@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:profile_box_test/02_profile_002.dart';
-import '02_profile_001.dart';
-import '02_profile_002.dart';
 import '02_profile_003.dart';
 import '02_profile_004.dart';
 
@@ -46,7 +44,7 @@ class _SelectState extends State<Select> {
                             child: Image.asset('images/cat.jpeg', width: 370,),
                             onPressed: () {
                               Navigator.push(
-                                  context, MaterialPageRoute(builder: (context) => profile_001()));
+                                  context, MaterialPageRoute(builder: (context) => profile_003()));
                             }
                             ),
                       ),
@@ -62,7 +60,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat2.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_002()));
+                                context, MaterialPageRoute(builder: (context) => profile_003()));
                           }
                       ),
                     ),
@@ -79,7 +77,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat3.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_003()));
+                                context, MaterialPageRoute(builder: (context) => profile_004()));
                           }
                       ),
                     ),
@@ -116,7 +114,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_004()));
+                                context, MaterialPageRoute(builder: (context) => profile_003()));
                           }
                       ),
                     ),
@@ -184,7 +182,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_001()));
+                                context, MaterialPageRoute(builder: (context) => profile_003()));
                           }
                       ),
                     ),
@@ -201,7 +199,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat2.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_001()));
+                                context, MaterialPageRoute(builder: (context) => profile_003()));
                           }
                       ),
                     ),
@@ -218,7 +216,7 @@ class _SelectState extends State<Select> {
                           child: Image.asset('images/cat3.jpeg', width: 370,),
                           onPressed: () {
                             Navigator.push(
-                                context, MaterialPageRoute(builder: (context) => profile_001()));
+                                context, MaterialPageRoute(builder: (context) => profile_004()));
                           }
                       ),
                     ),

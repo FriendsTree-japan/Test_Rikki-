@@ -102,7 +102,7 @@ class _profile_001 extends State<profile_001> {
                     String hateThing = hateThingController.text;
                     String query = 'INSERT INTO mypofile(name, age, favoriteThing, hateThing) VALUES("$name", "$age", "$favoriteThing", "$hateThing")';
 
-                    await proDb.saveData(name,age,favoriteThing,hateThing,query);
+                    //await proDb.saveData(name,age,favoriteThing,hateThing,query);
 
                     showDialog(BuildContext context) => AlertDialog(
                       title: Text("saved"),
