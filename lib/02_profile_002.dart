@@ -2,249 +2,97 @@ import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 import 'main.dart';
 import '01_Select.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:collection/collection.dart';
+import 'package:path/path.dart';
+import 'ProfileDetailes001.dart';
+import 'profileDb.dart';
+import '02_profile_001.dart';
+import 'profileShow.dart';
 
 
 class profile_002 extends StatefulWidget {
   @override
-  _profile_002 createState() => _profile_002();
+  _profile_002 createState() => new _profile_002();
 }
 
-
 class _profile_002 extends State<profile_002> {
-  var _sliderValue1 = 0.0;
-  var _sliderValue2 = 0.0;
-  var _sliderValue3 = 0.0;
-  var _sliderValue4 = 0.0;
-  var _sliderValue5 = 0.0;
-  var _labelText = 'Select value';
+  Future<List<ProList>> result = profileDb().getData() ;//    for (Map item in result) {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: <Widget>[
-                  Column(
-                      children: <Widget>[
-                        Align(
-                          child:Container(
-                            child:Image.asset(
-                                'images/cat.jpeg', width: 150
-                            ),
-                            padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 5.0),
-                          ),
-                        ),
-                      ]
-                  ),
-
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child: TextField(
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: '名前（あだ名）',
-                            filled: true,
-                            fillColor: Color(0xFFEEA1FF),
-                          ),
-                        ),
-                        width: 200,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: '生年月日',
-                        ),
-                      ),
-                      width: 100,
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.all(10.0)),
-                Column(
-                  children: <Widget>[
-                    Container(
-                      child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: '出身地',
-                        ),
-                      ),
-                      width: 100,
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.all(10.0)),
-                Column(
-                  children: <Widget>[
-                    Container(
-                      child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: '血液型',
-                        ),
-                      ),
-                      width: 100,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-
-            Padding(padding: EdgeInsets.only(top: 10.0)),
-
-            Container(
-              child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: '好きなもの・こと',
-                ),
-              ),
-              padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-            ),
-
-            Container(
-              padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
-              child: Container(
-                color: Color(0xFFF3D9F8),
-                child:
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('あなたはどっち派?' ,style: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold)),
-                    ),
-
-                    Container(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('「犬」派?、「猫」派?' ,style: TextStyle(color: Colors.black54, fontSize: 10,)),
-                    ),
-
-                    Slider(
-                      value: _sliderValue1,
-                      min: 0,
-                      max: 100,
-                      divisions: 5,
-                      onChanged: (double value) {
-                        setState(() {
-                          _sliderValue1 = value.roundToDouble();
-                          _labelText = 'value = $_sliderValue1';
-                        });
-                      },
-                    ),
-
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('「思いやり」派?、「論理に忠実」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-                    ),
-
-                    Slider(
-                      value: _sliderValue2,
-                      min: 0,
-                      max: 100,
-                      divisions: 5,
-                      onChanged: (double value) {
-                        setState(() {
-                          _sliderValue2 = value.roundToDouble();
-                          _labelText = 'value = $_sliderValue2';
-                        });
-                      },
-                    ),
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('業務は、「スピードが大事」派?、「品質が大事」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-                    ),
-
-                    Slider(
-                      value: _sliderValue3,
-                      min: 0,
-                      max: 100,
-                      divisions: 5,
-                      onChanged: (double value) {
-                        setState(() {
-                          _sliderValue3 = value.roundToDouble();
-                          _labelText = 'value = $_sliderValue3';
-                        });
-                      },
-                    ),
-
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('「色んなことに挑戦」派?、「一つのことを追求」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-                    ),
-
-                    Slider(
-                      value: _sliderValue4,
-                      min: 0,
-                      max: 100,
-                      divisions: 5,
-                      onChanged: (double value) {
-                        setState(() {
-                          _sliderValue4 = value.roundToDouble();
-                          _labelText = 'value = $_sliderValue4';
-                        });
-                      },
-                    ),
-
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text('大切にしたいのは、「仕事」派?、「家庭」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-                    ),
-
-                    Slider(
-                      value: _sliderValue5,
-                      min: 0,
-                      max: 100,
-                      divisions: 5,
-                      onChanged: (double value) {
-                        setState(() {
-                          _sliderValue5 = value.roundToDouble();
-                          _labelText = 'value = $_sliderValue5';
-                        });
-                      },
-                    ),
-
-                  ],
-
-                ),
-              ),
-            ),
-            Container(
-              child: TextField(
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'フリースペース',
-                ),
-              ),
-              padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
-            ),
-          ],
-
+        appBar: AppBar(
+          title: Text("プロフィール帳一覧"),
         ),
-      ),
+        body: FutureBuilder(
+            future: result,
+            builder: (BuildContext context,AsyncSnapshot<List<ProList>> snapshot){
+              if (snapshot.connectionState != ConnectionState.done){
+                return new Expanded(
+                    child: Center(
+                      child: new CircularProgressIndicator(),
+                    )
+                );
+              } else if (snapshot.hasError) {
+                return new Text('Error: ${snapshot.error}');
+              } else if (snapshot.hasData){
+                final List<ProList> prolists = snapshot.data ?? <ProList>[];
+                return Align(
+                  // オブジェクト配列でカード表示を行う
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.all(8),
+                    // ②配列のデータ数分カード表示を行う
+                    itemCount: prolists.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
+                        child: InkWell(
+                          //onTap: () {
+                          //debugPrint("tap : " +
+                          //'${prolists[index].name}');
+                          //_editArticle(prolists[index]);
+                          //},
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                title:
+                                // ③オブジェクトの属性(タイトル属性)を参照する
+                                Text(
+                                  '${prolists[index].name}',style: TextStyle(color: Colors.blue,fontSize: 20),
+                                ),
+                                subtitle:
+                                //  mainAxisAlignment:
+                                //   MainAxisAlignment
+                                //     .spaceBetween, // 両端に寄せる
+                                // children: <Widget>[
+                                Text(
+                                    '${prolists[index].age}'"歳"
+                                ),
+                                onTap: (){
+//              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => ProfileDetailes(prolists[index].id,prolists[index].name,prolists[index].age,prolists[index].favoriteThing,prolists[index].hateThing)), (route) => false);
+                                  Navigator.push(
+                                      context, MaterialPageRoute(builder: (context) => ProfileDetailes(prolists[index].id,prolists[index].name,prolists[index].age,prolists[index].favoriteThing,prolists[index].hateThing)));
+                                },
+                                trailing: IconButton(
+                                  icon: new Icon(Icons.delete),
+                                  onPressed: () async{
+                                    // 削除の確認ダイアログを表示
+                                    profileShow proshow = new profileShow();
+                                    await proshow.confirmDeleteDialog(prolists[index].id,context);
+                                  },
+                                ),),],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              }else{
+                return Text("データが存在しません");
+              }
+            }
+        )
     );
   }
 }

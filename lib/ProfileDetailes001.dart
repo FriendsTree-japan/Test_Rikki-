@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
+import '02_profile_002.dart';
 import 'main.dart';
 import '01_Select.dart';
 import 'package:sqflite/sqflite.dart';
@@ -7,17 +8,36 @@ import 'package:collection/collection.dart';
 import 'package:path/path.dart';
 import 'profileDb.dart';
 
-class profile_001 extends StatefulWidget {
+
+class ProfileDetailes extends StatefulWidget {
+  final int id;
+  final String name;
+  final String age;
+  final String favoriteThing;
+  final String hateThing;
+  ProfileDetailes(this.id,this.name,this.age,this.favoriteThing,this.hateThing);
+
   @override
-  _profile_001 createState() => _profile_001();
+  _ProfileDetailes createState() => _ProfileDetailes();
 }
 
-class _profile_001 extends State<profile_001> {
-  ScreenshotController screenshotController = ScreenshotController();
-  var nameController = TextEditingController();
-  var ageController = TextEditingController();
-  var favoriteThingController = TextEditingController();
-  var hateThingController = TextEditingController();
+class _ProfileDetailes extends State<ProfileDetailes> {
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController ageController = new TextEditingController();
+  TextEditingController favoriteThingController = new TextEditingController();
+  TextEditingController hateThingController = new TextEditingController();
+  late int id;
+
+  void initState() {
+    super.initState();
+    this.nameController = new TextEditingController(text: widget.name);
+    this.ageController = new TextEditingController(text: widget.age);
+    this.favoriteThingController =
+    new TextEditingController(text: widget.favoriteThing);
+    this.hateThingController =
+    new TextEditingController(text: widget.hateThing);
+    this.id = widget.id;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +95,7 @@ class _profile_001 extends State<profile_001> {
             Align(
               alignment: Alignment.bottomLeft,
               child: TextField(
-                controller:hateThingController,
+                controller: hateThingController,
               ),
             ),
 
@@ -84,8 +104,7 @@ class _profile_001 extends State<profile_001> {
               child: RaisedButton(
                   child: Text('戻る'),
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => MyApp()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => profile_002()));
                   }
               ),
             ),
@@ -93,22 +112,23 @@ class _profile_001 extends State<profile_001> {
             Align(
               alignment: Alignment.bottomRight,
               child: RaisedButton(
-                  child: Text('保存'),
-                  onPressed: () async{
+                  child: Text('更新'),
+                  onPressed: () async {
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
                     String age = ageController.text;
                     String favoriteThing = favoriteThingController.text;
                     String hateThing = hateThingController.text;
-                    String query = 'INSERT INTO mypofile(name, age, favoriteThing, hateThing) VALUES("$name", "$age", "$favoriteThing", "$hateThing")';
 
-                    await proDb.saveData(name,age,favoriteThing,hateThing,query);
-
-                    showDialog(BuildContext context) => AlertDialog(
-                      title: Text("saved"),
-                      content: Text("insert data into database."),
-                    );
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
+                    ProList plist = new ProList(id: id,name: name,age: age,favoriteThing: favoriteThing,hateThing: hateThing);
+                    await proDb.updateData(plist);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => profile_002()));
+                    //Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => profile_002()), (route) => false)
+                    showDialog(BuildContext context) =>
+                        AlertDialog(
+                          title: Text("saved"),
+                          content: Text("insert data into database."),
+                        );
                   }
               ),
             ),
