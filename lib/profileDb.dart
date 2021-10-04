@@ -7,16 +7,16 @@ import 'package:path/path.dart';
 import 'package:flutter/cupertino.dart';
 
 class profileDb {
-  //データセット処理
-  Future<void> saveData(String name,String age,String favoriteThing,String hateThing,String query) async {
+  //データセット処理(プロフィール①)
+  Future<void> saveData(String name,String birth,String place,String bloodType,String favoriteThing,String free,double _sliderValue1,double _sliderValue2,double _sliderValue3,double _sliderValue4,double _sliderValue5,String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "mypofile.db");
+    String path = join(dbPath, "profile1.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
           await db.execute(
-              "CREATE TABLE IF NOT EXISTS mypofile (id INTEGER PRIMARY KEY, name TEXT, age TEXT, favoriteThing TEXT, hateThing TEXT)");
+              "CREATE TABLE IF NOT EXISTS profile1 (id INTEGER PRIMARY KEY, name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, sliderValue2 REAL, sliderValue3 REAL, sliderValue4 REAL, sliderValue5 REAL)");
         }
     );
     await database.transaction((txn) async {
@@ -30,13 +30,13 @@ class profileDb {
   Future<void> deleteData(int id) async {
     debugPrint("DeleteData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "mypofile.db");
+    String path = join(dbPath, "profile1.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
     // Remove the Dog from the database.
     await db.delete(
-      'mypofile',
+      'profile1.db',
       // Use a where clause to delete a specific dog.
       where: "id = ?",
       // Pass the Dog's id as a whereArg to prevent SQL injection.
@@ -48,12 +48,12 @@ class profileDb {
   Future<void> updateData(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "mypofile.db");
+    String path = join(dbPath, "profile1.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
     await db.update(
-      'mypofile',
+      'profile1',
       plist.toMap(),
       where: "id = ?",
       whereArgs: [plist.id],
@@ -64,18 +64,24 @@ class profileDb {
   //データ選択(List表示)
   Future<List<ProList>> getData() async {
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "mypofile.db");
+    String path = join(dbPath, "profile1.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
-    final List<Map<String,dynamic>> maps = await db.rawQuery('SELECT * FROM mypofile');
+    final List<Map<String,dynamic>> maps = await db.rawQuery('SELECT * FROM profile1');
     return List.generate(maps.length, (i) {
       return ProList(
           id: maps[i]['id'],
           name: maps[i]['name'],
-          age: maps[i]['age'],
+          birth: maps[i]['birth'],
+          place: maps[i]['place'],
+          bloodType: maps[i]['bloodType'],
           favoriteThing: maps[i]['favoriteThing'],
-          hateThing: maps[i]['hateThing']
-
+          free: maps[i]['free'],
+          sliderValue1: maps[i]['sliderValue1'],
+          sliderValue2: maps[i]['sliderValue2'],
+          sliderValue3: maps[i]['sliderValue3'],
+          sliderValue4: maps[i]['sliderValue4'],
+          sliderValue5: maps[i]['sliderValue5']
       );
     });
   }
@@ -83,19 +89,33 @@ class profileDb {
 class ProList {
   int id;
   late final String name;
-  late final String age;
+  late final String birth;
+  late final String place;
+  late final String bloodType;
   late final String favoriteThing;
-  late final String hateThing;
+  late final String free;
+  late final double sliderValue1;
+  late final double sliderValue2;
+  late final double sliderValue3;
+  late final double sliderValue4;
+  late final double sliderValue5;
 
-  ProList({required this.id , required this.name, required this.age, required this.favoriteThing, required this.hateThing });
+  ProList({required this.id , required this.name, required this.birth, required this.place, required this.bloodType, required this.favoriteThing, required this.free, required this.sliderValue1, required this.sliderValue2, required this.sliderValue3, required this.sliderValue4, required this.sliderValue5 });
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'name': name,
-      'age' : age,
+      'birth' : birth,
+      'place' : place,
+      'bloodType' : bloodType,
       'favoriteThing' : favoriteThing,
-      'hateThing' : hateThing
+      'free' : free,
+      'sliderValue1' : sliderValue1,
+      'sliderValue2' : sliderValue2,
+      'sliderValue3' : sliderValue3,
+      'sliderValue4' : sliderValue4,
+      'sliderValue5' : sliderValue5,
     };
   }
 
@@ -104,37 +124,3 @@ class ProList {
     return 'ProList{ id: $id }';
   }
 }
-
-
-//    for (Map item in result) {
-//      _items.add(
-//        ListTile(
-//          title: Text(item['name']),
-//        ),
-//      );
-//    };
-//    return _items;
-
-//async {
-//  List<Widget> list = <Widget>[];
-//  String dbPath = await getDatabasesPath();
-//  String path = join(dbPath, "mypofile.db");
-
-//  Database database = await openDatabase(path, version: 1,
-//      onCreate: (Database db, int version) async {
-//        await db.execute(
-//            "CREATE TABLE IF NOT EXISTS mypofile (id INTEGER PRIMARY KEY, name , age TEXT, favoriteThing TEXT, hateThing TEXT)");
-//      }
-//  );
-//  List<Map> result = await database.rawQuery('SELECT * FROM mypofile');
-//  for (Map item in result) {
-//    list.add(
-//        ListTile(
-//          title: Text(item['name']),
-//        )
-//    );
-//   }
-//  setState(() {
-//    _items = list;
-//    });
-//  }

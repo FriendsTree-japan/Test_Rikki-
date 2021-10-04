@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 import 'main.dart';
 import '01_Select.dart';
+import 'profileDb.dart';
 
 
 class profile_003 extends StatefulWidget {
@@ -11,12 +12,23 @@ class profile_003 extends StatefulWidget {
 
 
 class _profile_003 extends State<profile_003> {
+  //プロフィール帳①質問回答項目
+  var nameController = TextEditingController();
+  var birthController = TextEditingController();
+  var placeController = TextEditingController();
+  var bloodTypeController = TextEditingController();
+  var favoriteThingController = TextEditingController();
+  var freeController = TextEditingController();
+
+  //スライダー値更新
   var _sliderValue1 = 0.0;
   var _sliderValue2 = 0.0;
   var _sliderValue3 = 0.0;
   var _sliderValue4 = 0.0;
   var _sliderValue5 = 0.0;
   var _labelText = 'Select value';
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +63,7 @@ class _profile_003 extends State<profile_003> {
                     children: <Widget>[
                       Container(
                         child: TextField(
+                          controller: nameController,
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: '名前（あだ名）',
@@ -73,6 +86,7 @@ class _profile_003 extends State<profile_003> {
                   children: <Widget>[
                     Container(
                       child: TextField(
+                        controller: birthController,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: '生年月日',
@@ -87,6 +101,7 @@ class _profile_003 extends State<profile_003> {
                   children: <Widget>[
                     Container(
                       child: TextField(
+                        controller: placeController,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: '出身地',
@@ -101,6 +116,7 @@ class _profile_003 extends State<profile_003> {
                   children: <Widget>[
                     Container(
                       child: TextField(
+                        controller: bloodTypeController,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           labelText: '血液型',
@@ -117,6 +133,7 @@ class _profile_003 extends State<profile_003> {
 
             Container(
               child: TextField(
+                controller: favoriteThingController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: '好きなもの・こと',
@@ -226,7 +243,6 @@ class _profile_003 extends State<profile_003> {
                         });
                       },
                     ),
-
                   ],
 
                 ),
@@ -234,6 +250,7 @@ class _profile_003 extends State<profile_003> {
             ),
             Container(
               child: TextField(
+                controller: freeController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'フリースペース',
@@ -241,8 +258,43 @@ class _profile_003 extends State<profile_003> {
               ),
               padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
             ),
-          ],
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                  child: Text('保存'),
+                  onPressed: () async{
+                    profileDb proDb = new profileDb();
+                    String name = nameController.text;
+                    String birth = birthController.text;
+                    String place = placeController.text;
+                    String bloodType = bloodTypeController.text;
+                    String favoriteThing = favoriteThingController.text;
+                    String free = freeController.text;
 
+                    String query = 'INSERT INTO profile1(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
+                        'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
+
+                    await proDb.saveData(name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5,query);
+
+                    showDialog(BuildContext context) => AlertDialog(
+                      title: Text("saved"),
+                      content: Text("insert data into database."),
+                    );
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
+                  }
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                  child: Text('戻る'),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => MyApp()));
+                  }
+              ),
+            )
+          ],
         ),
       ),
     );

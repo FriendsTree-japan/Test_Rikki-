@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '02_profile_002.dart';
+import '01_Edit.dart';
 import 'profileDb.dart';
 import 'main.dart';
 
@@ -42,7 +42,7 @@ class profileShow  {
                 profileDb delData = new profileDb();
                 delData.deleteData(id);
                 Navigator.pop(context);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => profile_002()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Edit()));
                 //Navigator.pushAndRemoveUntil(context, new MaterialPageRoute(builder: (context) => profile_002()),(_) => false);
                 // Navigator.push(
                 //     context, MaterialPageRoute(builder: (context) => profile_002()));
