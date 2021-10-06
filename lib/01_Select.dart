@@ -20,82 +20,94 @@ class Select extends StatefulWidget {
 
 
 class _SelectState extends State<Select> {
-  int _currentIndex = 0;
   final List<String> imgList = [
     'images/cat.jpeg',
     'images/cat2.jpeg',
     'images/cat3.jpeg',
   ];
-
+  int _current = 0;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: <Widget>[
-              CarouselSlider(
-                options: CarouselOptions(
+    return Scaffold(
+      body:
+      Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(padding: EdgeInsets.all(20.0)),
+            CarouselSlider.builder(
+              options: CarouselOptions(
+                  height: 200.0,
+                  initialPage: 0,
+                  viewportFraction: 1,
+                  enableInfiniteScroll: true,
                   enlargeCenterPage: true,
-                  enableInfiniteScroll: false,
-                  autoPlay: true,
                   onPageChanged: (index, reason) {
-                    setState(
-                          () {
-                        _currentIndex = index;
-                      },
-                    );
-                  },
-                ),
-                items: imgList.map((e) =>
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: <Widget>[
-                          Image.asset(e,
-                            width: 1050,
-                            height: 350,
-                            fit: BoxFit.cover,)
-                        ],
-                      ),
-                    )).toList(),
+                    setState(() {
+                      _current = index;
+                    });
+                  }
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: imgList.map((urlOfItem) {
-                  int index = imgList.indexOf(urlOfItem);
-                  return Container(
-                    width: 10.0,
-                    height: 10.0,
-                    margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: _currentIndex == index
-                          ? Color.fromRGBO(0, 0, 0, 0.8)
-                          : Color.fromRGBO(0, 0, 0, 0.3),
+              itemCount: imgList.length,
+              itemBuilder: (BuildContext context, int index, int realIndex) {
+                return ListTile(
+                    title:
+                    Image.asset(
+                      imgList[index],
                     ),
-                  );
-                }).toList(),
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: RaisedButton(
-                    child: Text('テスト'),
-                    onPressed: () {
-                      Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => profile_011()));
+                    onTap: () {
+                      switch (index) {
+                        case 0 : //プルフィール帳1
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => profile_005()));
+                          break;
+                        case 1 : //プルフィール帳2
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => profile_006()));
+                          break;
+                        case 2 : //プルフィール帳2
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => profile_007()));
+                          break;
+                      }
                     }
-                ),
-              ),
-            ],
-          ),
-        ),
+                );
+              },
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: imgList.map((String a) {
+                int index = imgList.indexOf(a);
+                return Container(
+                  width: 8.0,
+                  height: 8.0,
+                  margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _current == index
+                        ? Color.fromRGBO(0, 0, 0, 0.9)
+                        : Color.fromRGBO(0, 0, 0, 0.4),
+                  ),
+                );
+              }).toList(),
+            ),
+          ]
       ),
     );
+    //         Row(
+    //           mainAxisAlignment: MainAxisAlignment.start,
+    //           children: <Widget>[
+    //             Text('ちょっと大人の' ,style: TextStyle(color: Colors.lightGreen, fontSize: 25, )),
+    //             Text('のプロフィール帳', style: TextStyle(fontSize: 20)),
+    //           ],
+    //         ),
+    //       ],
+    //     ),
+    //   );
+    // }
   }
 }

@@ -27,9 +27,8 @@ class MyApp extends StatelessWidget {
 
 
 class TabPage extends StatelessWidget {
-
   final _tab = <Tab> [
-    Tab( text:'Create', icon: Icon(Icons.edit_sharp,color: Colors.black54)),
+    Tab( text:'Create',icon: Icon(Icons.edit_sharp,color: Colors.black54)),
     Tab( text:'Edit', icon: Icon(Icons.app_registration,color: Colors.black54 )),
   ];
 
@@ -39,6 +38,7 @@ class TabPage extends StatelessWidget {
       length: _tab.length,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
           title: Text("Profile Book App",
               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           bottom: TabBar(
@@ -46,11 +46,8 @@ class TabPage extends StatelessWidget {
           ),
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.dehaze,color: Colors.black54),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Setting()));
-                }
+                icon: Icon(Icons.help,color: Colors.black54),
+                onPressed: _launchURL
             ),
           ],
         ),
@@ -63,5 +60,14 @@ class TabPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void _launchURL() async {
+  const url = 'https://www.instagram.com/_friendstree_/';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
