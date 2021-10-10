@@ -38,7 +38,7 @@ class TabPage extends StatelessWidget {
       length: _tab.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.green,
           title: Text("Profile Book App",
               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           bottom: TabBar(
