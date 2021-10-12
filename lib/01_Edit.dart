@@ -39,6 +39,7 @@ class _Edit extends State<Edit> {
                 final List<ProList> prolists = snapshot.data ?? <ProList>[];
                 return Align(
                   // オブジェクト配列でカード表示を行う
+                  alignment: Alignment.topCenter,
                   child: ListView.builder(
                     shrinkWrap: true,
                     padding: const EdgeInsets.all(8),
