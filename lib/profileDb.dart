@@ -36,7 +36,7 @@ class profileDb {
 
     // Remove the Dog from the database.
     await db.delete(
-      'profile1.db',
+      'profile1',
       // Use a where clause to delete a specific dog.
       where: "id = ?",
       // Pass the Dog's id as a whereArg to prevent SQL injection.
