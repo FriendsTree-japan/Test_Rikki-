@@ -18,7 +18,6 @@ class Select extends StatefulWidget {
   _SelectState createState() => _SelectState();
 }
 
-
 class _SelectState extends State<Select> {
   final List<String> imgList = [
     'images/cat.jpeg',
@@ -26,11 +25,11 @@ class _SelectState extends State<Select> {
     'images/cat3.jpeg',
   ];
   int _current = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,35 +46,35 @@ class _SelectState extends State<Select> {
                     setState(() {
                       _current = index;
                     });
-                  }
-              ),
+                  }),
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return ListTile(
-                    title:
-                    Image.asset(
+                    title: Image.asset(
                       imgList[index],
                     ),
                     onTap: () {
                       switch (index) {
-                        case 0 : //プルフィール帳1
+                        case 0: //プルフィール帳1
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_003()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_003()));
                           break;
-                        case 1 : //プルフィール帳2
+                        case 1: //プルフィール帳2
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_006()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_006()));
                           break;
-                        case 2 : //プルフィール帳2
+                        case 2: //プルフィール帳2
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_007()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_007()));
                           break;
                       }
-                    }
-                );
+                    });
               },
             ),
             Row(
@@ -95,8 +94,7 @@ class _SelectState extends State<Select> {
                 );
               }).toList(),
             ),
-          ]
-      ),
+          ]),
     );
     //         Row(
     //           mainAxisAlignment: MainAxisAlignment.start,
