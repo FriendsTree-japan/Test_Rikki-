@@ -7,7 +7,6 @@ import '01_Edit.dart';
 import '01_Send.dart';
 import '01_Setting.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -25,21 +24,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class TabPage extends StatelessWidget {
-  final _tab = <Tab> [
+  final _tab = <Tab>[
+    Tab(text: 'Create', icon: Icon(Icons.edit_sharp, color: Colors.black54)),
     Tab(
-        text: 'Create',
-        icon: Icon(
-            Icons.edit_sharp,
-            color: Colors.black54)
-    ),
-    Tab(
-        text:'Edit',
-        icon: Icon(
-            Icons.app_registration,
-            color: Colors.black54 )
-    ),
+        text: 'Edit',
+        icon: Icon(Icons.app_registration, color: Colors.black54)),
   ];
 
   @override
@@ -50,19 +40,20 @@ class TabPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           title: Text("Profile Book App",
-              style: TextStyle(color: Colors.black54, fontSize: 18,)),
+              style: TextStyle(
+                color: Colors.black54,
+                fontSize: 18,
+              )),
           bottom: TabBar(
-            labelColor:Colors.black,
+            labelColor: Colors.black,
             tabs: _tab,
           ),
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.help,color: Colors.black54),
-                onPressed: _launchURL
-            ),
+                icon: Icon(Icons.help, color: Colors.black54),
+                onPressed: _launchURL),
           ],
         ),
-
         body: TabBarView(
           children: <Widget>[
             Select(),

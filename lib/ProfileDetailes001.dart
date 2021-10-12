@@ -8,7 +8,6 @@ import 'package:path/path.dart';
 import 'profileDb.dart';
 import '01_Edit.dart';
 
-
 class ProfileDetailes extends StatefulWidget {
   final int id;
   final String name;
@@ -23,7 +22,19 @@ class ProfileDetailes extends StatefulWidget {
   final double _sliderValue4;
   final double _sliderValue5;
 
-  ProfileDetailes(this.id,this.name,this.birth,this.place,this.bloodType,this.favoriteThing,this.free,this._sliderValue1,this._sliderValue2,this._sliderValue3,this._sliderValue4,this._sliderValue5);
+  ProfileDetailes(
+      this.id,
+      this.name,
+      this.birth,
+      this.place,
+      this.bloodType,
+      this.favoriteThing,
+      this.free,
+      this._sliderValue1,
+      this._sliderValue2,
+      this._sliderValue3,
+      this._sliderValue4,
+      this._sliderValue5);
 
   @override
   _ProfileDetailes createState() => _ProfileDetailes();
@@ -50,8 +61,10 @@ class _ProfileDetailes extends State<ProfileDetailes> {
     this.nameController = new TextEditingController(text: widget.name);
     this.birthController = new TextEditingController(text: widget.birth);
     this.placeController = new TextEditingController(text: widget.place);
-    this.bloodTypeController = new TextEditingController(text: widget.bloodType);
-    this.favoriteThingController = new TextEditingController(text: widget.favoriteThing);
+    this.bloodTypeController =
+        new TextEditingController(text: widget.bloodType);
+    this.favoriteThingController =
+        new TextEditingController(text: widget.favoriteThing);
     this.freeController = new TextEditingController(text: widget.free);
     this.id = widget.id;
     this._sliderValue1 = widget._sliderValue1;
@@ -77,19 +90,14 @@ class _ProfileDetailes extends State<ProfileDetailes> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: <Widget>[
-                  Column(
-                      children: <Widget>[
-                        Align(
-                          child:Container(
-                            child:Image.asset(
-                                'images/cat.jpeg', width: 150
-                            ),
-                            padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 5.0),
-                          ),
-                        ),
-                      ]
-                  ),
-
+                  Column(children: <Widget>[
+                    Align(
+                      child: Container(
+                        child: Image.asset('images/cat.jpeg', width: 150),
+                        padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 5.0),
+                      ),
+                    ),
+                  ]),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -110,7 +118,6 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                 ],
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -160,9 +167,7 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                 ),
               ],
             ),
-
             Padding(padding: EdgeInsets.only(top: 10.0)),
-
             Container(
               child: TextField(
                 controller: favoriteThingController,
@@ -173,25 +178,29 @@ class _ProfileDetailes extends State<ProfileDetailes> {
               ),
               padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
             ),
-
             Container(
               padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
               child: Container(
                 color: Color(0xFFF3D9F8),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
                       alignment: Alignment.bottomLeft,
-                      child: Text('あなたはどっち派?' ,style: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold)),
+                      child: Text('あなたはどっち派?',
+                          style: TextStyle(
+                              color: Colors.black54,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold)),
                     ),
-
                     Container(
                       alignment: Alignment.bottomLeft,
-                      child: Text('「犬」派?、「猫」派?' ,style: TextStyle(color: Colors.black54, fontSize: 10,)),
+                      child: Text('「犬」派?、「猫」派?',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 10,
+                          )),
                     ),
-
                     Slider(
                       value: _sliderValue1,
                       min: 0,
@@ -204,12 +213,14 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                         });
                       },
                     ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Text('「思いやり」派?、「論理に忠実」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
+                      child: Text('「思いやり」派?、「論理に忠実」派?',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 10,
+                          )),
                     ),
-
                     Slider(
                       value: _sliderValue2,
                       min: 0,
@@ -224,9 +235,12 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                     ),
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Text('業務は、「スピードが大事」派?、「品質が大事」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
+                      child: Text('業務は、「スピードが大事」派?、「品質が大事」派?',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 10,
+                          )),
                     ),
-
                     Slider(
                       value: _sliderValue3,
                       min: 0,
@@ -239,12 +253,14 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                         });
                       },
                     ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Text('「色んなことに挑戦」派?、「一つのことを追求」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
+                      child: Text('「色んなことに挑戦」派?、「一つのことを追求」派?',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 10,
+                          )),
                     ),
-
                     Slider(
                       value: _sliderValue4,
                       min: 0,
@@ -257,12 +273,14 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                         });
                       },
                     ),
-
                     Align(
                       alignment: Alignment.bottomLeft,
-                      child: Text('大切にしたいのは、「仕事」派?、「家庭」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
+                      child: Text('大切にしたいのは、「仕事」派?、「家庭」派?',
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 10,
+                          )),
                     ),
-
                     Slider(
                       value: _sliderValue5,
                       min: 0,
@@ -276,7 +294,6 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                       },
                     ),
                   ],
-
                 ),
               ),
             ),
@@ -290,9 +307,9 @@ class _ProfileDetailes extends State<ProfileDetailes> {
               ),
               padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
             ),
-              Align(
-                  alignment: Alignment.bottomRight,
-                  child: ElevatedButton(
+            Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
                   child: Text('更新'),
                   onPressed: () async {
                     profileDb proDb = new profileDb();
@@ -303,27 +320,37 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                     String favoriteThing = favoriteThingController.text;
                     String free = freeController.text;
 
-                    ProList plist = new ProList(id: id,name: name,birth: birth,place: place,bloodType: bloodType,favoriteThing: favoriteThing,free: free,sliderValue1: _sliderValue1,sliderValue2:_sliderValue2,sliderValue3: _sliderValue3,sliderValue4: _sliderValue4,sliderValue5: _sliderValue5);
+                    ProList plist = new ProList(
+                        id: id,
+                        name: name,
+                        birth: birth,
+                        place: place,
+                        bloodType: bloodType,
+                        favoriteThing: favoriteThing,
+                        free: free,
+                        sliderValue1: _sliderValue1,
+                        sliderValue2: _sliderValue2,
+                        sliderValue3: _sliderValue3,
+                        sliderValue4: _sliderValue4,
+                        sliderValue5: _sliderValue5);
                     await proDb.updateData(plist);
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Edit()));
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Edit()));
                     //Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => profile_002()), (route) => false)
-                    showDialog(BuildContext context) =>
-                        AlertDialog(
+                    showDialog(BuildContext context) => AlertDialog(
                           title: Text("saved"),
                           content: Text("insert data into database."),
                         );
-                  }
-              ),
+                  }),
             ),
             Align(
               alignment: Alignment.bottomRight,
               child: ElevatedButton(
                   child: Text('戻る'),
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => MyApp()));
-                  }
-              ),
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MyApp()));
+                  }),
             )
           ],
         ),
