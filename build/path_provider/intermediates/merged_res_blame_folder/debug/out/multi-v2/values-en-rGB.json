@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/karitarikito/Desktop/FriendsTREE/git_test/build/path_provider/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/Users/yoshidayouichirou/Documents/01_WORK/01.FT/00.git/app2_ProfileBooks/Test_Rikki-/build/path_provider/intermediates/res/merged/debug/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/Users/karitarikito/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/yoshidayouichirou/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/karitarikito/Desktop/FriendsTREE/git_test/build/path_provider/intermediates/res/merged/debug/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "/Users/yoshidayouichirou/Documents/01_WORK/01.FT/00.git/app2_ProfileBooks/Test_Rikki-/build/path_provider/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
-                    "source": "/Users/karitarikito/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",
+                    "source": "/Users/yoshidayouichirou/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-en-rGB/values-en-rGB.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

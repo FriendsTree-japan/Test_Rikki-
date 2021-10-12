@@ -28,8 +28,18 @@ class MyApp extends StatelessWidget {
 
 class TabPage extends StatelessWidget {
   final _tab = <Tab> [
-    Tab( text:'Create',icon: Icon(Icons.edit_sharp,color: Colors.black54)),
-    Tab( text:'Edit', icon: Icon(Icons.app_registration,color: Colors.black54 )),
+    Tab(
+        text: 'Create',
+        icon: Icon(
+            Icons.edit_sharp,
+            color: Colors.black54)
+    ),
+    Tab(
+        text:'Edit',
+        icon: Icon(
+            Icons.app_registration,
+            color: Colors.black54 )
+    ),
   ];
 
   @override
@@ -42,6 +52,7 @@ class TabPage extends StatelessWidget {
           title: Text("Profile Book App",
               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           bottom: TabBar(
+            labelColor:Colors.black,
             tabs: _tab,
           ),
           actions: <Widget>[

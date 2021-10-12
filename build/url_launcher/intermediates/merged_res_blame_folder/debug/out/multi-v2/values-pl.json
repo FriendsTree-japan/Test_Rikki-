@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/karitarikito/Desktop/FriendsTREE/git_test/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
+            "outputFile": "/Users/yoshidayouichirou/Documents/01_WORK/01.FT/00.git/app2_ProfileBooks/Test_Rikki-/build/url_launcher/intermediates/res/merged/debug/values-pl/values-pl.xml",
             "map": [
                 {
-                    "source": "/Users/karitarikito/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-pl/values-pl.xml",
+                    "source": "/Users/yoshidayouichirou/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/karitarikito/Desktop/FriendsTREE/git_test/build/url_launcher/intermediates/res/merged/debug/values-pl/values-pl.xml",
+            "outputFile": "/Users/yoshidayouichirou/Documents/01_WORK/01.FT/00.git/app2_ProfileBooks/Test_Rikki-/build/url_launcher/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
             "map": [
                 {
-                    "source": "/Users/karitarikito/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-pl/values-pl.xml",
+                    "source": "/Users/yoshidayouichirou/.gradle/caches/transforms-2/files-2.1/d67cd79abd1ca209502f51c69d23182b/core-1.1.0/res/values-pl/values-pl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

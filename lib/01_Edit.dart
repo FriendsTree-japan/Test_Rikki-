@@ -38,6 +38,7 @@ class _Edit extends State<Edit> {
               } else if (snapshot.hasData){
                 final List<ProList> prolists = snapshot.data ?? <ProList>[];
                 return Align(
+                  alignment: Alignment.topCenter,
                   // オブジェクト配列でカード表示を行う
                   child: ListView.builder(
                     shrinkWrap: true,

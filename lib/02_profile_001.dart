@@ -6,6 +6,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:collection/collection.dart';
 import 'package:path/path.dart';
 import 'profileDb.dart';
+import 'model/F01_CreateImage.dart';
 
 class profile_001 extends StatefulWidget {
   @override
@@ -21,7 +22,9 @@ class _profile_001 extends State<profile_001> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return RepaintBoundary(
+          key: convertWidgetToImageKey,
+        child: Scaffold(
       body:
       SingleChildScrollView(
         child: Column(
@@ -115,6 +118,7 @@ class _profile_001 extends State<profile_001> {
           ],
         ),
       ),
+    )
     );
   }
 }

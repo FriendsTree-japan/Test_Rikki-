@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.3/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.5+4/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.1/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/android" />
+            <option value="$PROJECT_DIR$/../../../../../../02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10/android" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

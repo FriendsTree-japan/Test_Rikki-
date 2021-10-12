@@ -3,7 +3,7 @@ import 'package:screenshot/screenshot.dart';
 import 'main.dart';
 import '01_Select.dart';
 import 'profileDb.dart';
-
+import 'model/F01_CreateImage.dart';
 
 class profile_003 extends StatefulWidget {
   @override
@@ -31,7 +31,10 @@ class _profile_003 extends State<profile_003> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      RepaintBoundary(
+        key: convertWidgetToImageKey,
+        child:Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -263,6 +266,9 @@ class _profile_003 extends State<profile_003> {
               child: ElevatedButton(
                   child: Text('保存'),
                   onPressed: () async{
+                    saveImage _saveImage = saveImage();
+                    _saveImage.saveLocalImage(convertWidgetToImageKey);
+
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
                     String birth = birthController.text;
@@ -297,6 +303,7 @@ class _profile_003 extends State<profile_003> {
           ],
         ),
       ),
-    );
+    )
+      );
   }
 }

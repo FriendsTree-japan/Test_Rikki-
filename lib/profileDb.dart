@@ -11,14 +11,19 @@ class profileDb {
   Future<void> saveData(String name,String birth,String place,String bloodType,String favoriteThing,String free,double _sliderValue1,double _sliderValue2,double _sliderValue3,double _sliderValue4,double _sliderValue5,String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "profile1.db");
+    String path = await join(dbPath, "profile1.db");
+    debugPrint("作成先パス:" + path);
 
-    Database database = await openDatabase(path, version: 1,
+
+    Database database = await openDatabase(
+        path,
+        version: 1,
         onCreate: (Database db, int version) async {
           await db.execute(
               "CREATE TABLE IF NOT EXISTS profile1 (id INTEGER PRIMARY KEY, name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, sliderValue2 REAL, sliderValue3 REAL, sliderValue4 REAL, sliderValue5 REAL)");
         }
     );
+
     await database.transaction((txn) async {
       int id = await txn.rawInsert(query);
       print("insert: $id");
