@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/profile_box_test/MainActivity.java
+ com.example.profile_box_test.MainActivity
+com/example/profile_box_test/BuildConfig.java
+ com.example.profile_box_test.BuildConfig
