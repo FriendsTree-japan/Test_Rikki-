@@ -1,4 +1,4 @@
-#Thu Oct 14 09:20:16 JST 2021
-base.0=/Users/karitarikito/Desktop/FriendsTREE/test_Rikki-/Rikki-/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Sat Oct 16 17:36:48 JST 2021
+base.0=/Users/karitarikito/Desktop/FriendsTREE/MyProfile/Test_Rikki-/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

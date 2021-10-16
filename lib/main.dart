@@ -4,7 +4,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '01_Select.dart';
 import '01_Edit.dart';
-import '01_Send.dart';
 import '01_Setting.dart';
 
 
@@ -38,11 +37,12 @@ class TabPage extends StatelessWidget {
       length: _tab.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
           title: Text("Profile Book App",
               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           bottom: TabBar(
             tabs: _tab,
+            labelColor: Colors.black54,
           ),
           actions: <Widget>[
             IconButton(
