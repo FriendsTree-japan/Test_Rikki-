@@ -73,12 +73,11 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 20,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
-                              width: 80,
+                              width: 160,
                               height: 20,
                             ),
                           ],
@@ -104,12 +103,11 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 22,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
-                              width: 100,
+                              width: 200,
                               height: 20,
                             ),
                           ],
@@ -146,9 +144,8 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 4,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 60,
@@ -170,9 +167,8 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 2,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 50,
@@ -195,9 +191,8 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 2,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 50,
@@ -237,12 +232,11 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 22,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
-                              width: 150,
+                              width: 180,
                               height: 20,
                             ),
                           ],
@@ -295,12 +289,11 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 30,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
-                              width: 150,
+                              width: 240,
                               height: 20,
                             ),
                           ],
@@ -326,12 +319,11 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                               child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                ),
+                                maxLength: 28,
+                                decoration: const InputDecoration(counterText: '',),
                                 style: TextStyle(fontSize: 14),
                               ),
-                              width: 150,
+                              width: 215,
                               height: 20,
                             ),
                           ],
@@ -367,9 +359,8 @@ class _profile_005 extends State<profile_005> {
                           children: <Widget>[
                             Container(
                                 child: TextField(
-                                  decoration: const InputDecoration(
-                                    border: OutlineInputBorder(),
-                                  ),
+                                  maxLength: 14,
+                                  decoration: const InputDecoration(counterText: '',),
                                   style: TextStyle(fontSize: 14),
                                 ),
                               width: 120,
@@ -408,13 +399,12 @@ class _profile_005 extends State<profile_005> {
                     ),
                     Container(
                       child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
+                        maxLength: 16,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
-                      height: 30,
+                      height: 20,
                     ),
                   ],
                 ),
@@ -429,20 +419,19 @@ class _profile_005 extends State<profile_005> {
                     ),
                     Container(
                       child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
+                        maxLength: 16,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
-                      height: 30,
+                      height: 20,
                     ),
                   ],
                 ),
                 Padding(padding: EdgeInsets.all(10.0)),
               ],
             ),
-            Padding(padding: EdgeInsets.only(top: 10.0)),
+            Padding(padding: EdgeInsets.only(top: 15.0)),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -457,34 +446,32 @@ class _profile_005 extends State<profile_005> {
                     ),
                     Container(
                       child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
+                        maxLength: 16,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
-                      height: 30,
+                      height: 20,
                     ),
                   ],
                 ),
-                Padding(padding: EdgeInsets.all(5.0)),
+                Padding(padding: EdgeInsets.all(10.0)),
                 Column(
                   children: <Widget>[
                     Container(
                       child: Text(
-                          "願いが一つ叶うとしたら？"
+                          "願いが一つ叶ったら？"
                           ,style: TextStyle(color: Color(0x860047FA), fontSize: 14,)
                       ),
                     ),
                     Container(
                       child: TextField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
+                        maxLength: 16,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
-                      height: 30,
+                      height: 20,
                     ),
                   ],
                 ),
@@ -528,14 +515,12 @@ class _profile_005 extends State<profile_005> {
                     Container(
                       child: TextField(
                         textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'My Best ３',
-                        ),
+                        maxLength: 18,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 160,
-                      height: 30.0,
+                      height: 20,
                     ),
                     Padding(padding: EdgeInsets.all(5.0)),
                     Row(
@@ -547,10 +532,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
@@ -566,10 +550,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
@@ -586,10 +569,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
@@ -604,14 +586,12 @@ class _profile_005 extends State<profile_005> {
                     Container(
                       child: TextField(
                         textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'My Best ３',
-                        ),
+                        maxLength: 18,
+                        decoration: const InputDecoration(counterText: '',),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 160,
-                      height: 30.0,
+                      height: 20,
                     ),
                     Padding(padding: EdgeInsets.all(5.0)),
                     Row(
@@ -623,10 +603,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
@@ -643,10 +622,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
@@ -663,10 +641,9 @@ class _profile_005 extends State<profile_005> {
                         Padding(padding: EdgeInsets.all(5.0)),
                         Container(
                           child: TextField(
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                            ),
-                            style: TextStyle(fontSize: 10),
+                            maxLength: 16,
+                            decoration: const InputDecoration(counterText: '',),
+                            style: TextStyle(fontSize: 12),
                           ),
                           width: 120,
                           height: 20.0,
