@@ -8,8 +8,7 @@ import 'package:path/path.dart';
 import 'profileDb.dart';
 import '01_Edit.dart';
 
-
-class ProfileDetailes extends StatefulWidget {
+  class ProfileDetailes extends StatefulWidget {
   final int id;
   final String name;
   final String birth;
@@ -27,9 +26,10 @@ class ProfileDetailes extends StatefulWidget {
 
   @override
   _ProfileDetailes createState() => _ProfileDetailes();
-}
+  }
 
 class _ProfileDetailes extends State<ProfileDetailes> {
+
   //プロフィール帳①質問回答項目
   TextEditingController nameController = TextEditingController();
   TextEditingController birthController = TextEditingController();
@@ -47,18 +47,18 @@ class _ProfileDetailes extends State<ProfileDetailes> {
 
   void initState() {
     super.initState();
-    this.nameController = new TextEditingController(text: widget.name);
-    this.birthController = new TextEditingController(text: widget.birth);
-    this.placeController = new TextEditingController(text: widget.place);
-    this.bloodTypeController = new TextEditingController(text: widget.bloodType);
-    this.favoriteThingController = new TextEditingController(text: widget.favoriteThing);
-    this.freeController = new TextEditingController(text: widget.free);
-    this.id = widget.id;
-    this._sliderValue1 = widget._sliderValue1;
-    this._sliderValue2 = widget._sliderValue2;
-    this._sliderValue3 = widget._sliderValue3;
-    this._sliderValue4 = widget._sliderValue4;
-    this._sliderValue5 = widget._sliderValue5;
+     this.nameController = new TextEditingController(text: widget.name);
+     this.birthController = new TextEditingController(text: widget.birth);
+     this.placeController = new TextEditingController(text: widget.place);
+     this.bloodTypeController = new TextEditingController(text: widget.bloodType);
+     this.favoriteThingController = new TextEditingController(text: widget.favoriteThing);
+     this.freeController = new TextEditingController(text: widget.free);
+     this.id = widget.id;
+     this._sliderValue1 = widget._sliderValue1;
+     this._sliderValue2 = widget._sliderValue2;
+     this._sliderValue3 = widget._sliderValue3;
+     this._sliderValue4 = widget._sliderValue4;
+     this._sliderValue5 = widget._sliderValue5;
   }
 
   @override
@@ -303,8 +303,8 @@ class _ProfileDetailes extends State<ProfileDetailes> {
                     String favoriteThing = favoriteThingController.text;
                     String free = freeController.text;
 
-                    ProList plist = new ProList(id: id,name: name,birth: birth,place: place,bloodType: bloodType,favoriteThing: favoriteThing,free: free,sliderValue1: _sliderValue1,sliderValue2:_sliderValue2,sliderValue3: _sliderValue3,sliderValue4: _sliderValue4,sliderValue5: _sliderValue5);
-                    await proDb.updateData(plist);
+                    ProList plist = new ProList.ProList_003(id_p003: id,name_p003: name,birth_p003: birth,place_p003: place,bloodType_p003: bloodType,favoriteThing_p003: favoriteThing,free_p003: free,sliderValue1_p003: _sliderValue1,sliderValue2_p003:_sliderValue2,sliderValue3_p003: _sliderValue3,sliderValue4_p003: _sliderValue4,sliderValue5_p003: _sliderValue5);
+                    await proDb.updateData003(plist);
                     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Edit()));
                     //Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => profile_002()), (route) => false)
                     showDialog(BuildContext context) =>

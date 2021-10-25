@@ -3,6 +3,7 @@ import 'package:screenshot/screenshot.dart';
 import 'main.dart';
 import '01_Select.dart';
 import 'profileDb.dart';
+import 'CreateImage.dart';
 
 
 class profile_003 extends StatefulWidget {
@@ -31,7 +32,8 @@ class _profile_003 extends State<profile_003> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return RepaintBoundary(key:convertWidgetToImageKey,child:
+      Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -263,6 +265,10 @@ class _profile_003 extends State<profile_003> {
               child: ElevatedButton(
                   child: Text('保存'),
                   onPressed: () async{
+                    //スクショイメージ保存
+                    saveImage _saveImage = saveImage();
+                    _saveImage.saveLocalImage(convertWidgetToImageKey);
+
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
                     String birth = birthController.text;
@@ -271,7 +277,7 @@ class _profile_003 extends State<profile_003> {
                     String favoriteThing = favoriteThingController.text;
                     String free = freeController.text;
 
-                    String query = 'INSERT INTO profile1(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
+                    String query = 'INSERT INTO profile003(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
                         'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
 
                     await proDb.saveData(name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5,query);
@@ -297,6 +303,7 @@ class _profile_003 extends State<profile_003> {
           ],
         ),
       ),
+    ),
     );
   }
 }

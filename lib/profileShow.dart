@@ -15,7 +15,7 @@ class profileShow  {
 //     return
 //
 //   }
-  Future<void> confirmDeleteDialog(int id,BuildContext context) async {
+  Future<void> confirmDeleteDialog(int id,String tableName,BuildContext context) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
@@ -40,9 +40,9 @@ class profileShow  {
               child: Text('はい', style: TextStyle(color: Colors.white)),
               onPressed: () async {
                 profileDb delData = new profileDb();
-                delData.deleteData(id);
+                delData.deleteData(id,tableName);
                 Navigator.pop(context);
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Edit()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabPage(1)));
                 //Navigator.pushAndRemoveUntil(context, new MaterialPageRoute(builder: (context) => profile_002()),(_) => false);
                 // Navigator.push(
                 //     context, MaterialPageRoute(builder: (context) => profile_002()));

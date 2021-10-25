@@ -5,13 +5,17 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '01_Select.dart';
 import '01_Edit.dart';
 import '01_Setting.dart';
+import 'profileDb.dart';
 
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  _MyApp createState() => _MyApp();
+}
+  class _MyApp extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,11 +23,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: TabPage(),
+      home: TabPage(0),
     );
   }
+  @override
+  void initState() {
+    super.initState();
+     profileDb().createData_003();
+     profileDb().createData_005();
+  }
 }
-
 
 class TabPage extends StatelessWidget {
   final _tab = <Tab> [
@@ -32,17 +41,21 @@ class TabPage extends StatelessWidget {
   ];
 
   @override
+  int _screen = 0;
+  TabPage(int curPage){
+    this._screen = curPage;
+  }
   Widget build(BuildContext context) {
     return DefaultTabController(
+      initialIndex: _screen,
       length: _tab.length,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.green,
           title: Text("Profile Book App",
               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           bottom: TabBar(
             tabs: _tab,
-            labelColor: Colors.black54,
           ),
           actions: <Widget>[
             IconButton(

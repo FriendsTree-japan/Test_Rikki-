@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:profile_box_test/02_profile_003.dart';
+import 'package:profile_box_test/02_profile_005.dart';
 import 'package:screenshot/screenshot.dart';
 import 'main.dart';
 import '01_Select.dart';
@@ -16,8 +18,9 @@ class Edit extends StatefulWidget {
 }
 
 class _Edit extends State<Edit> {
-  Future<List<ProList>> result = profileDb().getData() ;//    for (Map item in result) {
-
+  Future<List<ProList>> result003 = profileDb().getDataList003() ;
+  Future<List<ProList>> result005 = profileDb().getDataList005() ;
+  ///    for (Map item in result) {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +28,10 @@ class _Edit extends State<Edit> {
           title: Text("プロフィール帳一覧"),
         ),
         body: FutureBuilder(
-            future: result,
+            future: result003,
             builder: (BuildContext context,AsyncSnapshot<List<ProList>> snapshot){
               if (snapshot.connectionState != ConnectionState.done){
-                return new Expanded(
+                return new Align(
                     child: Center(
                       child: new CircularProgressIndicator(),
                     )
@@ -48,39 +51,58 @@ class _Edit extends State<Edit> {
                     itemBuilder: (BuildContext context, int index) {
                       return Card(
                         child: InkWell(
-                          //onTap: () {
-                          //debugPrint("tap : " +
-                          //'${prolists[index].name}');
-                          //_editArticle(prolists[index]);
-                          //},
-                          child: Column(
+                          child: (() {
+                            if (prolists[index].tableName == 'profile_003'){
+                            Column(
                             children: <Widget>[
                               ListTile(
                                 title:
                                 // ③オブジェクトの属性(タイトル属性)を参照する
                                 Text(
-                                  '${prolists[index].name}',style: TextStyle(color: Colors.blue,fontSize: 20),
+                                  '${prolists[index].name_p003}',style: TextStyle(color: Colors.blue,fontSize: 20),
                                 ),
                                 subtitle:
-                                //  mainAxisAlignment:
-                                //   MainAxisAlignment
-                                //     .spaceBetween, // 両端に寄せる
-                                // children: <Widget>[
                                 Text(
-                                    '${prolists[index].birth}'
+                                    '${prolists[index].tableName}'
                                 ),
                                 onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetailes(prolists[index].id,prolists[index].name,prolists[index].birth,prolists[index].place,prolists[index].bloodType,prolists[index].favoriteThing,prolists[index].free,prolists[index].sliderValue1,prolists[index].sliderValue2,prolists[index].sliderValue3,prolists[index].sliderValue4,prolists[index].sliderValue5)));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetailes(prolists[index].id_p003,prolists[index].name_p003,prolists[index].birth_p003,prolists[index].place_p003,prolists[index].bloodType_p003,prolists[index].favoriteThing_p003,prolists[index].free_p003,prolists[index].sliderValue1_p003,prolists[index].sliderValue2_p003,prolists[index].sliderValue3_p003,prolists[index].sliderValue4_p003,prolists[index].sliderValue5_p003)));
                                 },
                                 trailing: IconButton(
                                   icon: new Icon(Icons.delete),
                                   onPressed: () async{
                                     // 削除の確認ダイアログを表示
                                     profileShow proshow = new profileShow();
-                                    await proshow.confirmDeleteDialog(prolists[index].id,context);
+                                    await proshow.confirmDeleteDialog(prolists[index].id_p003,prolists[index].tableName,context);
                                   },
                                 ),),],
-                          ),
+                          );}else{
+                              Column(
+                                  children: <Widget>[
+                                  ListTile(
+                                  title:
+                                  // ③オブジェクトの属性(タイトル属性)を参照する
+                                  Text(
+                                  '${prolists[index].name_p005}',style: TextStyle(color: Colors.blue,fontSize: 20),
+                            ),
+                            subtitle:
+                            Text(
+                            '${prolists[index].tableName}'
+                            ),
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileDetailes(prolists[index].id_p003,prolists[index].name_p003,prolists[index].birth_p003,prolists[index].place_p003,prolists[index].bloodType_p003,prolists[index].favoriteThing_p003,prolists[index].free_p003,prolists[index].sliderValue1_p003,prolists[index].sliderValue2_p003,prolists[index].sliderValue3_p003,prolists[index].sliderValue4_p003,prolists[index].sliderValue5_p003)));
+                            },
+                            trailing: IconButton(
+                            icon: new Icon(Icons.delete),
+                            onPressed: () async{
+                            // 削除の確認ダイアログを表示
+                            profileShow proshow = new profileShow();
+                            await proshow.confirmDeleteDialog(prolists[index].id_p005,prolists[index].tableName,context);
+                            },
+                            ),),],
+                              );
+                          }
+                          }()),
                         ),
                       );
                     },

@@ -41,5 +41,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>Privacy – Photo Library Usage Description</key>
+	<string></string>
+	<key>Privacy – Camera Usage Description</key>
+	<string></string>
+	<key>Privacy – Microphone Usage Description</key>
+	<string></string>
 </dict>
 </plist>
