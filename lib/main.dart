@@ -29,8 +29,9 @@ class MyApp extends StatefulWidget {
   @override
   void initState() {
     super.initState();
-     profileDb().createData_003();
-     profileDb().createData_005();
+     // profileDb().createData_003();
+     // profileDb().createData_005();
+    profileDb().createData();
   }
 }
 

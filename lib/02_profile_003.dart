@@ -4,16 +4,47 @@ import 'main.dart';
 import '01_Select.dart';
 import 'profileDb.dart';
 import 'CreateImage.dart';
+import '01_Edit.dart';
 
 
 class profile_003 extends StatefulWidget {
+  late final int id;
+  late final String name;
+  late final String birth;
+  late final String place;
+  late final String bloodType;
+  late final String favoriteThing;
+  late final String free;
+  late final double _sliderValue1;
+  late final double _sliderValue2;
+  late final double _sliderValue3;
+  late final double _sliderValue4;
+  late final double _sliderValue5;
+  late final String koshinFlg;
+  profile_003.Details(this.id,this.name,this.birth,this.place,this.bloodType,this.favoriteThing,this.free,this._sliderValue1,this._sliderValue2,this._sliderValue3,this._sliderValue4,this._sliderValue5,this.koshinFlg);
+
+  profile_003.make(){
+    this.id = 0;
+    this.name = "";
+    this.birth = "";
+    this.place = "";
+    this.bloodType = "";
+    this.favoriteThing = "";
+    this.free = "";
+    this._sliderValue1 = 0.0;
+    this._sliderValue2 = 0.0;
+    this._sliderValue3 = 0.0;
+    this._sliderValue4 = 0.0;
+    this._sliderValue5 = 0.0;
+    this.koshinFlg = "0";
+  }
   @override
   _profile_003 createState() => _profile_003();
 }
 
 
 class _profile_003 extends State<profile_003> {
-  //プロフィール帳①質問回答項目
+  //プロフィール帳3質問回答項目
   var nameController = TextEditingController();
   var birthController = TextEditingController();
   var placeController = TextEditingController();
@@ -21,6 +52,8 @@ class _profile_003 extends State<profile_003> {
   var favoriteThingController = TextEditingController();
   var freeController = TextEditingController();
 
+  late int id;
+  late String koshinFlg;
   //スライダー値更新
   var _sliderValue1 = 0.0;
   var _sliderValue2 = 0.0;
@@ -28,6 +61,23 @@ class _profile_003 extends State<profile_003> {
   var _sliderValue4 = 0.0;
   var _sliderValue5 = 0.0;
   var _labelText = 'Select value';
+
+  void initState() {
+    super.initState();
+    this.nameController = new TextEditingController(text: widget.name);
+    this.birthController = new TextEditingController(text: widget.birth);
+    this.placeController = new TextEditingController(text: widget.place);
+    this.bloodTypeController = new TextEditingController(text: widget.bloodType);
+    this.favoriteThingController = new TextEditingController(text: widget.favoriteThing);
+    this.freeController = new TextEditingController(text: widget.free);
+    this.id = widget.id;
+    this._sliderValue1 = widget._sliderValue1;
+    this._sliderValue2 = widget._sliderValue2;
+    this._sliderValue3 = widget._sliderValue3;
+    this._sliderValue4 = widget._sliderValue4;
+    this._sliderValue5 = widget._sliderValue5;
+    this.koshinFlg = widget.koshinFlg;
+  }
 
 
   @override
@@ -265,9 +315,9 @@ class _profile_003 extends State<profile_003> {
               child: ElevatedButton(
                   child: Text('保存'),
                   onPressed: () async{
-                    //スクショイメージ保存
-                    saveImage _saveImage = saveImage();
-                    _saveImage.saveLocalImage(convertWidgetToImageKey);
+                    // //スクショイメージ保存
+                    // saveImage _saveImage = await saveImage();
+                    // await _saveImage.saveLocalImage(convertWidgetToImageKey);
 
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
@@ -277,16 +327,44 @@ class _profile_003 extends State<profile_003> {
                     String favoriteThing = favoriteThingController.text;
                     String free = freeController.text;
 
-                    String query = 'INSERT INTO profile003(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
-                        'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
-
-                    await proDb.saveData(name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5,query);
-
-                    showDialog(BuildContext context) => AlertDialog(
-                      title: Text("saved"),
-                      content: Text("insert data into database."),
-                    );
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
+                    if(koshinFlg == "1") {
+                      ProList plist = new ProList.ProList_003(id: id,
+                          name: name,
+                          birth_p003: birth,
+                          place_p003: place,
+                          bloodType_p003: bloodType,
+                          favoriteThing_p003: favoriteThing,
+                          free_p003: free,
+                          sliderValue1_p003: _sliderValue1,
+                          sliderValue2_p003: _sliderValue2,
+                          sliderValue3_p003: _sliderValue3,
+                          sliderValue4_p003: _sliderValue4,
+                          sliderValue5_p003: _sliderValue5);
+                      await proDb.updateData003(plist);
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Edit()));
+                    }else {
+                      String query = 'INSERT INTO profile003(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
+                          'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
+                      await proDb.saveData(
+                          name,
+                          birth,
+                          place,
+                          bloodType,
+                          favoriteThing,
+                          free,
+                          _sliderValue1,
+                          _sliderValue2,
+                          _sliderValue3,
+                          _sliderValue4,
+                          _sliderValue5,
+                          query);
+                      showDialog(BuildContext context) => AlertDialog(
+                        title: Text("saved"),
+                        content: Text("insert data into database."),
+                      );
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
+                    }
                   }
               ),
             ),
@@ -295,8 +373,15 @@ class _profile_003 extends State<profile_003> {
               child: ElevatedButton(
                   child: Text('戻る'),
                   onPressed: () {
-                    Navigator.push(
-                        context, MaterialPageRoute(builder: (context) => MyApp()));
+                    if(koshinFlg == "0") {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) =>
+                          TabPage(0)));
+                    }else{
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) =>
+                          TabPage(1)));
+                    }
                   }
               ),
             )
