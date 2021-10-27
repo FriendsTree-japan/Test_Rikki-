@@ -4,6 +4,7 @@ import 'main.dart';
 import '01_Select.dart';
 import 'profileDb.dart';
 import '01_Edit.dart';
+import 'CreateImage.dart';
 
 class profile_005 extends StatefulWidget {
   late int id;
@@ -117,7 +118,8 @@ class _profile_005 extends State<profile_005> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return RepaintBoundary(key:convertWidgetToImageKey,child:
+      Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -793,9 +795,9 @@ class _profile_005 extends State<profile_005> {
               child: ElevatedButton(
                   child: Text('保存'),
                   onPressed: () async{
-                    // //スクショイメージ保存
-                    // saveImage _saveImage = await saveImage();
-                    // await _saveImage.saveLocalImage(convertWidgetToImageKey);
+                    //スクショイメージ保存
+                     saveImage _saveImage = await saveImage();
+                     await _saveImage.saveLocalImage(convertWidgetToImageKey);
 
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
@@ -883,6 +885,7 @@ class _profile_005 extends State<profile_005> {
           ],
         ),
       ),
+    ),
     );
   }
 }
