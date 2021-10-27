@@ -315,9 +315,9 @@ class _profile_003 extends State<profile_003> {
               child: ElevatedButton(
                   child: Text('保存'),
                   onPressed: () async{
-                    // //スクショイメージ保存
-                    // saveImage _saveImage = await saveImage();
-                    // await _saveImage.saveLocalImage(convertWidgetToImageKey);
+                     //スクショイメージ保存
+                     saveImage _saveImage = await saveImage();
+                     await _saveImage.saveLocalImage(convertWidgetToImageKey);
 
                     profileDb proDb = new profileDb();
                     String name = nameController.text;
