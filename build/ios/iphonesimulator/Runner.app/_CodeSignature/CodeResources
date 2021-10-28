@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Ywp4SbzUzyJKzrqa7gmFussX2K0=
+		XpDC+4D4z07G+O74xhGc7G+4dek=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		kEEsJywCS8hj0edinILWfkp/E1c=
+		KAWZ6Cp6WXP3QreNVkxJ3K60UY4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		T5lURqZxIMpp738j42lpPDYjPSs=
+		w/8EumzfPiFH0l5ZxQBvOr/WhOo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>Frameworks/FMDB.framework/FMDB</key>
 		<data>
-		djZaoDxQ+2nBLq3UPo1qBirjUmw=
+		G57nU2jovtX0evBGnlFudnVx2p8=
 		</data>
 		<key>Frameworks/FMDB.framework/Info.plist</key>
 		<data>
@@ -338,7 +338,7 @@
 		</data>
 		<key>Frameworks/path_provider.framework/path_provider</key>
 		<data>
-		IJD0dRRQ4hkRFjWwCI7s8oCpSjo=
+		cbahJg/PBEN6QG26bOF9ELidvQA=
 		</data>
 		<key>Frameworks/sqflite.framework/Info.plist</key>
 		<data>
@@ -350,7 +350,7 @@
 		</data>
 		<key>Frameworks/sqflite.framework/sqflite</key>
 		<data>
-		S2cjE6aBnZ2kkrRC7jdjmadx8kk=
+		ghI+k1uACbRR+6R6rrJ4oRhycLs=
 		</data>
 		<key>Frameworks/url_launcher.framework/Info.plist</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>Frameworks/url_launcher.framework/url_launcher</key>
 		<data>
-		3gS741xeWwZwj/D8dujBCc6dt+U=
+		QCrvgzIxBn3r6ZF8KLbOGyiPd1Y=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -665,11 +665,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ywp4SbzUzyJKzrqa7gmFussX2K0=
+			XpDC+4D4z07G+O74xhGc7G+4dek=
 			</data>
 			<key>hash2</key>
 			<data>
-			lsfF+U1Iu2Xtk3Du179GJUMlVqA5d8URVpZjs7zwHNE=
+			hyzKm1yNLewNeKjYZYrcqkQGAvB//NMKRC6mWlFzzxE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -687,11 +687,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kEEsJywCS8hj0edinILWfkp/E1c=
+			KAWZ6Cp6WXP3QreNVkxJ3K60UY4=
 			</data>
 			<key>hash2</key>
 			<data>
-			mGjsBdV2+gkVjOMis9tvvaXY0R+aFCiL2hY0Xw3m4LU=
+			edY9XfbMsbB2+2kiYQ0b3EOToZ5qx6SoMN0MC1LD+uw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -819,11 +819,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T5lURqZxIMpp738j42lpPDYjPSs=
+			w/8EumzfPiFH0l5ZxQBvOr/WhOo=
 			</data>
 			<key>hash2</key>
 			<data>
-			bWiEicip8XlKWGPadZJlf++7sZDTVTYCqA5hVb74sXA=
+			m1Me7dvlXq5P8CxrN+5Si+nwfQzFufpW/F1YEoK+Bjg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -852,11 +852,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			djZaoDxQ+2nBLq3UPo1qBirjUmw=
+			G57nU2jovtX0evBGnlFudnVx2p8=
 			</data>
 			<key>hash2</key>
 			<data>
-			rKZU7+v67DUYprgCNUXXQ0KVPBBawrSripPtN7wehQI=
+			uQ6Fkc7XN7Cf3wmN7xctHrvfuSwbr8quhq4HjZOUoMU=
 			</data>
 		</dict>
 		<key>Frameworks/FMDB.framework/Info.plist</key>
@@ -1292,11 +1292,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IJD0dRRQ4hkRFjWwCI7s8oCpSjo=
+			cbahJg/PBEN6QG26bOF9ELidvQA=
 			</data>
 			<key>hash2</key>
 			<data>
-			cj9zHXKCfE6vhVrlRiss96pHUJg6SjKakh8TW2FEG48=
+			KsEFXuYFep8zBrOshYox3jw7sx311xBWRjw7HOb18rY=
 			</data>
 		</dict>
 		<key>Frameworks/sqflite.framework/Info.plist</key>
@@ -1325,11 +1325,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S2cjE6aBnZ2kkrRC7jdjmadx8kk=
+			ghI+k1uACbRR+6R6rrJ4oRhycLs=
 			</data>
 			<key>hash2</key>
 			<data>
-			JP+gr+Etlf+O7LfDwKCTQBJ515AXCFSJr1c99XBrrWE=
+			ybq9FfgWcc7p2wwRRFLg10UybJu5guFq0RDxb7jQM2E=
 			</data>
 		</dict>
 		<key>Frameworks/url_launcher.framework/Info.plist</key>
@@ -1358,11 +1358,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3gS741xeWwZwj/D8dujBCc6dt+U=
+			QCrvgzIxBn3r6ZF8KLbOGyiPd1Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			cZWd1uL6VrDu0B1VN6tjC2s/4PiyJdt5JISfxq+U4yk=
+			rPaOQTXRJZurUq1f2Esf7oWD1DzowghWiA/InEp0FVc=
 			</data>
 		</dict>
 	</dict>

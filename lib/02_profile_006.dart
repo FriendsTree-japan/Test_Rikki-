@@ -11,15 +11,117 @@ class profile_006 extends StatefulWidget {
 class _profile_006 extends State<profile_006> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        theme: ThemeData(
+            // brightness: Brightness.dark,
+          primaryIconTheme: const IconThemeData.fallback().copyWith(
+            color: Colors.black,
+          ),
+        ),
+        home: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text("Profile Book App",
-            style: TextStyle(
-              color: Color(0x86D400FA),
-              fontSize: 18,
-            )),
-      ),
+          backgroundColor: Colors.white,
+          title: Text("Profile Book App",
+              style: TextStyle(
+                color: Color(0x86D400FA),
+                fontSize: 18,
+              )),
+          actions: <Widget>[
+            IconButton(
+              icon:Icon(
+                Icons.more_horiz,
+                color:Colors.black
+              ),
+              onPressed: (){
+                showDialog(
+                  context: context,
+                  builder: (childContext) {
+                    return SimpleDialog(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      children: <Widget>[
+                        SimpleDialogOption(
+                          onPressed: () {
+                            //saveImage _saveImage = saveImage();
+                            //_saveImage.saveLocalImage(convertWidgetToImageKey);
+                          },
+                          child: Center(
+                            child:Text(
+                              "プロジェクトとして保存",
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                            color: Colors.black
+                        ),
+                        SimpleDialogOption(
+                          onPressed: () {
+                            //saveImage _saveImage = saveImage();
+                            //_saveImage.saveLocalImage(convertWidgetToImageKey);
+                          },
+                          child: Center(
+                            child:Text(
+                              "写真として保存",
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                            color: Colors.black
+                        ),
+                        SimpleDialogOption(
+                          onPressed: () {
+
+                            //shareProvider _shareProvider = shareProvider();
+                            //_shareProvider.shareImageAndText('test', convertWidgetToImageKey);
+                          },
+                          child: Center(
+                            child: Text(
+                              "宛先を指定してシェア",
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Divider(
+                            color: Colors.black
+                        ),
+                        SimpleDialogOption(
+                          onPressed: () {
+                            Navigator.pop(childContext);
+                          },
+                          child: Center(
+                            child: Text(
+                              'キャンセル',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontWeight:FontWeight.bold,
+                                  color: Colors.red
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+            )
+            // PopupMenuButton(
+            //   itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+            //
+            //     const PopupMenuItem(
+            //         child: const ListTile(
+            //             leading: Icon(Icons.supervisor_account),
+            //             title: Text("Google Sign In"))),
+            //     const PopupMenuItem(
+            //         child: const ListTile(
+            //             leading: Icon(Icons.crop_original),
+            //             title: Text("Firestore,CloudVision"))),
+            //   ],
+            // ),
+          ]),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -237,14 +339,14 @@ class _profile_006 extends State<profile_006> {
                   padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 5.0),
                   child: Container(
                     width: 250,
-                    height:250,
+                    height: 250,
                     decoration: BoxDecoration(
                       color: Color(0x83C6C2FF),
                       // border-radius: 10px 10px 0 0,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15.0),
-                        bottomLeft:Radius.circular(15.0),
-                        bottomRight:Radius.circular(15.0),
+                        bottomLeft: Radius.circular(15.0),
+                        bottomRight: Radius.circular(15.0),
                       ),
                     ),
                     child: Column(
@@ -400,28 +502,26 @@ class _profile_006 extends State<profile_006> {
                     ),
                   ),
                 ),
-                Column(
-                  children:[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0.0, 20.0, 10.0, 5.0),
-                      color: Colors.amber,
-                      width: 100,
-                      height:100,
-                    ),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
-                      color: Colors.amber,
-                      width: 100,
-                      height:100,
-                    ),
-                  ]
-                ),
+                Column(children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.0, 20.0, 10.0, 5.0),
+                    // color: Colors.amber,
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0.0, 10.0, 10.0, 5.0),
+                    // color: Colors.amber,
+                    width: 100,
+                    height: 100,
+                  ),
+                ]),
               ],
             ),
             Padding(padding: EdgeInsets.only(top: 5.0)),
           ],
         ),
       ),
-    );
+    ));
   }
 }
