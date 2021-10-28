@@ -95,6 +95,7 @@ class _profile_005 extends State<profile_005> {
     super.initState();
     this.nameController = new TextEditingController(text: widget.name);
     this.nickNameController = new TextEditingController(text: widget.nickName);
+    this.birthYYYYController = new TextEditingController(text: widget.birthYYYY);
     this.birthMMController = new TextEditingController(text:widget.birthMM);
     this.birthDDController = new TextEditingController(text:widget.birthDD);
     this.personalityController = new TextEditingController(text:widget.personality);
@@ -841,7 +842,7 @@ class _profile_005 extends State<profile_005> {
                           myBestTheme1_p005: myBestTheme1,
                           teme1MyBest1_p005: teme1MyBest1,
                           teme1MyBest2_p005: teme1MyBest2,
-                          teme1MyBest3_p005: teme2MyBest3,
+                          teme1MyBest3_p005: teme1MyBest3,
                           myBestTheme2_p005: myBestTheme2,
                           teme2MyBest1_p005: teme2MyBest1,
                           teme2MyBest2_p005: teme2MyBest2,
@@ -851,8 +852,8 @@ class _profile_005 extends State<profile_005> {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => Edit()));
                     }else {
-                      String query = 'INSERT INTO profile005(name, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
-                          'VALUES("$name", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme2MyBest2", "$teme2MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
+                      String query = 'INSERT INTO profile005(name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
+                          'VALUES("$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
                       await proDb.saveData005(name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3, query);
                       showDialog(BuildContext context) => AlertDialog(
                         title: Text("saved"),
