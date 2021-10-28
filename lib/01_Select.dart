@@ -71,7 +71,7 @@ class _SelectState extends State<Select> {
                         case 2 : //プルフィール帳2
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_006()));
+                              MaterialPageRoute(builder: (context) => profile_006.make()));
                           break;
                       }
                     }
