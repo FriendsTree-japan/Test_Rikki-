@@ -3,9 +3,13 @@ import 'profileDb.dart';
 import '01_Edit.dart';
 import 'CreateImage.dart';
 import 'main.dart';
+import 'profileShow.dart';
+import 'package:intl/intl.dart';
 
 class profile_006 extends StatefulWidget {
   late int id;
+  late final String saveName;
+  late final String koshinYmd;
   late final String name;
   late final String birthYYYY;
   late final String birthMM;
@@ -24,11 +28,14 @@ class profile_006 extends StatefulWidget {
   late final String favoritePlace;
   late final String koshinFlg;
 
-  profile_006.Details(this.id,this.name,this.birthYYYY,this.birthMM,this.birthDD,this.place,this.nickName,this.hobby,this.skill,
+  profile_006.Details(this.id,this.saveName,
+      this.koshinYmd,this.name,this.birthYYYY,this.birthMM,this.birthDD,this.place,this.nickName,this.hobby,this.skill,
       this.myBoom,this.offDay,this.favoriteFood,this.favoriteMovie, this.favoriteAnime,
       this.favoriteTv,this.favoriteYouTube,this.favoritePlace,this.koshinFlg);
   profile_006.make(){
     this.id = 0;
+    this.saveName = "";
+    this.koshinYmd = "";
     this.name = "";
     this.birthYYYY = "";
     this.birthMM = "";
@@ -72,6 +79,7 @@ class _profile_006 extends State<profile_006> {
   var favoritePlaceController = TextEditingController();
   late int id;
   late String koshinFlg;
+  late String saveName;
 
   void initState() {
     super.initState();
@@ -99,6 +107,7 @@ class _profile_006 extends State<profile_006> {
     new TextEditingController(text: widget.favoritePlace);
     this.id = widget.id;
     this.koshinFlg = widget.koshinFlg;
+    this.saveName = widget.saveName;
   }
 
   @override
@@ -157,10 +166,16 @@ class _profile_006 extends State<profile_006> {
                                   String favoriteTv = favoriteTvController.text;
                                   String favoriteYouTube = favoriteYouTubeController.text;
                                   String favoritePlace = favoritePlaceController.text;
+                                  DateTime now = DateTime.now();
+                                  DateFormat outputFormat =
+                                  DateFormat('yyyy/MM/dd HH:mm');
+                                  String date = outputFormat.format(now);
 
                                   if(koshinFlg == "1") {
                                     ProList plist = new ProList.ProList_006(
                                         id: id,
+                                        saveName: saveName,
+                                        koshinYmd: date,
                                         name: name,
                                         birthYYYY_p006: birthYYYY,
                                         birthMM_p006: birthMM,
@@ -181,13 +196,11 @@ class _profile_006 extends State<profile_006> {
                                     await proDb.updateData006(plist);
                                         Navigator.pop(childContext);
                                   }else {
-                                    String query = 'INSERT INTO profile006(name, birthYYYY, birthMM, birthDD, place, nickName, hobby, skill, myBoom, offDay, favoriteFood, favoriteMovie, favoriteAnime, favoriteTv, favoriteYouTube, favoritePlace) '
-                                        'VALUES("$name", "$birthYYYY", "$birthMM", "$birthDD", "$place", "$nickName", "$hobby", "$skill", "$myBoom", "$offDay", "$favoriteFood", "$favoriteMovie", "$favoriteAnime", "$favoriteTv", "$favoriteYouTube", "$favoritePlace")';
-                                    await proDb.saveData006(name, birthYYYY, birthMM, birthDD, place, nickName, hobby, skill, myBoom, offDay, favoriteFood, favoriteMovie, favoriteAnime, favoriteTv, favoriteYouTube, favoritePlace, query);
-                                    showDialog(BuildContext context) => AlertDialog(
-                                      title: Text("saved"),
-                                      content: Text("insert data into database."),
-                                    );
+                                    await profileShow().saveDialog006(context, name, birthYYYY,
+                                      birthMM, birthDD, place, nickName, hobby, skill,
+                                      myBoom, offDay, //各種質問
+                                      favoriteFood, favoriteMovie, favoriteAnime, //ランキング
+                                      favoriteTv, favoriteYouTube, favoritePlace);
                                     Navigator.pop(childContext);
                                   }
                               },

@@ -280,7 +280,7 @@ class _profile_003 extends State<profile_003> {
                     String query = 'INSERT INTO profile003(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
                         'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
 
-                    await proDb.saveData003(name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5,query);
+                    //await proDb.saveData003(name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5,query);
 
                     showDialog(BuildContext context) => AlertDialog(
                       title: Text("saved"),

@@ -5,10 +5,13 @@ import '01_Select.dart';
 import 'profileDb.dart';
 import 'CreateImage.dart';
 import '01_Edit.dart';
-
+import 'profileShow.dart';
+import 'package:intl/intl.dart';
 
 class profile_003 extends StatefulWidget {
   late final int id;
+  late final String saveName;
+  late final String koshinYmd;
   late final String name;
   late final String birth;
   late final String place;
@@ -22,13 +25,15 @@ class profile_003 extends StatefulWidget {
   late final double _sliderValue5;
   late final String koshinFlg;
 
-  profile_003.Details(this.id, this.name, this.birth, this.place,
+  profile_003.Details(this.id, this.saveName, this.koshinYmd, this.name, this.birth, this.place,
       this.bloodType, this.favoriteThing, this.free, this._sliderValue1,
       this._sliderValue2, this._sliderValue3, this._sliderValue4,
       this._sliderValue5, this.koshinFlg);
 
   profile_003.make(){
     this.id = 0;
+    this.saveName = "";
+    this.koshinYmd = "";
     this.name = "";
     this.birth = "";
     this.place = "";
@@ -59,6 +64,7 @@ class _profile_003 extends State<profile_003> {
 
   late int id;
   late String koshinFlg;
+  late String saveName;
 
   //スライダー値更新
   var _sliderValue1 = 0.0;
@@ -70,6 +76,7 @@ class _profile_003 extends State<profile_003> {
 
   void initState() {
     super.initState();
+    this.saveName = widget.saveName;
     this.nameController = new TextEditingController(text: widget.name);
     this.birthController = new TextEditingController(text: widget.birth);
     this.placeController = new TextEditingController(text: widget.place);
@@ -133,8 +140,14 @@ class _profile_003 extends State<profile_003> {
     String bloodType = bloodTypeController.text;
     String favoriteThing = favoriteThingController.text;
     String free = freeController.text;
+    DateTime now = DateTime.now();
+    DateFormat outputFormat = DateFormat('yyyy/MM/dd HH:mm');
+    String date = outputFormat.format(now);
+
     if(koshinFlg == "1") {
     ProList plist = new ProList.ProList_003(id: id,
+    saveName: saveName,
+    koshinYmd: date,
     name: name,
     birth_p003: birth,
     place_p003: place,
@@ -149,25 +162,7 @@ class _profile_003 extends State<profile_003> {
     await proDb.updateData003(plist);
     Navigator.pop(childContext);
     }else {
-    String query = 'INSERT INTO profile003(name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
-    'VALUES("$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
-    await proDb.saveData003(
-    name,
-    birth,
-    place,
-    bloodType,
-    favoriteThing,
-    free,
-    _sliderValue1,
-    _sliderValue2,
-    _sliderValue3,
-    _sliderValue4,
-    _sliderValue5,
-    query);
-    showDialog(BuildContext context) => AlertDialog(
-    title: Text("saved"),
-    content: Text("insert data into database."),
-    );
+    await profileShow().saveDialog003(context,name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5);
     Navigator.pop(childContext);
     }
     },

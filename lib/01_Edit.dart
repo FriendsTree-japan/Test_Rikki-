@@ -64,11 +64,11 @@ class _Edit extends State<Edit> {
                             title:
                                 // ③オブジェクトの属性(タイトル属性)を参照する
                                 Text(
-                              '${prolists[index].name}',
+                              '${prolists[index].saveName}',
                               style:
                                   TextStyle(color: Colors.blue, fontSize: 20),
                             ),
-                            subtitle: Text('${prolists[index].tableName}'),
+                            subtitle: Text('${prolists[index].koshinYmd}'),
                             onTap: () {
                               if (prolists[index].tableName == "profile003") {
                                 Navigator.push(
@@ -77,6 +77,8 @@ class _Edit extends State<Edit> {
                                         builder: (context) =>
                                             profile_003.Details(
                                                 prolists[index].id,
+                                                prolists[index].saveName,
+                                                prolists[index].koshinYmd,
                                                 prolists[index].name,
                                                 prolists[index].birth_p003,
                                                 prolists[index].place_p003,
@@ -103,6 +105,8 @@ class _Edit extends State<Edit> {
                                         builder: (context) =>
                                             profile_005.Details(
                                                 prolists[index].id,
+                                                prolists[index].saveName,
+                                                prolists[index].koshinYmd,
                                                 prolists[index].name,
                                                 prolists[index].nickName_p005,
                                                 prolists[index].birthYYYY_p005,
@@ -143,6 +147,8 @@ class _Edit extends State<Edit> {
                                         builder: (context) =>
                                             profile_006.Details(
                                                 prolists[index].id,
+                                                prolists[index].saveName,
+                                                prolists[index].koshinYmd,
                                                 prolists[index].name,
                                                 prolists[index].birthYYYY_p006,
                                                 prolists[index].birthMM_p006,
