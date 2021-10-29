@@ -215,8 +215,8 @@ class _profile_006 extends State<profile_006> {
                             Divider(color: Colors.black),
                             SimpleDialogOption(
                               onPressed: () {
-                                //shareProvider _shareProvider = shareProvider();
-                                //_shareProvider.shareImageAndText('test', convertWidgetToImageKey);
+                                shareProvider _shareProvider = shareProvider();
+                                _shareProvider.shareImageAndText('test', convertWidgetToImageKey);
                               },
                               child: Center(
                                 child: Text(
@@ -256,7 +256,7 @@ class _profile_006 extends State<profile_006> {
                     children: <Widget>[
                       Column(children: <Widget>[
                         Container(
-                            padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 15.0),
+                            padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
                             child: Text("My Profile",
                                 style: TextStyle(
                                   color: Color(0x86D400FA),
@@ -474,7 +474,7 @@ class _profile_006 extends State<profile_006> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 5.0),
+                      padding: EdgeInsets.fromLTRB(20.0, 5.0, 0.0, 5.0),
                       child: Container(
                         width: 250,
                         height: 250,
@@ -496,7 +496,7 @@ class _profile_006 extends State<profile_006> {
                                   children: <Widget>[
                                     Container(
                                       padding: EdgeInsets.fromLTRB(
-                                          0.0, 10.0, 0.0, 10.0),
+                                          0.0, 5.0, 0.0, 5.0),
                                       child: Text("Favorite",
                                           style: TextStyle(
                                             color: Color(0xC8412FFD),

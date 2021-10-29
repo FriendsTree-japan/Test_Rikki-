@@ -51,10 +51,14 @@ class TabPage extends StatelessWidget {
       initialIndex: _screen,
       length: _tab.length,
       child: Scaffold(
-        appBar: AppBar(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(110.0),
+          child:
+        AppBar(
           backgroundColor: Colors.green,
-          title: Text("Profile Book App",
-              style: TextStyle(color: Colors.black54, fontSize: 18,)),
+           title: Text("Profile Book App",
+               style: TextStyle(color: Colors.white, fontSize: 18,)),
+          automaticallyImplyLeading: false,
           bottom: TabBar(
             tabs: _tab,
           ),
@@ -64,8 +68,7 @@ class TabPage extends StatelessWidget {
                 onPressed: _launchURL
             ),
           ],
-        ),
-
+        ),),
         body: TabBarView(
           children: <Widget>[
             Select(),
