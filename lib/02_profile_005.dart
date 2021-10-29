@@ -258,8 +258,8 @@ class _profile_005 extends State<profile_005> {
     Divider(color: Colors.black),
     SimpleDialogOption(
     onPressed: () {
-    //shareProvider _shareProvider = shareProvider();
-    //_shareProvider.shareImageAndText('test', convertWidgetToImageKey);
+    shareProvider _shareProvider = shareProvider();
+    _shareProvider.shareImageAndText('test', convertWidgetToImageKey);
     },
     child: Center(
     child: Text(
