@@ -186,7 +186,7 @@ class _profile_005 extends State<profile_005> {
             //保存/共有ボタン
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.more_horiz, color: Colors.black),
+                icon: Icon(Icons.save_alt, color: Colors.black),
                 onPressed: () {
                   showDialog(
                     context: context,

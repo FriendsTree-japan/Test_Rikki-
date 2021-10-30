@@ -41,8 +41,8 @@ class MyApp extends StatefulWidget {
 
 class TabPage extends StatelessWidget {
   final _tab = <Tab> [
-    Tab( text:'Create',icon: Icon(Icons.edit_sharp,color: Colors.black54)),
-    Tab( text:'Edit', icon: Icon(Icons.app_registration,color: Colors.black54 )),
+    Tab( text:'新規作成',icon: Icon(Icons.edit_sharp,color: Colors.black54)),
+    Tab( text:'一覧', icon: Icon(Icons.app_registration,color: Colors.black54 )),
   ];
 
   @override
@@ -69,7 +69,7 @@ class TabPage extends StatelessWidget {
           ),
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.help,color: Colors.black54),
+                icon: Icon(Icons.menu,color: Colors.black54),
                 onPressed: _launchURL
             ),
           ],

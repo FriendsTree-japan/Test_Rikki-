@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		i9YSop3FoVjokTDA76FjN0NjwrE=
+		WdahK6nNEcOd6QtuNfKYbjXxsNk=
 		</data>
 		<key>Modules/esys_flutter_share.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
@@ -77,6 +77,10 @@
 	<dict>
 		<key>Headers/EsysFlutterSharePlugin.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			hYdHrvY+SboqQFiRMFE7o1/N9uA=
+			</data>
 			<key>hash2</key>
 			<data>
 			aFuNlsKHjTDzZUVzGJ2YYk0+ljUdzMZ3iBB8B1JVvJ8=
@@ -84,6 +88,10 @@
 		</dict>
 		<key>Headers/esys_flutter_share-Swift.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			GSwwqPekFf4dC9OVwWDueO1A46c=
+			</data>
 			<key>hash2</key>
 			<data>
 			8s6Wq/nwXoIr9ollXx4zKFa8/HKFhAo+9nwBMbht8PE=
@@ -91,6 +99,10 @@
 		</dict>
 		<key>Headers/esys_flutter_share-umbrella.h</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Xws2/uQ8zsiLTWnSUUT0ZwFNaeA=
+			</data>
 			<key>hash2</key>
 			<data>
 			h7Pd2vK0z/V9PhidR3vB646yYwc49HaV09IENpViWmo=
@@ -98,6 +110,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			+KVToBP9usR3Y47xjOm2fuoosKU=
+			</data>
 			<key>hash2</key>
 			<data>
 			TiVo3TiUc55sRzConS85QvlHC2wgsQ0yNBrkoYCpiLs=
@@ -105,6 +121,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			+KVToBP9usR3Y47xjOm2fuoosKU=
+			</data>
 			<key>hash2</key>
 			<data>
 			TiVo3TiUc55sRzConS85QvlHC2wgsQ0yNBrkoYCpiLs=
@@ -112,6 +132,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			UTvUunFzapKyEtlwTvV7vw9Lnsk=
+			</data>
 			<key>hash2</key>
 			<data>
 			eUqAV99MKwP0CwkEDyhavDPqxCHcZU5TlJzySDnszY0=
@@ -119,6 +143,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			UTvUunFzapKyEtlwTvV7vw9Lnsk=
+			</data>
 			<key>hash2</key>
 			<data>
 			eUqAV99MKwP0CwkEDyhavDPqxCHcZU5TlJzySDnszY0=
@@ -126,6 +154,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			IHb9Wj/RJyAO5oziXs4ynLfnvfI=
+			</data>
 			<key>hash2</key>
 			<data>
 			E/RwT/qU+fGXcpgGTm7NnrNVZJuX0XMOhZLgKaFI6yQ=
@@ -133,6 +165,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			fM+Dhgd0iiXQrYyriYtPNj0DE/E=
+			</data>
 			<key>hash2</key>
 			<data>
 			Lwi6BFToiPa4lJu6s/xroQwzfSrdHUoGsKQZLCCYZnM=
@@ -140,6 +176,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/arm64.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			IHb9Wj/RJyAO5oziXs4ynLfnvfI=
+			</data>
 			<key>hash2</key>
 			<data>
 			E/RwT/qU+fGXcpgGTm7NnrNVZJuX0XMOhZLgKaFI6yQ=
@@ -147,6 +187,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/arm64.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			fM+Dhgd0iiXQrYyriYtPNj0DE/E=
+			</data>
 			<key>hash2</key>
 			<data>
 			Lwi6BFToiPa4lJu6s/xroQwzfSrdHUoGsKQZLCCYZnM=
@@ -154,6 +198,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			HMuBJlh+2sGsXsqITU3d+9qBxsw=
+			</data>
 			<key>hash2</key>
 			<data>
 			PrJRNoU+UHbtUPYvBEIXbUHRyIpLAvVBmXAgujKVo54=
@@ -161,6 +209,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Tlqs2JmJShdijN2JSD/nuui0vb0=
+			</data>
 			<key>hash2</key>
 			<data>
 			on3hkKSsIBsDuVwVuil+0mQUt/Gr3vjVerCsaXlskFU=
@@ -168,6 +220,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			HMuBJlh+2sGsXsqITU3d+9qBxsw=
+			</data>
 			<key>hash2</key>
 			<data>
 			PrJRNoU+UHbtUPYvBEIXbUHRyIpLAvVBmXAgujKVo54=
@@ -175,6 +231,10 @@
 		</dict>
 		<key>Modules/esys_flutter_share.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Tlqs2JmJShdijN2JSD/nuui0vb0=
+			</data>
 			<key>hash2</key>
 			<data>
 			on3hkKSsIBsDuVwVuil+0mQUt/Gr3vjVerCsaXlskFU=
@@ -182,6 +242,10 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			Xqxn8TC5j8FbojM9OSQH4xjntQU=
+			</data>
 			<key>hash2</key>
 			<data>
 			oQihZCZOCCcGl3t4wqCDcprN0AbQJaSX1rHkssvm4uE=
