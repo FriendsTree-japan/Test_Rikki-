@@ -1,11 +1,115 @@
 import 'package:flutter/material.dart';
+import 'profileDb.dart';
+import '01_Edit.dart';
+import 'CreateImage.dart';
+import 'main.dart';
+import 'profileShow.dart';
+import 'package:intl/intl.dart';
 
 class profile_006 extends StatefulWidget {
+  late int id;
+  late final String saveName;
+  late final String koshinYmd;
+  late final String name;
+  late final String birthYYYY;
+  late final String birthMM;
+  late final String birthDD;
+  late final String place;
+  late final String nickName;
+  late final String hobby;
+  late final String skill;
+  late final String myBoom;
+  late final String offDay;
+  late final String favoriteFood;
+  late final String favoriteMovie;
+  late final String favoriteAnime;
+  late final String favoriteTv;
+  late final String favoriteYouTube;
+  late final String favoritePlace;
+  late final String koshinFlg;
+
+  profile_006.Details(this.id,this.saveName,
+      this.koshinYmd,this.name,this.birthYYYY,this.birthMM,this.birthDD,this.place,this.nickName,this.hobby,this.skill,
+      this.myBoom,this.offDay,this.favoriteFood,this.favoriteMovie, this.favoriteAnime,
+      this.favoriteTv,this.favoriteYouTube,this.favoritePlace,this.koshinFlg);
+  profile_006.make(){
+    this.id = 0;
+    this.saveName = "";
+    this.koshinYmd = "";
+    this.name = "";
+    this.birthYYYY = "";
+    this.birthMM = "";
+    this.birthDD = "";
+    this.place = "";
+    this.nickName = "";
+    this.hobby = "";
+    this.skill = "";
+    this.myBoom = "";
+    this.offDay = "";
+    this.favoriteFood = "";
+    this.favoriteMovie = "";
+    this.favoriteAnime = "";
+    this.favoriteTv = "";
+    this.favoriteYouTube = "";
+    this.favoritePlace = "";
+    this.koshinFlg = "0";
+  }
+
+
   @override
   _profile_006 createState() => _profile_006();
 }
 
 class _profile_006 extends State<profile_006> {
+  var nameController = TextEditingController();
+  var birthYYYYController = TextEditingController();
+  var birthMMController = TextEditingController();
+  var birthDDController = TextEditingController();
+  var placeController = TextEditingController();
+  var nickNameController = TextEditingController();
+  var hobbyController = TextEditingController();
+  var skillController = TextEditingController();
+  var myBoomController = TextEditingController();
+  var offDayController = TextEditingController();
+  var favoriteFoodController = TextEditingController();
+  var favoriteMovieController = TextEditingController();
+  var favoriteAnimeController = TextEditingController();
+  var favoriteTvController = TextEditingController();
+  var favoriteYouTubeController = TextEditingController();
+  var favoritePlaceController = TextEditingController();
+  late int id;
+  late String koshinFlg;
+  late String saveName;
+
+  void initState() {
+    super.initState();
+    this.nameController = new TextEditingController(text: widget.name);
+    this.birthYYYYController = new TextEditingController(text: widget.birthYYYY);
+    this.birthMMController = new TextEditingController(text: widget.birthMM);
+    this.birthDDController = new TextEditingController(text: widget.birthDD);
+    this.placeController = new TextEditingController(text: widget.place);
+    this.nickNameController = new TextEditingController(text: widget.nickName);
+    this.hobbyController = new TextEditingController(text: widget.hobby);
+    this.skillController = new TextEditingController(text: widget.skill);
+    this.myBoomController = new TextEditingController(text: widget.myBoom);
+    this.offDayController = new TextEditingController(text: widget.offDay);
+    this.favoriteFoodController =
+    new TextEditingController(text: widget.favoriteFood);
+    this.favoriteMovieController =
+    new TextEditingController(text: widget.favoriteMovie);
+    this.favoriteAnimeController =
+    new TextEditingController(text: widget.favoriteAnime);
+    this.favoriteTvController =
+    new TextEditingController(text: widget.favoriteTv);
+    this.favoriteYouTubeController =
+    new TextEditingController(text: widget.favoriteYouTube);
+    this.favoritePlaceController =
+    new TextEditingController(text: widget.favoritePlace);
+    this.id = widget.id;
+    this.koshinFlg = widget.koshinFlg;
+    this.saveName = widget.saveName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,12 +130,12 @@ class _profile_006 extends State<profile_006> {
               //戻るボタン
               leading: new IconButton(
                 icon: new Icon(Icons.arrow_back, color: Colors.black),
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabPage(1))),
               ),
               //保存/共有ボタン
               actions: <Widget>[
                 IconButton(
-                  icon: Icon(Icons.more_horiz, color: Colors.black),
+                  icon: Icon(Icons.save_alt, color: Colors.black),
                   onPressed: () {
                     showDialog(
                       context: context,
@@ -40,12 +144,65 @@ class _profile_006 extends State<profile_006> {
                           backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
+                              BorderRadius.all(Radius.circular(20))),
                           children: <Widget>[
                             SimpleDialogOption(
-                              onPressed: () {
-                                //saveImage _saveImage = saveImage();
-                                //_saveImage.saveLocalImage(convertWidgetToImageKey);
+                              onPressed: () 
+                                async{
+                                  profileDb proDb = new profileDb();
+                                  String name = nameController.text;
+                                  String birthYYYY = birthYYYYController.text;
+                                  String birthMM = birthMMController.text;
+                                  String birthDD = birthDDController.text;
+                                  String place = placeController.text;
+                                  String nickName = nickNameController.text;
+                                  String hobby = hobbyController.text;
+                                  String skill = skillController.text;
+                                  String myBoom = myBoomController.text;
+                                  String offDay = offDayController.text;
+                                  String favoriteFood = favoriteFoodController.text;
+                                  String favoriteMovie = favoriteMovieController.text;
+                                  String favoriteAnime = favoriteAnimeController.text;
+                                  String favoriteTv = favoriteTvController.text;
+                                  String favoriteYouTube = favoriteYouTubeController.text;
+                                  String favoritePlace = favoritePlaceController.text;
+                                  DateTime now = DateTime.now();
+                                  DateFormat outputFormat =
+                                  DateFormat('yyyy/MM/dd HH:mm');
+                                  String date = outputFormat.format(now);
+
+                                  if(koshinFlg == "1") {
+                                    ProList plist = new ProList.ProList_006(
+                                        id: id,
+                                        saveName: saveName,
+                                        koshinYmd: date,
+                                        name: name,
+                                        birthYYYY_p006: birthYYYY,
+                                        birthMM_p006: birthMM,
+                                        birthDD_p006: birthDD,
+                                        place_p006: place,
+                                        nickName_p006: nickName,
+                                        hobby_p006: hobby,
+                                        skill_p006: skill,
+                                        myBoom_p006: myBoom,
+                                        offDay_p006: offDay,
+                                        favoriteFood_p006: favoriteFood,
+                                        favoriteMovie_p006: favoriteMovie,
+                                        favoriteAnime_p006: favoriteAnime,
+                                        favoriteTv_p006: favoriteTv,
+                                        favoriteYouTube_p006: favoriteYouTube,
+                                        favoritePlace_p006: favoritePlace
+                                    );
+                                    await proDb.updateData006(plist);
+                                        Navigator.pop(childContext);
+                                  }else {
+                                    await profileShow().saveDialog006(context, name, birthYYYY,
+                                      birthMM, birthDD, place, nickName, hobby, skill,
+                                      myBoom, offDay, //各種質問
+                                      favoriteFood, favoriteMovie, favoriteAnime, //ランキング
+                                      favoriteTv, favoriteYouTube, favoritePlace);
+                                    Navigator.pop(childContext);
+                                  }
                               },
                               child: Center(
                                 child: Text(
@@ -57,8 +214,9 @@ class _profile_006 extends State<profile_006> {
                             Divider(color: Colors.black),
                             SimpleDialogOption(
                               onPressed: () {
-                                //saveImage _saveImage = saveImage();
-                                //_saveImage.saveLocalImage(convertWidgetToImageKey);
+                                saveImage _saveImage = saveImage();
+                                _saveImage.saveLocalImage(convertWidgetToImageKey);
+                                Navigator.pop(childContext);
                               },
                               child: Center(
                                 child: Text(
@@ -70,8 +228,8 @@ class _profile_006 extends State<profile_006> {
                             Divider(color: Colors.black),
                             SimpleDialogOption(
                               onPressed: () {
-                                //shareProvider _shareProvider = shareProvider();
-                                //_shareProvider.shareImageAndText('test', convertWidgetToImageKey);
+                                shareProvider _shareProvider = shareProvider();
+                                _shareProvider.shareImageAndText('test', convertWidgetToImageKey);
                               },
                               child: Center(
                                 child: Text(
@@ -102,7 +260,7 @@ class _profile_006 extends State<profile_006> {
                   },
                 )
               ]),
-          body: SingleChildScrollView(
+          body: RepaintBoundary(key:convertWidgetToImageKey,child:SingleChildScrollView(
             child: Column(
               children: <Widget>[
                 SingleChildScrollView(
@@ -111,7 +269,7 @@ class _profile_006 extends State<profile_006> {
                     children: <Widget>[
                       Column(children: <Widget>[
                         Container(
-                            padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 15.0),
+                            padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
                             child: Text("My Profile",
                                 style: TextStyle(
                                   color: Color(0x86D400FA),
@@ -122,7 +280,7 @@ class _profile_006 extends State<profile_006> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+                  padding: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
                   child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Color(0x86D400FA)),
@@ -143,8 +301,8 @@ class _profile_006 extends State<profile_006> {
                             ),
                             Container(
                               padding:
-                                  EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
-                              child: TextField(),
+                              EdgeInsets.fromLTRB(20.0, 15.0, 0.0, 0.0),
+                              child: TextField(controller: nameController),
                               width: 200,
                               height: 30.0,
                             ),
@@ -164,8 +322,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: birthYYYYController),
                                 width: 50,
                                 height: 30.0,
                               ),
@@ -174,8 +332,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: birthMMController),
                                 width: 30,
                                 height: 30.0,
                               ),
@@ -184,8 +342,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: birthDDController),
                                 width: 30,
                                 height: 30.0,
                               ),
@@ -200,14 +358,14 @@ class _profile_006 extends State<profile_006> {
                             children: <Widget>[
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: placeController),
                                 width: 160,
                                 height: 30.0,
                               ),
                               Container(
                                   padding:
-                                      EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
+                                  EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                                   child: Text("に住んでるの。",
                                       style: TextStyle(fontSize: 18))),
                             ],
@@ -221,8 +379,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: nickNameController),
                                 width: 180,
                                 height: 30.0,
                               ),
@@ -246,8 +404,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: hobbyController),
                                 width: 180,
                                 height: 30.0,
                               ),
@@ -265,8 +423,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: skillController),
                                 width: 180,
                                 height: 30.0,
                               ),
@@ -283,8 +441,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: myBoomController),
                                 width: 180,
                                 height: 30.0,
                               ),
@@ -301,8 +459,8 @@ class _profile_006 extends State<profile_006> {
                                       style: TextStyle(fontSize: 18))),
                               Container(
                                 padding:
-                                    EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
-                                child: TextField(),
+                                EdgeInsets.fromLTRB(5.0, 10.0, 0.0, 0.0),
+                                child: TextField(controller: offDayController),
                                 width: 180,
                                 height: 30.0,
                               ),
@@ -329,7 +487,7 @@ class _profile_006 extends State<profile_006> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(20.0, 20.0, 0.0, 5.0),
+                      padding: EdgeInsets.fromLTRB(20.0, 5.0, 0.0, 5.0),
                       child: Container(
                         width: 250,
                         height: 250,
@@ -351,7 +509,7 @@ class _profile_006 extends State<profile_006> {
                                   children: <Widget>[
                                     Container(
                                       padding: EdgeInsets.fromLTRB(
-                                          0.0, 10.0, 0.0, 10.0),
+                                          0.0, 5.0, 0.0, 5.0),
                                       child: Text("Favorite",
                                           style: TextStyle(
                                             color: Color(0xC8412FFD),
@@ -367,7 +525,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Container(
                                         padding: EdgeInsets.fromLTRB(
@@ -379,7 +537,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 10.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoriteFoodController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -387,7 +545,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Container(
                                         padding: EdgeInsets.fromLTRB(
@@ -399,7 +557,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 10.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoriteMovieController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -407,7 +565,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Container(
                                         padding: EdgeInsets.fromLTRB(
@@ -419,7 +577,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 10.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoriteAnimeController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -427,7 +585,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Container(
                                         padding: EdgeInsets.fromLTRB(
@@ -439,7 +597,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 10.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoriteTvController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -447,7 +605,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Column(
                                         children: [
@@ -464,7 +622,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 0.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoriteYouTubeController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -472,7 +630,7 @@ class _profile_006 extends State<profile_006> {
                                 TableRow(children: [
                                   TableCell(
                                     verticalAlignment:
-                                        TableCellVerticalAlignment.middle,
+                                    TableCellVerticalAlignment.middle,
                                     child: Align(
                                       child: Container(
                                         padding: EdgeInsets.fromLTRB(
@@ -484,7 +642,7 @@ class _profile_006 extends State<profile_006> {
                                   Container(
                                     padding: EdgeInsets.fromLTRB(
                                         0.0, 10.0, 25.0, 10.0),
-                                    child: TextField(),
+                                    child: TextField(controller: favoritePlaceController),
                                     width: 30,
                                     height: 30,
                                   )
@@ -515,6 +673,6 @@ class _profile_006 extends State<profile_006> {
               ],
             ),
           ),
-        ));
+          )));
   }
 }

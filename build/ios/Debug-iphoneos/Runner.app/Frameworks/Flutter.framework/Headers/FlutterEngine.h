@@ -161,8 +161,11 @@ FLUTTER_DARWIN_EXPORT
       allowHeadlessExecution:(BOOL)allowHeadlessExecution
           restorationEnabled:(BOOL)restorationEnabled NS_DESIGNATED_INITIALIZER;
 
+<<<<<<< HEAD
 + (instancetype)new NS_UNAVAILABLE;
 
+=======
+>>>>>>> dev_yusuke
 /**
  * Runs a Dart program on an Isolate from the main Dart library (i.e. the library that
  * contains `main()`), using `main()` as the entrypoint (the default for Flutter projects),

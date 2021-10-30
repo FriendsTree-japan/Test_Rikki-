@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:profile_box_test/02_profile_002.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '00_admob_baner.dart';
 import '02_profile_001.dart';
 import '02_profile_002.dart';
 import '02_profile_003.dart';
@@ -18,27 +20,30 @@ class Select extends StatefulWidget {
   _SelectState createState() => _SelectState();
 }
 
-
 class _SelectState extends State<Select> {
   final List<String> imgList = [
-    'images/cat.jpeg',
-    'images/cat2.jpeg',
-    'images/cat3.jpeg',
+    'images/profile003.png',
+    'images/profile005.png',
+    'images/profile006.png',
   ];
   int _current = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-      Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(padding: EdgeInsets.all(20.0)),
+            Align(
+                child: Text("〜〜プロフィール帳のタイプを選んでください〜〜",
+                    style: TextStyle(fontSize: 12, color: Colors.black54))),
+            Padding(padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),),
             CarouselSlider.builder(
               options: CarouselOptions(
-                  height: 200.0,
+                  height: 450.0,
                   initialPage: 0,
                   viewportFraction: 1,
                   enableInfiniteScroll: true,
@@ -47,35 +52,36 @@ class _SelectState extends State<Select> {
                     setState(() {
                       _current = index;
                     });
-                  }
-              ),
+                  }),
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return ListTile(
-                    title:
-                    Image.asset(
+                    title: Image.asset(
                       imgList[index],
+                      fit: BoxFit.contain,
                     ),
                     onTap: () {
                       switch (index) {
-                        case 0 : //プルフィール帳1
+                        case 0: //プルフィール帳1
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_005()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_003.make()));
                           break;
-                        case 1 : //プルフィール帳2
+                        case 1: //プルフィール帳2
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_006()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_005.make()));
                           break;
-                        case 2 : //プルフィール帳2
+                        case 2: //プルフィール帳2
                           Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => profile_007()));
+                              MaterialPageRoute(
+                                  builder: (context) => profile_006.make()));
                           break;
                       }
-                    }
-                );
+                    });
               },
             ),
             Row(
@@ -84,7 +90,7 @@ class _SelectState extends State<Select> {
                 int index = imgList.indexOf(a);
                 return Container(
                   width: 8.0,
-                  height: 8.0,
+                  height: 100.0,
                   margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -95,8 +101,11 @@ class _SelectState extends State<Select> {
                 );
               }).toList(),
             ),
-          ]
-      ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: AdBanner(size: AdSize.banner),
+            )
+          ]),
     );
     //         Row(
     //           mainAxisAlignment: MainAxisAlignment.start,

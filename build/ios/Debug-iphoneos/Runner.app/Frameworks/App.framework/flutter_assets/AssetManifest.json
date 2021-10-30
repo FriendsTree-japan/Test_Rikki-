@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"images/.DS_Store":["images/.DS_Store"],"images/cat.jpeg":["images/cat.jpeg"],"images/cat2.jpeg":["images/cat2.jpeg"],"images/cat3.jpeg":["images/cat3.jpeg"],"images/dog1.jpeg":["images/dog1.jpeg"],"images/dog2.jpeg":["images/dog2.jpeg"],"images/dog3.jpeg":["images/dog3.jpeg"],"packages/cupertino_icons/assets/CupertinoIcons.ttf":["packages/cupertino_icons/assets/CupertinoIcons.ttf"]}
+=======
+{"images/cat.jpeg":["images/cat.jpeg"],"images/cat2.jpeg":["images/cat2.jpeg"],"images/cat3.jpeg":["images/cat3.jpeg"],"images/dog1.jpeg":["images/dog1.jpeg"],"images/dog2.jpeg":["images/dog2.jpeg"],"images/dog3.jpeg":["images/dog3.jpeg"],"images/profile003.png":["images/profile003.png"],"images/profile005.png":["images/profile005.png"],"images/profile006.png":["images/profile006.png"],"packages/cupertino_icons/assets/CupertinoIcons.ttf":["packages/cupertino_icons/assets/CupertinoIcons.ttf"]}
+>>>>>>> dev_yusuke

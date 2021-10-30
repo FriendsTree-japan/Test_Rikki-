@@ -282,6 +282,10 @@ typedef NS_ENUM(NSInteger, FlutterStandardDataType) {
   FlutterStandardDataTypeUInt8,
   FlutterStandardDataTypeInt32,
   FlutterStandardDataTypeInt64,
+<<<<<<< HEAD
+=======
+  FlutterStandardDataTypeFloat32,
+>>>>>>> dev_yusuke
   FlutterStandardDataTypeFloat64,
 };
 
@@ -321,6 +325,17 @@ FLUTTER_DARWIN_EXPORT
 
 /**
  * Creates a `FlutterStandardTypedData` which interprets the specified data
+<<<<<<< HEAD
+=======
+ * as 32-bit floats.
+ *
+ * @param data the byte data. The length must be divisible by 8.
+ */
++ (instancetype)typedDataWithFloat32:(NSData*)data;
+
+/**
+ * Creates a `FlutterStandardTypedData` which interprets the specified data
+>>>>>>> dev_yusuke
  * as 64-bit floats.
  *
  * @param data the byte data. The length must be divisible by 8.
