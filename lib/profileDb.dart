@@ -10,7 +10,7 @@ class profileDb {
   void createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -61,7 +61,7 @@ class profileDb {
       double _sliderValue5, String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
     print("$saveName");
     print("$query");
     Database database = await openDatabase(path, version: 1,
@@ -89,7 +89,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -114,7 +114,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -135,7 +135,7 @@ class profileDb {
   Future<void> deleteData(int id, String tableName) async {
     debugPrint("DeleteData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
@@ -153,7 +153,7 @@ class profileDb {
   Future<void> updateData003(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
@@ -170,7 +170,7 @@ class profileDb {
   Future<void> updateData005(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
@@ -188,7 +188,7 @@ class profileDb {
   Future<void> updateData006(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ProfileBookFt.db");
+    String path = join(dbPath, "ProfileBookFt88.db");
     final database = await openDatabase(path, version: 1,);
     final Database db = await database;
 
@@ -273,7 +273,7 @@ class profileDb {
 //データ選択(List表示)
 Future<List<ProList>> getDataList() async {
   String dbPath = await getDatabasesPath();
-  String path = join(dbPath, "ProfileBookFt.db");
+  String path = join(dbPath, "ProfileBookFt88.db");
   final database = await openDatabase(path, version: 1,);
   final Database db = await database;
   List<ProList> plist_003 = <ProList>[];
