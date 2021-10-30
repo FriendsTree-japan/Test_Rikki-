@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:profile_box_test/02_profile_002.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '00_admob_baner.dart';
 import '02_profile_001.dart';
 import '02_profile_002.dart';
 import '02_profile_003.dart';
@@ -21,9 +23,9 @@ class Select extends StatefulWidget {
 
 class _SelectState extends State<Select> {
   final List<String> imgList = [
-    'images/cat.jpeg',
-    'images/cat2.jpeg',
-    'images/cat3.jpeg',
+    'images/profile003.png',
+    'images/profile005.png',
+    'images/profile006.png',
   ];
   int _current = 0;
   @override
@@ -38,7 +40,7 @@ class _SelectState extends State<Select> {
             Padding(padding: EdgeInsets.all(20.0)),
             CarouselSlider.builder(
               options: CarouselOptions(
-                  height: 200.0,
+                  height: 450.0,
                   initialPage: 0,
                   viewportFraction: 1,
                   enableInfiniteScroll: true,
@@ -54,7 +56,7 @@ class _SelectState extends State<Select> {
                 return ListTile(
                     title:
                     Image.asset(
-                      imgList[index],
+                      imgList[index],fit: BoxFit.contain,
                     ),
                     onTap: () {
                       switch (index) {
@@ -84,7 +86,7 @@ class _SelectState extends State<Select> {
                 int index = imgList.indexOf(a);
                 return Container(
                   width: 8.0,
-                  height: 8.0,
+                  height: 100.0,
                   margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -95,6 +97,10 @@ class _SelectState extends State<Select> {
                 );
               }).toList(),
             ),
+            Align(
+            alignment: Alignment.bottomCenter,
+              child: AdBanner(size: AdSize.banner),
+            )
           ]
       ),
     );

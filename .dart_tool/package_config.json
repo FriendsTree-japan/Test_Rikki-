@@ -80,6 +80,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "google_mobile_ads",
+      "rootUri": "file:///Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "image_gallery_saver",
       "rootUri": "file:///Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1",
       "packageUri": "lib/",
@@ -254,7 +260,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-10-29T08:46:48.183754Z",
+  "generated": "2021-10-30T02:22:11.806998Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

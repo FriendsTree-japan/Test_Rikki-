@@ -43,6 +43,8 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
+	<key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-3940256099942544~1458002511</string>
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSMicrophoneUsageDescription</key>

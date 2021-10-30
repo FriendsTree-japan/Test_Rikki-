@@ -93,6 +93,13 @@
             </list>
           </value>
         </entry>
+        <entry key="google_mobile_ads">
+          <value>
+            <list>
+              <option value="$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="image_gallery_saver">
           <value>
             <list>
@@ -302,6 +309,7 @@
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.3/lib" />
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/lib" />
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
+      <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.5/lib" />
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/lib" />
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
       <root url="file://$USER_HOME$/develop/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3/lib" />

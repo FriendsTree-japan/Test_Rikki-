@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '00_admob_baner.dart';
 import '01_Select.dart';
 import '01_Edit.dart';
 import '01_Setting.dart';
@@ -9,6 +11,8 @@ import 'profileDb.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   runApp(MyApp());
 }
 
@@ -55,12 +59,13 @@ class TabPage extends StatelessWidget {
           preferredSize: Size.fromHeight(110.0),
           child:
         AppBar(
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.white,
            title: Text("Profile Book App",
-               style: TextStyle(color: Colors.white, fontSize: 18,)),
+               style: TextStyle(color: Colors.black54, fontSize: 18,)),
           automaticallyImplyLeading: false,
           bottom: TabBar(
             tabs: _tab,
+            labelColor: Colors.black54,
           ),
           actions: <Widget>[
             IconButton(

@@ -30,7 +30,7 @@ class _Edit extends State<Edit> {
       Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-          color: Colors.blue,
+          color: Colors.pinkAccent,
           child: Align(
               child: Text("プロフィール帳一覧",
                   style: TextStyle(fontSize: 20, color: Colors.white)))),
@@ -66,9 +66,9 @@ class _Edit extends State<Edit> {
                                 Text(
                               '${prolists[index].saveName}',
                               style:
-                                  TextStyle(color: Colors.blue, fontSize: 20),
+                                  TextStyle(color: Colors.pinkAccent, fontSize: 20),
                             ),
-                            subtitle: Text('${prolists[index].koshinYmd}'),
+                            subtitle: Text('${prolists[index].koshinYmd}',style:TextStyle(color: Colors.black54),),
                             onTap: () {
                               if (prolists[index].tableName == "profile003") {
                                 Navigator.push(
