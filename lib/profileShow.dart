@@ -63,7 +63,7 @@ class profileShow {
     );
   }
 
-  Future<void> saveDialog003(
+  Future<dynamic> saveDialog003(
       BuildContext context,
       String name,
       String birth,
@@ -125,7 +125,8 @@ class profileShow {
                       sliderValue4,
                       sliderValue5,
                       query);
-                  Navigator.pop(context);
+                  Navigator.pop(context,"1");
+                  return Future.value(false);
                 },
               ),
             ],
@@ -133,7 +134,7 @@ class profileShow {
         });
   }
 
-  Future<void> saveDialog005(
+  Future<dynamic> saveDialog005(
       BuildContext context,
       String name,
       String nickName,
@@ -219,7 +220,8 @@ class profileShow {
                         title: Text("saved"),
                         content: Text("insert data into database."),
                       );
-                  Navigator.pop(context);
+                  Navigator.pop(context,"1");
+                  return Future.value(false);
                 },
               ),
             ],
@@ -227,7 +229,7 @@ class profileShow {
         });
   }
 
-  Future<void> saveDialog006(
+  Future<dynamic> saveDialog006(
       BuildContext context,
       String name,
       String birthYYYY,
@@ -303,7 +305,8 @@ class profileShow {
                         content: Text("insert data into database."),
                       );
 
-                  Navigator.pop(context);
+                  Navigator.pop(context,"1");
+                  return Future.value(false);
                 },
               ),
             ],

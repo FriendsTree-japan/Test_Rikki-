@@ -130,7 +130,15 @@ class _profile_006 extends State<profile_006> {
               //戻るボタン
               leading: new IconButton(
                 icon: new Icon(Icons.arrow_back, color: Colors.black),
-                onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabPage(1))),
+                  onPressed: () {
+                    if (koshinFlg == "1") {
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (context) => TabPage(1)));
+                    }else{
+                      Navigator.pushReplacement(
+                          context, MaterialPageRoute(builder: (context) => TabPage(0)));
+                    }
+                  }
               ),
               //保存/共有ボタン
               actions: <Widget>[
@@ -196,7 +204,7 @@ class _profile_006 extends State<profile_006> {
                                     await proDb.updateData006(plist);
                                         Navigator.pop(childContext);
                                   }else {
-                                    await profileShow().saveDialog006(context, name, birthYYYY,
+                                    koshinFlg = await profileShow().saveDialog006(context, name, birthYYYY,
                                       birthMM, birthDD, place, nickName, hobby, skill,
                                       myBoom, offDay, //各種質問
                                       favoriteFood, favoriteMovie, favoriteAnime, //ランキング

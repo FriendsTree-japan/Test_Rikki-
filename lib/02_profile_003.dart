@@ -115,7 +115,50 @@ class _profile_003 extends State<profile_003> {
     //戻るボタン
     leading: new IconButton(
     icon: new Icon(Icons.arrow_back, color: Colors.black),
-    onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabPage(1))),
+    onPressed: () {
+      if (koshinFlg == "1") {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => TabPage(1)));
+    }else{
+    showDialog(
+    context: context,
+    builder: (context) {
+    return AlertDialog(
+    title: Text('プロフィールが保存されていません。保存しますか？'),
+    actions: <Widget>[
+    ElevatedButton(
+    style: ElevatedButton.styleFrom(
+    primary: Colors.blue, onPrimary: Colors.white),
+    child: Text('いいえ'),
+    onPressed: () {
+      Navigator.pushReplacement(
+      context, MaterialPageRoute(builder: (context) => TabPage(0)));
+    },
+    ),
+    ElevatedButton(
+    style: ElevatedButton.styleFrom(
+    primary: Colors.blue, onPrimary: Colors.white),
+    onPressed: () async{
+      profileDb proDb = new profileDb();
+      String name = nameController.text;
+      String birth = birthController.text;
+      String place = placeController.text;
+      String bloodType = bloodTypeController.text;
+      String favoriteThing = favoriteThingController.text;
+      String free = freeController.text;
+      DateTime now = DateTime.now();
+      DateFormat outputFormat = DateFormat('yyyy/MM/dd HH:mm');
+      String date = outputFormat.format(now);
+      koshinFlg = await profileShow().saveDialog003(context,name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5);
+      Navigator.pop(context);
+      },
+    child: Text('はい'),
+    ),],
+    );
+    }
+    );
+      }
+    }
     ),
     //保存/共有ボタン
     actions: <Widget>[
@@ -162,7 +205,7 @@ class _profile_003 extends State<profile_003> {
     await proDb.updateData003(plist);
     Navigator.pop(childContext);
     }else {
-    await profileShow().saveDialog003(context,name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5);
+    koshinFlg = await profileShow().saveDialog003(context,name,birth,place,bloodType,favoriteThing,free,_sliderValue1,_sliderValue2,_sliderValue3,_sliderValue4,_sliderValue5);
     Navigator.pop(childContext);
     }
     },
