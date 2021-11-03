@@ -180,8 +180,15 @@ class _profile_005 extends State<profile_005> {
             //戻るボタン
             leading: new IconButton(
               icon: new Icon(Icons.arrow_back, color: Colors.black),
-              onPressed: () => Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => TabPage(1))),
+                onPressed: () {
+                  if (koshinFlg == "1") {
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (context) => TabPage(1)));
+                  }else{
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (context) => TabPage(0)));
+                  }
+                }
             ),
             //保存/共有ボタン
             actions: <Widget>[
@@ -256,7 +263,7 @@ class _profile_005 extends State<profile_005> {
                                 await proDb.updateData005(plist);
                                 Navigator.pop(childContext);
                               } else {
-                                await profileShow().saveDialog005(context,name,nickName,birthYYYY,birthMM,birthDD,personality,skill,myBoom,recentThing,offDay,win1BillionYen,reborn,wish,myBestTheme1,teme1MyBest1,teme1MyBest2,teme1MyBest3,myBestTheme2,teme2MyBest1,teme2MyBest2,teme2MyBest3);
+                                koshinFlg = await profileShow().saveDialog005(context,name,nickName,birthYYYY,birthMM,birthDD,personality,skill,myBoom,recentThing,offDay,win1BillionYen,reborn,wish,myBestTheme1,teme1MyBest1,teme1MyBest2,teme1MyBest3,myBestTheme2,teme2MyBest1,teme2MyBest2,teme2MyBest3);
                                 Navigator.pop(childContext);
                               }
                             },
