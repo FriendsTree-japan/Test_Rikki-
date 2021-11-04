@@ -30,6 +30,8 @@ class _SelectState extends State<Select> {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -40,7 +42,9 @@ class _SelectState extends State<Select> {
             Align(
                 child: Text("〜〜プロフィール帳のタイプを選んでください〜〜",
                     style: TextStyle(fontSize: 12, color: Colors.black54))),
-            Padding(padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+            ),
             CarouselSlider.builder(
               options: CarouselOptions(
                   height: 450.0,
@@ -55,33 +59,42 @@ class _SelectState extends State<Select> {
                   }),
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
-                return ListTile(
-                    title: Image.asset(
-                      imgList[index],
-                      fit: BoxFit.contain,
+                return Container(
+                    width:deviceWidth * 0.6,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black54),
+                      borderRadius: BorderRadius.circular(5),
                     ),
-                    onTap: () {
-                      switch (index) {
-                        case 0: //プルフィール帳1
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => profile_003.make()));
-                          break;
-                        case 1: //プルフィール帳2
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => profile_005.make()));
-                          break;
-                        case 2: //プルフィール帳2
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => profile_006.make()));
-                          break;
-                      }
-                    });
+                    child: ListTile(
+                        title: Image.asset(
+                          imgList[index],
+                          fit: BoxFit.contain,
+                        ),
+                        onTap: () {
+                          switch (index) {
+                            case 0: //プルフィール帳1
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          profile_003.make()));
+                              break;
+                            case 1: //プルフィール帳2
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          profile_005.make()));
+                              break;
+                            case 2: //プルフィール帳2
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          profile_006.make()));
+                              break;
+                          }
+                        }));
               },
             ),
             Row(
