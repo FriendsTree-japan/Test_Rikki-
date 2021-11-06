@@ -387,11 +387,32 @@ class _profile_003 extends State<profile_003> {
     alignment: Alignment.bottomLeft,
     child: Text('あなたはどっち派?' ,style: TextStyle(color: Colors.black54, fontSize: 16, fontWeight: FontWeight.bold)),
     ),
-
-    Container(
-    alignment: Alignment.bottomLeft,
-    child: Text('「犬」派?、「猫」派?' ,style: TextStyle(color: Colors.black54, fontSize: 10,)),
-    ),
+      Padding(padding: EdgeInsets.all(10.0)),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+              width: 140.0,
+              height: 40,
+              alignment: Alignment.bottomLeft,
+              child: TextField(
+                style: TextStyle(color: Colors.black54, fontSize: 14),
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'ex)犬',),),
+          ),
+          Padding(padding: EdgeInsets.all(20.0)),
+          Container(
+            width: 140.0,
+            height: 40,
+            alignment: Alignment.bottomLeft,
+            child: TextField(
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'ex)猫',),),
+          ),
+        ],),
 
     Slider(
     value: _sliderValue1,
@@ -405,11 +426,33 @@ class _profile_003 extends State<profile_003> {
     });
     },
     ),
+      Padding(padding: EdgeInsets.all(10.0)),
 
-    Align(
-    alignment: Alignment.bottomLeft,
-    child: Text('「思いやり」派?、「論理に忠実」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-    ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            width: 140.0,
+            height: 40,
+            alignment: Alignment.bottomLeft,
+            child: TextField(
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'ex)お金',),),
+          ),
+          Padding(padding: EdgeInsets.all(20.0)),
+          Container(
+            width: 140.0,
+            height: 40,
+            alignment: Alignment.bottomLeft,
+            child: TextField(
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'ex)愛情',),),
+          ),
+        ],),
 
     Slider(
     value: _sliderValue2,
@@ -423,10 +466,33 @@ class _profile_003 extends State<profile_003> {
     });
     },
     ),
-    Align(
-    alignment: Alignment.bottomLeft,
-    child: Text('業務は、「スピードが大事」派?、「品質が大事」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-    ),
+      Padding(padding: EdgeInsets.all(10.0)),
+
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            width: 140.0,
+            height: 40,
+            alignment: Alignment.bottomLeft,
+            child: TextField(
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'ex)色んな経験',),),
+          ),
+          Padding(padding: EdgeInsets.all(20.0)),
+          Container(
+            width: 140.0,
+            height: 40,
+            alignment: Alignment.bottomLeft,
+            child: TextField(
+              style: TextStyle(color: Colors.black54, fontSize: 14),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: 'ex)一つを追求',),),
+          ),
+        ],),
 
     Slider(
     value: _sliderValue3,
@@ -440,55 +506,24 @@ class _profile_003 extends State<profile_003> {
     });
     },
     ),
-
-    Align(
-    alignment: Alignment.bottomLeft,
-    child: Text('「色んなことに挑戦」派?、「一つのことを追求」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-    ),
-
-    Slider(
-    value: _sliderValue4,
-    min: 0,
-    max: 100,
-    divisions: 5,
-    onChanged: (double value) {
-    setState(() {
-    _sliderValue4 = value.roundToDouble();
-    _labelText = 'value = $_sliderValue4';
-    });
-    },
-    ),
-
-    Align(
-    alignment: Alignment.bottomLeft,
-    child: Text('大切にしたいのは、「仕事」派?、「家庭」派?',style: TextStyle(color: Colors.black54, fontSize: 10,)),
-    ),
-
-    Slider(
-    value: _sliderValue5,
-    min: 0,
-    max: 100,
-    divisions: 5,
-    onChanged: (double value) {
-    setState(() {
-    _sliderValue5 = value.roundToDouble();
-    _labelText = 'value = $_sliderValue5';
-    });
-    },
-    ),
+      Padding(padding: EdgeInsets.all(10.0)),
     ],
-
     ),
     ),
     ),
     Container(
-    child: TextField(
-    controller: freeController,
-    decoration: const InputDecoration(
-    border: OutlineInputBorder(),
-    labelText: 'フリースペース',
-    ),
-    ),
+        child: Container(
+          padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
+          child: TextField(
+            maxLines: null,
+            style: TextStyle(fontSize: 18, color: Colors.black54, height: 1),
+            controller: freeController,
+            decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            labelText: 'フリースペース',
+          ),
+        ),
+      )
     ),
     ],
     ),
