@@ -74,8 +74,13 @@ class TabPage extends StatelessWidget {
         drawer: Drawer(
             child: ListView(
               children: <Widget>[
-                DrawerHeader(
-                    child: Text('メニュー', style: TextStyle(color: Colors.black54)),
+                Container(
+                  height: 60.0,
+                  child: DrawerHeader(
+                    child: Text("メニュー"),
+                    decoration: BoxDecoration(
+                    ),
+                  ),
                 ),
                 ListTile(
                   title: Text('操作手順書',style: TextStyle(color: Colors.black54)),
