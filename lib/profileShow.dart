@@ -110,24 +110,45 @@ class profileShow {
                       'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
                       'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $sliderValue1, $sliderValue2, $sliderValue3, $sliderValue4, $sliderValue5)';
                   profileDb proDb = new profileDb();
-                  await proDb.saveData003(
-                      saveName,
-                      date,
-                      name,
-                      birth,
-                      place,
-                      bloodType,
-                      favoriteThing,
-                      free,
-                      sliderValue1,
-                      sliderValue2,
-                      sliderValue3,
-                      sliderValue4,
-                      sliderValue5,
-                      query);
-                  Navigator.pop(context,"1");
-                  return Future.value(false);
-                },
+                  if (saveName == "") {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('プロジェクト保存名を入力してください'),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue,
+                                    onPrimary: Colors.white),
+                                child: Text('OK'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  } else {
+                    await proDb.saveData003(
+                        saveName,
+                        date,
+                        name,
+                        birth,
+                        place,
+                        bloodType,
+                        favoriteThing,
+                        free,
+                        sliderValue1,
+                        sliderValue2,
+                        sliderValue3,
+                        sliderValue4,
+                        sliderValue5,
+                        query);
+                    Navigator.pop(context, "1");
+                    return Future.value(false);
+                  }
+                 },
               ),
             ],
           );
@@ -191,37 +212,58 @@ class profileShow {
                       'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
                       'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
                   profileDb proDb = new profileDb();
-                  await proDb.saveData005(
-                      saveName,
-                      date,
-                      name,
-                      nickName,
-                      birthYYYY,
-                      birthMM,
-                      birthDD,
-                      personality,
-                      skill,
-                      myBoom,
-                      recentThing,
-                      offDay,
-                      win1BillionYen,
-                      reborn,
-                      wish,
-                      myBestTheme1,
-                      teme1MyBest1,
-                      teme1MyBest2,
-                      teme1MyBest3,
-                      myBestTheme2,
-                      teme2MyBest1,
-                      teme2MyBest2,
-                      teme2MyBest3,
-                      query);
-                  showDialog(BuildContext context) => AlertDialog(
-                        title: Text("saved"),
-                        content: Text("insert data into database."),
-                      );
-                  Navigator.pop(context,"1");
-                  return Future.value(false);
+                  if (saveName == "") {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('プロジェクト保存名を入力してください'),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue,
+                                    onPrimary: Colors.white),
+                                child: Text('OK'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  } else {
+                    await proDb.saveData005(
+                        saveName,
+                        date,
+                        name,
+                        nickName,
+                        birthYYYY,
+                        birthMM,
+                        birthDD,
+                        personality,
+                        skill,
+                        myBoom,
+                        recentThing,
+                        offDay,
+                        win1BillionYen,
+                        reborn,
+                        wish,
+                        myBestTheme1,
+                        teme1MyBest1,
+                        teme1MyBest2,
+                        teme1MyBest3,
+                        myBestTheme2,
+                        teme2MyBest1,
+                        teme2MyBest2,
+                        teme2MyBest3,
+                        query);
+                    showDialog(BuildContext context) => AlertDialog(
+                          title: Text("saved"),
+                          content: Text("insert data into database."),
+                        );
+                    Navigator.pop(context, "1");
+                    return Future.value(false);
+                  }
                 },
               ),
             ],
@@ -280,33 +322,54 @@ class profileShow {
                       'INSERT INTO profile006(saveName, koshinYmd, name, birthYYYY, birthMM, birthDD, place, nickName, hobby, skill, myBoom, offDay, favoriteFood, favoriteMovie, favoriteAnime, favoriteTv, favoriteYouTube, favoritePlace) '
                       'VALUES("$saveName", "$date", "$name", "$birthYYYY", "$birthMM", "$birthDD", "$place", "$nickName", "$hobby", "$skill", "$myBoom", "$offDay", "$favoriteFood", "$favoriteMovie", "$favoriteAnime", "$favoriteTv", "$favoriteYouTube", "$favoritePlace")';
                   profileDb proDb = new profileDb();
-                  await proDb.saveData006(
-                      saveName,
-                      date,
-                      name,
-                      birthYYYY,
-                      birthMM,
-                      birthDD,
-                      place,
-                      nickName,
-                      hobby,
-                      skill,
-                      myBoom,
-                      offDay,
-                      favoriteFood,
-                      favoriteMovie,
-                      favoriteAnime,
-                      favoriteTv,
-                      favoriteYouTube,
-                      favoritePlace,
-                      query);
-                  showDialog(BuildContext context) => AlertDialog(
-                        title: Text("saved"),
-                        content: Text("insert data into database."),
-                      );
+                  if (saveName == "") {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('プロジェクト保存名を入力してください'),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue,
+                                    onPrimary: Colors.white),
+                                child: Text('OK'),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  } else {
+                    await proDb.saveData006(
+                        saveName,
+                        date,
+                        name,
+                        birthYYYY,
+                        birthMM,
+                        birthDD,
+                        place,
+                        nickName,
+                        hobby,
+                        skill,
+                        myBoom,
+                        offDay,
+                        favoriteFood,
+                        favoriteMovie,
+                        favoriteAnime,
+                        favoriteTv,
+                        favoriteYouTube,
+                        favoritePlace,
+                        query);
+                    showDialog(BuildContext context) => AlertDialog(
+                          title: Text("saved"),
+                          content: Text("insert data into database."),
+                        );
 
-                  Navigator.pop(context,"1");
-                  return Future.value(false);
+                    Navigator.pop(context, "1");
+                    return Future.value(false);
+                  }
                 },
               ),
             ],
