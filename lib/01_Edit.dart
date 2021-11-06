@@ -22,13 +22,15 @@ class _Edit extends State<Edit> {
   ///    for (Map item in result) {
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         // appBar: AppBar(
         //   title: Text("プロフィール帳一覧"),
         // ),
         body: Column(children: [
       Container(
-          width: MediaQuery.of(context).size.width,
+          width: deviceWidth,
           padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
           color: Colors.pinkAccent,
           child: Align(
@@ -50,7 +52,10 @@ class _Edit extends State<Edit> {
               return Align(
                 // オブジェクト配列でカード表示を行う
                 alignment: Alignment.topCenter,
-                child: ListView.builder(
+                child: LimitedBox(
+                  maxHeight: deviceHeight * 0.7,
+                  maxWidth: deviceWidth,
+                  child: ListView.builder(
                   shrinkWrap: true,
                   padding: const EdgeInsets.all(8),
                   // ②配列のデータ数分カード表示を行う
@@ -189,6 +194,7 @@ class _Edit extends State<Edit> {
                       ),
                     ));
                   },
+                ),
                 ),
               );
             } else {

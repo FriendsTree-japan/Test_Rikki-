@@ -1,4 +1,16 @@
 # This is a generated file; do not edit or check into version control.
+<<<<<<< HEAD
+esys_flutter_share=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/
+google_mobile_ads=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.5/
+image_gallery_saver=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/
+path_provider=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.1/
+sqflite=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/
+url_launcher=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10/
+url_launcher_linux=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.2/
+url_launcher_macos=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2/
+url_launcher_web=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.4/
+url_launcher_windows=/Users/yusuke-arai/develop/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2/
+=======
 esys_flutter_share=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2/
 google_mobile_ads=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.5/
 image_gallery_saver=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/
@@ -9,3 +21,4 @@ url_launcher_linux=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub
 url_launcher_macos=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2/
 url_launcher_web=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.4/
 url_launcher_windows=/Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2/
+>>>>>>> de4ad4183845e1e34f9ba19c3eb3e264a1acdbe9
