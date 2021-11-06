@@ -86,7 +86,7 @@ class profileDb {
       String myBestTheme1, String teme1MyBest1, String teme1MyBest2,
       String teme1MyBest3, String myBestTheme2, String teme2MyBest1,
       String teme2MyBest2, String teme2MyBest3, //MyBestランキング
-      String query) async {
+      String query) async                                                                                                                                                                                                 {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
     String path = join(dbPath, "ProfileBookFt88.db");
