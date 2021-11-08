@@ -183,10 +183,68 @@ class _profile_005 extends State<profile_005> {
                 onPressed: () {
                   if (koshinFlg == "1") {
                     Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (context) => TabPage(1)));
-                  }else{
-                    Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (context) => TabPage(0)));
+                        context,
+                        MaterialPageRoute(builder: (context) => TabPage(1)));
+                  } else {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('プロフィールが保存されていません。保存しますか？'),
+                            actions: <Widget>[
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue,
+                                    onPrimary: Colors.white),
+                                child: Text('いいえ'),
+                                onPressed: () {
+                                  Navigator.pushReplacement(
+                                      context, MaterialPageRoute(
+                                      builder: (context) => TabPage(0)));
+                                },
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    primary: Colors.blue,
+                                    onPrimary: Colors.white),
+                                onPressed: () async {
+                                  profileDb proDb = new profileDb();
+                                  String name = nameController.text;
+                                  String nickName = nickNameController.text;
+                                  String birthYYYY = birthYYYYController.text;
+                                  String birthMM = birthMMController.text;
+                                  String birthDD = birthDDController.text;
+                                  String personality = personalityController.text;
+                                  String skill = skillController.text;
+                                  String myBoom = myBoomController.text;
+                                  String recentThing = recentThingController.text;
+                                  String offDay = offDayController.text;
+                                  String win1BillionYen =
+                                      win1BillionYenController.text;
+                                  String reborn = rebornController.text;
+                                  String wish = wishController.text;
+                                  String myBestTheme1 = myBestTheme1Controller.text;
+                                  String teme1MyBest1 = teme1MyBest1Controller.text;
+                                  String teme1MyBest2 = teme1MyBest2Controller.text;
+                                  String teme1MyBest3 = teme1MyBest3Controller.text;
+                                  String myBestTheme2 = myBestTheme2Controller.text;
+                                  String teme2MyBest1 = teme2MyBest1Controller.text;
+                                  String teme2MyBest2 = teme2MyBest2Controller.text;
+                                  String teme2MyBest3 = teme2MyBest3Controller.text;
+                                  DateTime now = DateTime.now();
+                                  DateFormat outputFormat =
+                                  DateFormat('yyyy/MM/dd HH:mm');
+                                  String date = outputFormat.format(now);
+
+                                  koshinFlg = await profileShow().saveDialog005(context,name,nickName,birthYYYY,birthMM,birthDD,personality,skill,myBoom,recentThing,offDay,win1BillionYen,reborn,wish,myBestTheme1,teme1MyBest1,teme1MyBest2,teme1MyBest3,myBestTheme2,teme2MyBest1,teme2MyBest2,teme2MyBest3);
+                                  Navigator.pop(context);
+                                },
+                                child: Text('はい'),
+                              ),
+                            ],
+                          );
+                        }
+                    );
                   }
                 }
             ),

@@ -134,9 +134,65 @@ class _profile_006 extends State<profile_006> {
                     if (koshinFlg == "1") {
                       Navigator.pushReplacement(
                           context, MaterialPageRoute(builder: (context) => TabPage(1)));
-                    }else{
-                      Navigator.pushReplacement(
-                          context, MaterialPageRoute(builder: (context) => TabPage(0)));
+                    }else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('プロフィールが保存されていません。保存しますか？'),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.blue,
+                                      onPrimary: Colors.white),
+                                  child: Text('いいえ'),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context, MaterialPageRoute(
+                                        builder: (context) => TabPage(0)));
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.blue,
+                                      onPrimary: Colors.white),
+                                  onPressed: () async {
+                                    profileDb proDb = new profileDb();
+                                    String name = nameController.text;
+                                    String birthYYYY = birthYYYYController.text;
+                                    String birthMM = birthMMController.text;
+                                    String birthDD = birthDDController.text;
+                                    String place = placeController.text;
+                                    String nickName = nickNameController.text;
+                                    String hobby = hobbyController.text;
+                                    String skill = skillController.text;
+                                    String myBoom = myBoomController.text;
+                                    String offDay = offDayController.text;
+                                    String favoriteFood = favoriteFoodController.text;
+                                    String favoriteMovie = favoriteMovieController.text;
+                                    String favoriteAnime = favoriteAnimeController.text;
+                                    String favoriteTv = favoriteTvController.text;
+                                    String favoriteYouTube = favoriteYouTubeController.text;
+                                    String favoritePlace = favoritePlaceController.text;
+                                    DateTime now = DateTime.now();
+                                    DateFormat outputFormat =
+                                    DateFormat('yyyy/MM/dd HH:mm');
+                                    String date = outputFormat.format(now);
+
+                                    koshinFlg = await profileShow().saveDialog006(context, name, birthYYYY,
+                                        birthMM, birthDD, place, nickName, hobby, skill,
+                                        myBoom, offDay, //各種質問
+                                        favoriteFood, favoriteMovie, favoriteAnime, //ランキング
+                                        favoriteTv, favoriteYouTube, favoritePlace);
+
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text('はい'),
+                                ),
+                              ],
+                            );
+                          }
+                      );
                     }
                   }
               ),
