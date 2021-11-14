@@ -65,6 +65,7 @@ class _profile_003 extends State<profile_003> {
   late int id;
   late String koshinFlg;
   late String saveName;
+  late String profileTitle;
 
   //スライダー値更新
   var _sliderValue1 = 0.0;
@@ -92,6 +93,11 @@ class _profile_003 extends State<profile_003> {
     this._sliderValue4 = widget._sliderValue4;
     this._sliderValue5 = widget._sliderValue5;
     this.koshinFlg = widget.koshinFlg;
+    if(koshinFlg == "1"){
+      this.profileTitle = "更新画面";
+    }else{
+      this.profileTitle = "新規作成画面";
+    }
   }
 
 
@@ -107,7 +113,7 @@ class _profile_003 extends State<profile_003> {
     home:Scaffold(
     appBar: AppBar(
     backgroundColor: Colors.white,
-    title: Text("Profile Book App",
+    title: Text(profileTitle,
     style: TextStyle(
     color: Color(0x86D400FA),
     fontSize: 18,
