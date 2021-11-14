@@ -63,19 +63,9 @@ class profileShow {
     );
   }
 
-  Future<dynamic> saveDialog003(
-      BuildContext context,
-      String name,
-      String birth,
-      String place,
-      String bloodType,
-      String favoriteThing,
-      String free,
-      double sliderValue1,
-      double sliderValue2,
-      double sliderValue3,
-      double sliderValue4,
-      double sliderValue5) async {
+  Future<dynamic> saveDialog(
+    BuildContext context,
+  ) async {
     var saveNameController = TextEditingController();
     String saveName = "";
     return showDialog(
@@ -92,8 +82,9 @@ class profileShow {
                 style: ElevatedButton.styleFrom(
                     primary: Colors.blue, onPrimary: Colors.white),
                 child: Text('キャンセル'),
-                onPressed: () {
-                  Navigator.pop(context);
+                onPressed: () async {
+                  Navigator.pop(context, saveName);
+                  return Future.value(false);
                 },
               ),
               ElevatedButton(
@@ -105,11 +96,6 @@ class profileShow {
                   DateTime now = DateTime.now();
                   DateFormat outputFormat = DateFormat('yyyy/MM/dd HH:mm');
                   String date = outputFormat.format(now);
-
-                  String query =
-                      'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
-                      'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $sliderValue1, $sliderValue2, $sliderValue3, $sliderValue4, $sliderValue5)';
-                  profileDb proDb = new profileDb();
                   if (saveName == "") {
                     showDialog(
                         context: context,
@@ -130,244 +116,7 @@ class profileShow {
                           );
                         });
                   } else {
-                    await proDb.saveData003(
-                        saveName,
-                        date,
-                        name,
-                        birth,
-                        place,
-                        bloodType,
-                        favoriteThing,
-                        free,
-                        sliderValue1,
-                        sliderValue2,
-                        sliderValue3,
-                        sliderValue4,
-                        sliderValue5,
-                        query);
-                    Navigator.pop(context, "1");
-                    return Future.value(false);
-                  }
-                 },
-              ),
-            ],
-          );
-        });
-  }
-
-  Future<dynamic> saveDialog005(
-      BuildContext context,
-      String name,
-      String nickName,
-      String birthYYYY,
-      String birthMM,
-      String birthDD,
-      String personality,
-      String skill,
-      String myBoom,
-      String recentThing, //プロフィール説明
-      String offDay,
-      String win1BillionYen,
-      String reborn,
-      String wish, //質問回答
-      String myBestTheme1,
-      String teme1MyBest1,
-      String teme1MyBest2,
-      String teme1MyBest3,
-      String myBestTheme2,
-      String teme2MyBest1,
-      String teme2MyBest2,
-      String teme2MyBest3) async {
-    var saveNameController = TextEditingController();
-    String saveName = "";
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text('プロジェクト保存名'),
-            content: TextField(
-              controller: saveNameController,
-              decoration: InputDecoration(hintText: "ここに入力"),
-            ),
-            actions: <Widget>[
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
-                child: Text('キャンセル'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
-                child: Text('OK'),
-                onPressed: () async {
-                  saveName = saveNameController.text;
-                  DateTime now = DateTime.now();
-                  DateFormat outputFormat = DateFormat('yyyy/MM/dd HH:mm');
-                  String date = outputFormat.format(now);
-
-                  String query =
-                      'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
-                      'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
-                  profileDb proDb = new profileDb();
-                  if (saveName == "") {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text('プロジェクト保存名を入力してください'),
-                            actions: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
-                                    onPrimary: Colors.white),
-                                child: Text('OK'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ],
-                          );
-                        });
-                  } else {
-                    await proDb.saveData005(
-                        saveName,
-                        date,
-                        name,
-                        nickName,
-                        birthYYYY,
-                        birthMM,
-                        birthDD,
-                        personality,
-                        skill,
-                        myBoom,
-                        recentThing,
-                        offDay,
-                        win1BillionYen,
-                        reborn,
-                        wish,
-                        myBestTheme1,
-                        teme1MyBest1,
-                        teme1MyBest2,
-                        teme1MyBest3,
-                        myBestTheme2,
-                        teme2MyBest1,
-                        teme2MyBest2,
-                        teme2MyBest3,
-                        query);
-                    showDialog(BuildContext context) => AlertDialog(
-                          title: Text("saved"),
-                          content: Text("insert data into database."),
-                        );
-                    Navigator.pop(context, "1");
-                    return Future.value(false);
-                  }
-                },
-              ),
-            ],
-          );
-        });
-  }
-
-  Future<dynamic> saveDialog006(
-      BuildContext context,
-      String name,
-      String birthYYYY,
-      String birthMM,
-      String birthDD,
-      String place,
-      String nickName,
-      String hobby,
-      String skill,
-      String myBoom,
-      String offDay, //各種質問
-      String favoriteFood,
-      String favoriteMovie,
-      String favoriteAnime, //ランキング
-      String favoriteTv,
-      String favoriteYouTube,
-      String favoritePlace) async {
-    var saveNameController = TextEditingController();
-    String saveName = "";
-    return showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: Text('プロジェクト保存名'),
-            content: TextField(
-              controller: saveNameController,
-              decoration: InputDecoration(hintText: "ここに入力"),
-            ),
-            actions: <Widget>[
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
-                child: Text('キャンセル'),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
-                child: Text('OK'),
-                onPressed: () async {
-                  saveName = saveNameController.text;
-                  DateTime now = DateTime.now();
-                  DateFormat outputFormat = DateFormat('yyyy/MM/dd HH:mm');
-                  String date = outputFormat.format(now);
-                  String query =
-                      'INSERT INTO profile006(saveName, koshinYmd, name, birthYYYY, birthMM, birthDD, place, nickName, hobby, skill, myBoom, offDay, favoriteFood, favoriteMovie, favoriteAnime, favoriteTv, favoriteYouTube, favoritePlace) '
-                      'VALUES("$saveName", "$date", "$name", "$birthYYYY", "$birthMM", "$birthDD", "$place", "$nickName", "$hobby", "$skill", "$myBoom", "$offDay", "$favoriteFood", "$favoriteMovie", "$favoriteAnime", "$favoriteTv", "$favoriteYouTube", "$favoritePlace")';
-                  profileDb proDb = new profileDb();
-                  if (saveName == "") {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: Text('プロジェクト保存名を入力してください'),
-                            actions: <Widget>[
-                              ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
-                                    onPrimary: Colors.white),
-                                child: Text('OK'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ],
-                          );
-                        });
-                  } else {
-                    await proDb.saveData006(
-                        saveName,
-                        date,
-                        name,
-                        birthYYYY,
-                        birthMM,
-                        birthDD,
-                        place,
-                        nickName,
-                        hobby,
-                        skill,
-                        myBoom,
-                        offDay,
-                        favoriteFood,
-                        favoriteMovie,
-                        favoriteAnime,
-                        favoriteTv,
-                        favoriteYouTube,
-                        favoritePlace,
-                        query);
-                    showDialog(BuildContext context) => AlertDialog(
-                          title: Text("saved"),
-                          content: Text("insert data into database."),
-                        );
-
-                    Navigator.pop(context, "1");
+                    Navigator.pop(context, saveName);
                     return Future.value(false);
                   }
                 },

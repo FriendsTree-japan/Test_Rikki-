@@ -119,6 +119,7 @@ class _profile_005 extends State<profile_005> {
   late int id;
   late String koshinFlg;
   late String saveName;
+  late String profileTitle;
 
   void initState() {
     super.initState();
@@ -158,6 +159,11 @@ class _profile_005 extends State<profile_005> {
         new TextEditingController(text: widget.teme2MyBest3);
     this.id = widget.id;
     this.koshinFlg = widget.koshinFlg;
+    if (koshinFlg == "1") {
+      this.profileTitle = "更新画面";
+    } else {
+      this.profileTitle = "新規作成画面";
+    }
   }
 
   @override
@@ -172,18 +178,17 @@ class _profile_005 extends State<profile_005> {
       home: Scaffold(
         appBar: AppBar(
             backgroundColor: Colors.white,
-            title: Text("Profile Book App",
+            title: Text(profileTitle,
                 style: TextStyle(
                   color: Color(0x86D400FA),
                   fontSize: 18,
                 )),
             //戻るボタン
             leading: new IconButton(
-              icon: new Icon(Icons.arrow_back, color: Colors.black),
+                icon: new Icon(Icons.arrow_back, color: Colors.black),
                 onPressed: () {
                   if (koshinFlg == "1") {
-                    Navigator.pushReplacement(
-                        context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => TabPage(1)));
                   } else {
                     showDialog(
@@ -199,8 +204,9 @@ class _profile_005 extends State<profile_005> {
                                 child: Text('いいえ'),
                                 onPressed: () {
                                   Navigator.pushReplacement(
-                                      context, MaterialPageRoute(
-                                      builder: (context) => TabPage(0)));
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TabPage(0)));
                                 },
                               ),
                               ElevatedButton(
@@ -208,46 +214,86 @@ class _profile_005 extends State<profile_005> {
                                     primary: Colors.blue,
                                     onPrimary: Colors.white),
                                 onPressed: () async {
-                                  profileDb proDb = new profileDb();
-                                  String name = nameController.text;
-                                  String nickName = nickNameController.text;
-                                  String birthYYYY = birthYYYYController.text;
-                                  String birthMM = birthMMController.text;
-                                  String birthDD = birthDDController.text;
-                                  String personality = personalityController.text;
-                                  String skill = skillController.text;
-                                  String myBoom = myBoomController.text;
-                                  String recentThing = recentThingController.text;
-                                  String offDay = offDayController.text;
-                                  String win1BillionYen =
-                                      win1BillionYenController.text;
-                                  String reborn = rebornController.text;
-                                  String wish = wishController.text;
-                                  String myBestTheme1 = myBestTheme1Controller.text;
-                                  String teme1MyBest1 = teme1MyBest1Controller.text;
-                                  String teme1MyBest2 = teme1MyBest2Controller.text;
-                                  String teme1MyBest3 = teme1MyBest3Controller.text;
-                                  String myBestTheme2 = myBestTheme2Controller.text;
-                                  String teme2MyBest1 = teme2MyBest1Controller.text;
-                                  String teme2MyBest2 = teme2MyBest2Controller.text;
-                                  String teme2MyBest3 = teme2MyBest3Controller.text;
-                                  DateTime now = DateTime.now();
-                                  DateFormat outputFormat =
-                                  DateFormat('yyyy/MM/dd HH:mm');
-                                  String date = outputFormat.format(now);
+                                  saveName =
+                                      await profileShow().saveDialog(context);
+                                  if (saveName != "") {
+                                    profileDb proDb = new profileDb();
+                                    String name = nameController.text;
+                                    String nickName = nickNameController.text;
+                                    String birthYYYY = birthYYYYController.text;
+                                    String birthMM = birthMMController.text;
+                                    String birthDD = birthDDController.text;
+                                    String personality =
+                                        personalityController.text;
+                                    String skill = skillController.text;
+                                    String myBoom = myBoomController.text;
+                                    String recentThing =
+                                        recentThingController.text;
+                                    String offDay = offDayController.text;
+                                    String win1BillionYen =
+                                        win1BillionYenController.text;
+                                    String reborn = rebornController.text;
+                                    String wish = wishController.text;
+                                    String myBestTheme1 =
+                                        myBestTheme1Controller.text;
+                                    String teme1MyBest1 =
+                                        teme1MyBest1Controller.text;
+                                    String teme1MyBest2 =
+                                        teme1MyBest2Controller.text;
+                                    String teme1MyBest3 =
+                                        teme1MyBest3Controller.text;
+                                    String myBestTheme2 =
+                                        myBestTheme2Controller.text;
+                                    String teme2MyBest1 =
+                                        teme2MyBest1Controller.text;
+                                    String teme2MyBest2 =
+                                        teme2MyBest2Controller.text;
+                                    String teme2MyBest3 =
+                                        teme2MyBest3Controller.text;
+                                    DateTime now = DateTime.now();
+                                    DateFormat outputFormat =
+                                        DateFormat('yyyy/MM/dd HH:mm');
+                                    String date = outputFormat.format(now);
+                                    String query =
+                                        'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
+                                        'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
 
-                                  koshinFlg = await profileShow().saveDialog005(context,name,nickName,birthYYYY,birthMM,birthDD,personality,skill,myBoom,recentThing,offDay,win1BillionYen,reborn,wish,myBestTheme1,teme1MyBest1,teme1MyBest2,teme1MyBest3,myBestTheme2,teme2MyBest1,teme2MyBest2,teme2MyBest3);
+                                    await proDb.saveData005(
+                                        saveName,
+                                        date,
+                                        name,
+                                        nickName,
+                                        birthYYYY,
+                                        birthMM,
+                                        birthDD,
+                                        personality,
+                                        skill,
+                                        myBoom,
+                                        recentThing,
+                                        offDay,
+                                        win1BillionYen,
+                                        reborn,
+                                        wish,
+                                        myBestTheme1,
+                                        teme1MyBest1,
+                                        teme1MyBest2,
+                                        teme1MyBest3,
+                                        myBestTheme2,
+                                        teme2MyBest1,
+                                        teme2MyBest2,
+                                        teme2MyBest3,
+                                        query);
+                                    koshinFlg = "1";
+                                  }
                                   Navigator.pop(context);
                                 },
                                 child: Text('はい'),
                               ),
                             ],
                           );
-                        }
-                    );
+                        });
                   }
-                }
-            ),
+                }),
             //保存/共有ボタン
             actions: <Widget>[
               IconButton(
@@ -321,7 +367,40 @@ class _profile_005 extends State<profile_005> {
                                 await proDb.updateData005(plist);
                                 Navigator.pop(childContext);
                               } else {
-                                koshinFlg = await profileShow().saveDialog005(context,name,nickName,birthYYYY,birthMM,birthDD,personality,skill,myBoom,recentThing,offDay,win1BillionYen,reborn,wish,myBestTheme1,teme1MyBest1,teme1MyBest2,teme1MyBest3,myBestTheme2,teme2MyBest1,teme2MyBest2,teme2MyBest3);
+                                saveName =
+                                    await profileShow().saveDialog(context);
+                                if (saveName != "") {
+                                  String query =
+                                      'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
+                                      'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
+
+                                  await proDb.saveData005(
+                                      saveName,
+                                      date,
+                                      name,
+                                      nickName,
+                                      birthYYYY,
+                                      birthMM,
+                                      birthDD,
+                                      personality,
+                                      skill,
+                                      myBoom,
+                                      recentThing,
+                                      offDay,
+                                      win1BillionYen,
+                                      reborn,
+                                      wish,
+                                      myBestTheme1,
+                                      teme1MyBest1,
+                                      teme1MyBest2,
+                                      teme1MyBest3,
+                                      myBestTheme2,
+                                      teme2MyBest1,
+                                      teme2MyBest2,
+                                      teme2MyBest3,
+                                      query);
+                                  koshinFlg = "1";
+                                }
                                 Navigator.pop(childContext);
                               }
                             },
