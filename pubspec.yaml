@@ -29,6 +29,9 @@ dependencies:
   path_provider: any
   sqflite: any
   intl: ^0.17.0
+  image_picker: ^0.8.2
+  provider: ^5.0.0
+  flutter_lints: ^1.0.4
 
   #Imageファイルをシェア
   esys_flutter_share: ^1.0.2

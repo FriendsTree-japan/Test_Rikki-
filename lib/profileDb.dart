@@ -10,12 +10,12 @@ class profileDb {
   void createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)",
       );
       await db.execute(
         "CREATE TABLE IF NOT EXISTS profile005 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
@@ -47,16 +47,17 @@ class profileDb {
       double _sliderValue3,
       String slider3Koumoku1,
       String slider3Koumoku2,
+      String myImagePath,
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     print("$saveName");
     print("$query");
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-          "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT)");
+          "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)");
     });
     await database.transaction((txn) async {
       int id = await txn.rawInsert(query);
@@ -94,7 +95,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -132,7 +133,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -152,7 +153,7 @@ class profileDb {
   Future<void> deleteData(int id, String tableName) async {
     debugPrint("DeleteData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -173,7 +174,7 @@ class profileDb {
   Future<void> updateData003(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -193,7 +194,7 @@ class profileDb {
   Future<void> updateData005(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -214,7 +215,7 @@ class profileDb {
   Future<void> updateData006(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -234,7 +235,7 @@ class profileDb {
 //データ選択(List表示)
   Future<List<ProList>> getDataList() async {
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProfileBook.db");
+    String path = join(dbPath, "ftProBook.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -267,7 +268,9 @@ class profileDb {
           slider2Koumoku2_p003: maps003[i]['slider2Koumoku2'],
           sliderValue3_p003: maps003[i]['sliderValue3'],
           slider3Koumoku1_p003: maps003[i]['slider3Koumoku1'],
-          slider3Koumoku2_p003: maps003[i]['slider3Koumoku2']);
+          slider3Koumoku2_p003: maps003[i]['slider3Koumoku2'],
+          myImagePath_p003: maps003[i]['myImagePath']
+      );
     });
 
     final List<Map<String, dynamic>> maps005 =
@@ -353,6 +356,7 @@ class ProList {
   String slider3Koumoku2_p003 = "";
   double sliderValue2_p003 = 0.0;
   double sliderValue3_p003 = 0.0;
+  String myImagePath_p003 = "";
 
   //プロフィール帳⑤
   String nickName_p005 = "";
@@ -411,7 +415,8 @@ class ProList {
     required this.slider2Koumoku2_p003,
     required this.sliderValue3_p003,
     required this.slider3Koumoku1_p003,
-    required this.slider3Koumoku2_p003
+    required this.slider3Koumoku2_p003,
+    required this.myImagePath_p003
   }) {
     this.tableName = "profile003";
   }
@@ -493,7 +498,8 @@ class ProList {
       'slider2Koumoku2': slider2Koumoku2_p003,
       'sliderValue3': sliderValue3_p003,
       'slider3Koumoku1': slider3Koumoku1_p003,
-      'slider3Koumoku2': slider3Koumoku2_p003
+      'slider3Koumoku2': slider3Koumoku2_p003,
+      'myImagePath' : myImagePath_p003
     };
   }
 

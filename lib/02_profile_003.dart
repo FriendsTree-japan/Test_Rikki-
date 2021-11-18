@@ -7,6 +7,8 @@ import 'CreateImage.dart';
 import '01_Edit.dart';
 import 'profileShow.dart';
 import 'package:intl/intl.dart';
+import 'selectImage.dart';
+import 'base64_helper.dart';
 
 class profile_003 extends StatefulWidget {
   late final int id;
@@ -27,6 +29,7 @@ class profile_003 extends StatefulWidget {
   late final double _sliderValue3;
   late final String slider3Koumoku1;
   late final String slider3Koumoku2;
+  late final String myImagePath;
 
   late final String koshinFlg;
 
@@ -49,6 +52,7 @@ class profile_003 extends StatefulWidget {
       this._sliderValue3,
       this.slider3Koumoku1,
       this.slider3Koumoku2,
+      this.myImagePath,
       this.koshinFlg);
 
   profile_003.make() {
@@ -70,6 +74,7 @@ class profile_003 extends StatefulWidget {
     this._sliderValue3 = 0.0;
     this.slider3Koumoku1 = "";
     this.slider3Koumoku2 = "";
+    this.myImagePath = "";
     this.koshinFlg = "0";
   }
 
@@ -103,6 +108,9 @@ class _profile_003 extends State<profile_003> {
   var _sliderValue3 = 0.0;
   var _labelText = 'Select value';
 
+  //プロフィール画像Pass
+  late String myImagePath;
+
   void initState() {
     super.initState();
     this.saveName = widget.saveName;
@@ -132,6 +140,7 @@ class _profile_003 extends State<profile_003> {
         new TextEditingController(text: widget.slider3Koumoku1);
     this.slider3Koumoku2Controller =
         new TextEditingController(text: widget.slider3Koumoku2);
+    this.myImagePath = widget.myImagePath;
 
     this.koshinFlg = widget.koshinFlg;
     if (koshinFlg == "1") {
@@ -143,6 +152,8 @@ class _profile_003 extends State<profile_003> {
 
   @override
   Widget build(BuildContext context) {
+    final double deviceHeight = MediaQuery.of(context).size.height;
+    final double deviceWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       theme: ThemeData(
         // brightness: Brightness.dark,
@@ -217,8 +228,8 @@ class _profile_003 extends State<profile_003> {
                                         DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
-                                        'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2) '
-                                        'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2")';
+                                        'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2, myImagePath) '
+                                        'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2", "$myImagePath")';
                                     await proDb.saveData003(
                                         saveName,
                                         date,
@@ -237,6 +248,7 @@ class _profile_003 extends State<profile_003> {
                                         _sliderValue3,
                                         slider3Koumoku1,
                                         slider3Koumoku2,
+                                        myImagePath,
                                         query);
                                     koshinFlg = "1";
                                   }
@@ -310,7 +322,8 @@ class _profile_003 extends State<profile_003> {
                                     slider2Koumoku2_p003: slider2Koumoku2,
                                     sliderValue3_p003: _sliderValue3,
                                     slider3Koumoku1_p003: slider3Koumoku1,
-                                    slider3Koumoku2_p003: slider3Koumoku2);
+                                    slider3Koumoku2_p003: slider3Koumoku2,
+                                    myImagePath_p003: myImagePath);
                                 await proDb.updateData003(plist);
                                 Navigator.pop(childContext);
                               } else {
@@ -318,8 +331,8 @@ class _profile_003 extends State<profile_003> {
                                     await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
-                                      'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2) '
-                                      'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2")';
+                                      'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2, myImagePath) '
+                                      'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2", "$myImagePath")';
                                   await proDb.saveData003(
                                       saveName,
                                       date,
@@ -338,6 +351,7 @@ class _profile_003 extends State<profile_003> {
                                       _sliderValue3,
                                       slider3Koumoku1,
                                       slider3Koumoku2,
+                                      myImagePath,
                                       query);
                                   koshinFlg = "1";
                                 }
@@ -420,8 +434,22 @@ class _profile_003 extends State<profile_003> {
                       Column(children: <Widget>[
                         Align(
                           child: Container(
-                            child: Image.asset('images/cat.jpeg', width: 150),
-                            padding: EdgeInsets.fromLTRB(5.0, 5.0, 10.0, 5.0),
+                            width: deviceWidth * 0.35,
+                            height: deviceHeight *0.15,
+                            child: myImagePath == "" ?
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.black54, onPrimary: Colors.white),
+                              child: Text('No image selected.'),
+                              onPressed: () async {
+                                myImagePath = await HomeScreenModel().selectImage();
+                                setState(() {});
+                              },
+                            ):
+                            Base64Helper.imageFromBase64String(
+                              myImagePath,
+                            ),
+                            padding: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
                           ),
                         ),
                       ]),
@@ -438,7 +466,7 @@ class _profile_003 extends State<profile_003> {
                                 fillColor: Color(0xFFEEA1FF),
                               ),
                             ),
-                            width: 200,
+                            width: deviceWidth * 0.6,
                           ),
                         ],
                       ),
@@ -458,7 +486,7 @@ class _profile_003 extends State<profile_003> {
                               labelText: '生年月日',
                             ),
                           ),
-                          width: 100,
+                          width: deviceWidth * 0.28,
                         ),
                       ],
                     ),
@@ -473,7 +501,7 @@ class _profile_003 extends State<profile_003> {
                               labelText: '出身地',
                             ),
                           ),
-                          width: 100,
+                          width: deviceWidth * 0.28,
                         ),
                       ],
                     ),
@@ -488,7 +516,7 @@ class _profile_003 extends State<profile_003> {
                               labelText: '血液型',
                             ),
                           ),
-                          width: 100,
+                          width: deviceWidth * 0.28,
                         ),
                       ],
                     ),
@@ -525,8 +553,8 @@ class _profile_003 extends State<profile_003> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider1Koumoku1Controller,
@@ -540,8 +568,8 @@ class _profile_003 extends State<profile_003> {
                             ),
                             Padding(padding: EdgeInsets.all(20.0)),
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider1Koumoku2Controller,
@@ -572,8 +600,8 @@ class _profile_003 extends State<profile_003> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider2Koumoku1Controller,
@@ -587,8 +615,8 @@ class _profile_003 extends State<profile_003> {
                             ),
                             Padding(padding: EdgeInsets.all(20.0)),
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider2Koumoku2Controller,
@@ -619,8 +647,8 @@ class _profile_003 extends State<profile_003> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider3Koumoku1Controller,
@@ -634,8 +662,8 @@ class _profile_003 extends State<profile_003> {
                             ),
                             Padding(padding: EdgeInsets.all(20.0)),
                             Container(
-                              width: 140.0,
-                              height: 40,
+                              width: deviceWidth * 0.35,
+                              height: deviceHeight * 0.05,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
                                 controller: slider3Koumoku2Controller,
@@ -672,7 +700,7 @@ class _profile_003 extends State<profile_003> {
                   child: TextField(
                     maxLines: null,
                     style: TextStyle(
-                        fontSize: 18, color: Colors.black54, height: 1),
+                        fontSize: 18, color: Colors.black54, height: deviceHeight*0.001),
                     controller: freeController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
