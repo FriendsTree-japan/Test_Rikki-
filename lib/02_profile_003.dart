@@ -19,10 +19,15 @@ class profile_003 extends StatefulWidget {
   late final String favoriteThing;
   late final String free;
   late final double _sliderValue1;
+  late final String slider1Koumoku1;
+  late final String slider1Koumoku2;
   late final double _sliderValue2;
+  late final String slider2Koumoku1;
+  late final String slider2Koumoku2;
   late final double _sliderValue3;
-  late final double _sliderValue4;
-  late final double _sliderValue5;
+  late final String slider3Koumoku1;
+  late final String slider3Koumoku2;
+
   late final String koshinFlg;
 
   profile_003.Details(
@@ -36,10 +41,14 @@ class profile_003 extends StatefulWidget {
       this.favoriteThing,
       this.free,
       this._sliderValue1,
+      this.slider1Koumoku1,
+      this.slider1Koumoku2,
       this._sliderValue2,
+      this.slider2Koumoku1,
+      this.slider2Koumoku2,
       this._sliderValue3,
-      this._sliderValue4,
-      this._sliderValue5,
+      this.slider3Koumoku1,
+      this.slider3Koumoku2,
       this.koshinFlg);
 
   profile_003.make() {
@@ -53,10 +62,14 @@ class profile_003 extends StatefulWidget {
     this.favoriteThing = "";
     this.free = "";
     this._sliderValue1 = 0.0;
+    this.slider1Koumoku1 = "";
+    this.slider1Koumoku2 = "";
     this._sliderValue2 = 0.0;
+    this.slider2Koumoku1 = "";
+    this.slider2Koumoku2 = "";
     this._sliderValue3 = 0.0;
-    this._sliderValue4 = 0.0;
-    this._sliderValue5 = 0.0;
+    this.slider3Koumoku1 = "";
+    this.slider3Koumoku2 = "";
     this.koshinFlg = "0";
   }
 
@@ -72,6 +85,12 @@ class _profile_003 extends State<profile_003> {
   var bloodTypeController = TextEditingController();
   var favoriteThingController = TextEditingController();
   var freeController = TextEditingController();
+  var slider1Koumoku1Controller = TextEditingController();
+  var slider1Koumoku2Controller = TextEditingController();
+  var slider2Koumoku1Controller = TextEditingController();
+  var slider2Koumoku2Controller = TextEditingController();
+  var slider3Koumoku1Controller = TextEditingController();
+  var slider3Koumoku2Controller = TextEditingController();
 
   late int id;
   late String koshinFlg;
@@ -82,8 +101,6 @@ class _profile_003 extends State<profile_003> {
   var _sliderValue1 = 0.0;
   var _sliderValue2 = 0.0;
   var _sliderValue3 = 0.0;
-  var _sliderValue4 = 0.0;
-  var _sliderValue5 = 0.0;
   var _labelText = 'Select value';
 
   void initState() {
@@ -99,10 +116,23 @@ class _profile_003 extends State<profile_003> {
     this.freeController = new TextEditingController(text: widget.free);
     this.id = widget.id;
     this._sliderValue1 = widget._sliderValue1;
+    this.slider1Koumoku1Controller =
+        new TextEditingController(text: widget.slider1Koumoku1);
+    this.slider1Koumoku2Controller =
+        new TextEditingController(text: widget.slider1Koumoku2);
+
     this._sliderValue2 = widget._sliderValue2;
+    this.slider2Koumoku1Controller =
+        new TextEditingController(text: widget.slider2Koumoku1);
+    this.slider2Koumoku2Controller =
+        new TextEditingController(text: widget.slider2Koumoku2);
+
     this._sliderValue3 = widget._sliderValue3;
-    this._sliderValue4 = widget._sliderValue4;
-    this._sliderValue5 = widget._sliderValue5;
+    this.slider3Koumoku1Controller =
+        new TextEditingController(text: widget.slider3Koumoku1);
+    this.slider3Koumoku2Controller =
+        new TextEditingController(text: widget.slider3Koumoku2);
+
     this.koshinFlg = widget.koshinFlg;
     if (koshinFlg == "1") {
       this.profileTitle = "更新画面";
@@ -170,13 +200,25 @@ class _profile_003 extends State<profile_003> {
                                     String favoriteThing =
                                         favoriteThingController.text;
                                     String free = freeController.text;
+                                    String slider1Koumoku1 =
+                                        slider1Koumoku1Controller.text;
+                                    String slider1Koumoku2 =
+                                        slider1Koumoku2Controller.text;
+                                    String slider2Koumoku1 =
+                                        slider2Koumoku1Controller.text;
+                                    String slider2Koumoku2 =
+                                        slider2Koumoku2Controller.text;
+                                    String slider3Koumoku1 =
+                                        slider3Koumoku1Controller.text;
+                                    String slider3Koumoku2 =
+                                        slider3Koumoku2Controller.text;
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
                                         DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
-                                        'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
-                                        'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
+                                        'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2) '
+                                        'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2")';
                                     await proDb.saveData003(
                                         saveName,
                                         date,
@@ -187,10 +229,14 @@ class _profile_003 extends State<profile_003> {
                                         favoriteThing,
                                         free,
                                         _sliderValue1,
+                                        slider1Koumoku1,
+                                        slider1Koumoku2,
                                         _sliderValue2,
+                                        slider2Koumoku1,
+                                        slider2Koumoku2,
                                         _sliderValue3,
-                                        _sliderValue4,
-                                        _sliderValue5,
+                                        slider3Koumoku1,
+                                        slider3Koumoku2,
                                         query);
                                     koshinFlg = "1";
                                   }
@@ -228,6 +274,18 @@ class _profile_003 extends State<profile_003> {
                               String favoriteThing =
                                   favoriteThingController.text;
                               String free = freeController.text;
+                              String slider1Koumoku1 =
+                                  slider1Koumoku1Controller.text;
+                              String slider1Koumoku2 =
+                                  slider1Koumoku2Controller.text;
+                              String slider2Koumoku1 =
+                                  slider2Koumoku1Controller.text;
+                              String slider2Koumoku2 =
+                                  slider2Koumoku2Controller.text;
+                              String slider3Koumoku1 =
+                                  slider3Koumoku1Controller.text;
+                              String slider3Koumoku2 =
+                                  slider3Koumoku2Controller.text;
                               DateTime now = DateTime.now();
                               DateFormat outputFormat =
                                   DateFormat('yyyy/MM/dd HH:mm');
@@ -245,10 +303,14 @@ class _profile_003 extends State<profile_003> {
                                     favoriteThing_p003: favoriteThing,
                                     free_p003: free,
                                     sliderValue1_p003: _sliderValue1,
+                                    slider1Koumoku1_p003: slider1Koumoku1,
+                                    slider1Koumoku2_p003: slider1Koumoku2,
                                     sliderValue2_p003: _sliderValue2,
+                                    slider2Koumoku1_p003: slider2Koumoku1,
+                                    slider2Koumoku2_p003: slider2Koumoku2,
                                     sliderValue3_p003: _sliderValue3,
-                                    sliderValue4_p003: _sliderValue4,
-                                    sliderValue5_p003: _sliderValue5);
+                                    slider3Koumoku1_p003: slider3Koumoku1,
+                                    slider3Koumoku2_p003: slider3Koumoku2);
                                 await proDb.updateData003(plist);
                                 Navigator.pop(childContext);
                               } else {
@@ -256,8 +318,8 @@ class _profile_003 extends State<profile_003> {
                                     await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
-                                      'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, sliderValue2, sliderValue3, sliderValue4, sliderValue5) '
-                                      'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, $_sliderValue2, $_sliderValue3, $_sliderValue4, $_sliderValue5)';
+                                      'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, bloodType, favoriteThing, free, sliderValue1, slider1Koumoku1, slider1Koumoku2, sliderValue2, slider2Koumoku1, slider2Koumoku2, sliderValue3, slider3Koumoku1, slider3Koumoku2) '
+                                      'VALUES("$saveName", "$date", "$name", "$birth", "$place", "$bloodType", "$favoriteThing", "$free", $_sliderValue1, "$slider1Koumoku1", "$slider1Koumoku2", $_sliderValue2, "$slider2Koumoku1", "$slider2Koumoku2", $_sliderValue3, "$slider3Koumoku1", "$slider3Koumoku2")';
                                   await proDb.saveData003(
                                       saveName,
                                       date,
@@ -268,10 +330,14 @@ class _profile_003 extends State<profile_003> {
                                       favoriteThing,
                                       free,
                                       _sliderValue1,
+                                      slider1Koumoku1,
+                                      slider1Koumoku2,
                                       _sliderValue2,
+                                      slider2Koumoku1,
+                                      slider2Koumoku2,
                                       _sliderValue3,
-                                      _sliderValue4,
-                                      _sliderValue5,
+                                      slider3Koumoku1,
+                                      slider3Koumoku2,
                                       query);
                                   koshinFlg = "1";
                                 }
@@ -463,6 +529,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider1Koumoku1Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(
@@ -477,6 +544,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider1Koumoku2Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(
@@ -508,6 +576,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider2Koumoku1Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(
@@ -522,6 +591,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider2Koumoku2Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(
@@ -553,6 +623,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider3Koumoku1Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(
@@ -567,6 +638,7 @@ class _profile_003 extends State<profile_003> {
                               height: 40,
                               alignment: Alignment.bottomLeft,
                               child: TextField(
+                                controller: slider3Koumoku2Controller,
                                 style: TextStyle(
                                     color: Colors.black54, fontSize: 14),
                                 decoration: const InputDecoration(

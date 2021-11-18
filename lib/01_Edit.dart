@@ -94,13 +94,21 @@ class _Edit extends State<Edit> {
                                                 prolists[index]
                                                     .sliderValue1_p003,
                                                 prolists[index]
+                                                    .slider1Koumoku1_p003,
+                                                prolists[index]
+                                                    .slider1Koumoku2_p003,
+                                                prolists[index]
                                                     .sliderValue2_p003,
+                                                prolists[index]
+                                                    .slider2Koumoku1_p003,
+                                                prolists[index]
+                                                    .slider2Koumoku2_p003,
                                                 prolists[index]
                                                     .sliderValue3_p003,
                                                 prolists[index]
-                                                    .sliderValue4_p003,
+                                                    .slider3Koumoku1_p003,
                                                 prolists[index]
-                                                    .sliderValue5_p003,
+                                                    .slider3Koumoku2_p003,
                                                 "1")));
                               } else if (prolists[index].tableName ==
                                   "profile005") {
