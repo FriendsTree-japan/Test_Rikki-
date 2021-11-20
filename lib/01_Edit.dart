@@ -28,14 +28,7 @@ class _Edit extends State<Edit> {
         // appBar: AppBar(
         //   title: Text("プロフィール帳一覧"),
         // ),
-        body: Column(children: [
-      Container(
-          width: deviceWidth,
-          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-          color: Colors.pinkAccent,
-          child: Align(
-              child: Text("プロフィール帳一覧",
-                  style: TextStyle(fontSize: 20, color: Colors.white)))),
+        body:
       FutureBuilder(
           future: result,
           builder:
@@ -71,11 +64,11 @@ class _Edit extends State<Edit> {
                                   Text(
                                 '${prolists[index].saveName}',
                                 style: TextStyle(
-                                    color: Colors.pinkAccent, fontSize: 20),
+                                    color: Colors.blue, fontSize: 18),
                               ),
                               subtitle: Text(
                                 '${prolists[index].koshinYmd}',
-                                style: TextStyle(color: Colors.black54),
+                                style: TextStyle(color: Colors.black54,fontSize: 12),
                               ),
                               onTap: () {
                                 if (prolists[index].tableName == "profile003") {
@@ -218,6 +211,6 @@ class _Edit extends State<Edit> {
               return Text("データが存在しません");
             }
           })
-    ]));
+    );
   }
 }

@@ -38,10 +38,10 @@ class _SelectState extends State<Select> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Padding(padding: EdgeInsets.all(20.0)),
+            Padding(padding: EdgeInsets.all(8.0)),
             Align(
-                child: Text("〜〜プロフィール帳のタイプを選んでください〜〜",
-                    style: TextStyle(fontSize: 12, color: Colors.black54))),
+                child: Text("プロフィール帳のタイプを選んでください",
+                    style: TextStyle(fontSize: 18, color: Colors.black54))),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
             ),
@@ -60,7 +60,8 @@ class _SelectState extends State<Select> {
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return Container(
-                    width:deviceWidth * 0.6,
+                    width:deviceWidth * 0.8,
+                    height:deviceHeight,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black54),
                       borderRadius: BorderRadius.circular(5),
@@ -103,7 +104,7 @@ class _SelectState extends State<Select> {
                 int index = imgList.indexOf(a);
                 return Container(
                   width: 8.0,
-                  height: 100.0,
+                  height: 25.0,
                   margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,

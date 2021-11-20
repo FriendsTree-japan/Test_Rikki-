@@ -42,8 +42,8 @@ class _MyApp extends State<MyApp>{
 enum WhyFarther { manual, FAQ }
 class TabPage extends StatelessWidget {
   final _tab = <Tab> [
-    Tab( text:'新規作成',icon: Icon(Icons.edit_sharp,color: Colors.black54)),
-    Tab( text:'一覧', icon: Icon(Icons.app_registration,color: Colors.black54 )),
+    Tab( text:'新規作成',icon: Icon(Icons.edit_sharp),),
+    Tab( text:'一覧', icon: Icon(Icons.app_registration)),
   ];
 
   @override
@@ -68,7 +68,9 @@ class TabPage extends StatelessWidget {
             backgroundColor: Colors.white,
             bottom: TabBar(
               tabs: _tab,
-              labelColor: Colors.black54,
+              labelColor: Colors.blue,
+              unselectedLabelColor: Colors.black54,
+              indicatorColor: Colors.blue,
             ),
           ),),
         drawer: Drawer(
