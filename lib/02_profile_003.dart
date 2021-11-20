@@ -166,7 +166,7 @@ class _profile_003 extends State<profile_003> {
             backgroundColor: Colors.white,
             title: Text(profileTitle,
                 style: TextStyle(
-                  color: Color(0x86D400FA),
+                  color: Colors.black54,
                   fontSize: 18,
                 )),
             //戻るボタン
