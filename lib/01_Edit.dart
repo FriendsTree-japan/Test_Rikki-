@@ -25,6 +25,7 @@ class _Edit extends State<Edit> {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+        backgroundColor: const Color(0xCFFE0D1),
         // appBar: AppBar(
         //   title: Text("プロフィール帳一覧"),
         // ),

@@ -33,6 +33,7 @@ class _SelectState extends State<Select> {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: const Color(0xCFFE0D1),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,

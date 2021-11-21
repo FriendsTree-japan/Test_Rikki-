@@ -56,21 +56,22 @@ class TabPage extends StatelessWidget {
       initialIndex: _screen,
       length: _tab.length,
       child: Scaffold(
+        backgroundColor: const Color(0xFFFFF7EE),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(110.0),
           child:
           AppBar(
             title: Text("Profile Book App",
-                style: TextStyle(color: Colors.black54, fontSize: 18,)),
+                style: TextStyle(color: Colors.white, fontSize: 18,)),
             iconTheme: const IconThemeData(
-              color: Colors.black54,
+              color: Colors.white,
             ),
-            backgroundColor: Colors.white,
+            backgroundColor: const Color(0xFF00AF95),
             bottom: TabBar(
               tabs: _tab,
-              labelColor: Colors.blue,
-              unselectedLabelColor: Colors.black54,
-              indicatorColor: Colors.blue,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.white,
+              indicatorColor: Colors.white,
             ),
           ),),
         drawer: Drawer(

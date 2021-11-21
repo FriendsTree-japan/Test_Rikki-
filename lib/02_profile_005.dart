@@ -199,7 +199,7 @@ class _profile_005 extends State<profile_005> {
                             actions: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
+                                    primary: Colors.green,
                                     onPrimary: Colors.white),
                                 child: Text('いいえ'),
                                 onPressed: () {
