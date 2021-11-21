@@ -25,7 +25,7 @@ class _Edit extends State<Edit> {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: const Color(0xCFFE0D1),
+        backgroundColor: const Color(0xFFFAF7F3),
         // appBar: AppBar(
         //   title: Text("プロフィール帳一覧"),
         // ),
@@ -69,7 +69,7 @@ class _Edit extends State<Edit> {
                               ),
                               subtitle: Text(
                                 '${prolists[index].koshinYmd}',
-                                style: TextStyle(color: Colors.black54,fontSize: 12),
+                                style: TextStyle(color: const Color(0xFF737373),fontSize: 12),
                               ),
                               onTap: () {
                                 if (prolists[index].tableName == "profile003") {

@@ -33,7 +33,7 @@ class _SelectState extends State<Select> {
     final double deviceHeight = MediaQuery.of(context).size.height;
     final double deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: const Color(0xCFFE0D1),
+      backgroundColor: const Color(0xFFFAF7F3),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -42,7 +42,7 @@ class _SelectState extends State<Select> {
             Padding(padding: EdgeInsets.all(8.0)),
             Align(
                 child: Text("プロフィール帳のタイプを選んでください",
-                    style: TextStyle(fontSize: 18, color: Colors.black54))),
+                    style: TextStyle(fontSize: 18, color: const Color(0xFF737373),))),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
             ),
@@ -64,7 +64,7 @@ class _SelectState extends State<Select> {
                     width:deviceWidth * 0.8,
                     height:deviceHeight,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black54),
+                      border: Border.all(color: const Color(0xFF737373),),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: ListTile(
@@ -110,8 +110,8 @@ class _SelectState extends State<Select> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == index
-                        ? Color.fromRGBO(0, 0, 0, 0.9)
-                        : Color.fromRGBO(0, 0, 0, 0.4),
+                        ? Color.fromRGBO(115, 115, 115, 1.0)
+                        : Color.fromRGBO(115, 115, 115, 1.0),
                   ),
                 );
               }).toList(),

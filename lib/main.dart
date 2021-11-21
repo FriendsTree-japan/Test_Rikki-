@@ -56,22 +56,21 @@ class TabPage extends StatelessWidget {
       initialIndex: _screen,
       length: _tab.length,
       child: Scaffold(
-        backgroundColor: const Color(0xFFFFF7EE),
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(110.0),
           child:
           AppBar(
             title: Text("Profile Book App",
-                style: TextStyle(color: Colors.white, fontSize: 18,)),
+                style: TextStyle(color: const Color(0xFFFFFFFF), fontSize: 18,)),
             iconTheme: const IconThemeData(
-              color: Colors.white,
+              color: const Color(0xFFFFFFFF),
             ),
-            backgroundColor: const Color(0xFF00AF95),
+            backgroundColor: const Color(0xFF039E74),
             bottom: TabBar(
               tabs: _tab,
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.white,
-              indicatorColor: Colors.white,
+              labelColor: const Color(0xFFFFFFFF),
+              unselectedLabelColor: const Color(0xFFFFFFFF),
+              indicatorColor: const Color(0xFFFFFFFF),
             ),
           ),),
         drawer: Drawer(
@@ -86,11 +85,13 @@ class TabPage extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  title: Text('操作手順書',style: TextStyle(color: Colors.black54)),
+                  title: Text('操作手順書',style: TextStyle(color: const Color(
+                      0xFF737373),)),
                   onTap: _manualURL,
                 ),
                 ListTile(
-                  title: Text('問い合わせ',style: TextStyle(color: Colors.black54)),
+                  title: Text('問い合わせ',style: TextStyle(color: const Color(
+                      0xFF737373),)),
                   onTap: _FAQURL,
                 )
               ],
