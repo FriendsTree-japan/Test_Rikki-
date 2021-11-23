@@ -530,7 +530,7 @@ class _profile_005 extends State<profile_005> {
                   ),
                   Center(
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(maxHeight: 300),
+                      constraints: BoxConstraints(maxHeight: 200),
                       child: Container(
                         height: SizeConfig.screenHeight * 0.3,
                         width: SizeConfig.screenWidth * 0.9,
@@ -858,7 +858,7 @@ class _profile_005 extends State<profile_005> {
                   ),
                   Padding(padding: EdgeInsets.only(top: 5.0)),
                   ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 200),
+                    constraints: BoxConstraints(maxHeight: 126),
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: ColorConfig.Orange, width: 6),
