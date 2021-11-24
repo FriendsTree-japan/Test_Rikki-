@@ -1192,7 +1192,7 @@ class _profile_005 extends State<profile_005> {
                                     style: TextStyle(fontSize: 14),
                                   ),
                                 ),
-                                
+
                                 Container(
                                   padding:
                                       EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),

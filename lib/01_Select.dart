@@ -15,6 +15,39 @@ import '02_profile_009.dart';
 import '02_profile_010.dart';
 import '02_profile_011.dart';
 
+class SizeConfig {
+  static late MediaQueryData _mediaQueryData;
+  static late double screenWidth;
+  static late double screenHeight;
+  static late double widgetHeightSize;
+  static late double widgetWidthSize;
+  static late double widgetPaddingSize;
+
+  void init(BuildContext context) {
+    _mediaQueryData = MediaQuery.of(context);
+
+    //デバイスのサイズを取得
+    screenWidth = _mediaQueryData.size.width;
+    screenHeight = _mediaQueryData.size.height;
+
+    //表示されるプロフィールのウィジェットの最大値を定義
+    if (screenHeight > 700) {
+      widgetWidthSize = screenWidth * 0.8;
+      widgetHeightSize = screenHeight * 0.8;
+    } else {
+      widgetWidthSize = screenWidth * 0.6;
+      widgetHeightSize = screenHeight * 0.6;
+    }
+
+    //各ウィジェット間のPaddingの値を定義
+    if (screenHeight > 700) {
+      widgetPaddingSize = 15.0;
+    } else {
+      widgetPaddingSize = 5.0;
+    }
+  }
+}
+
 class Select extends StatefulWidget {
   @override
   _SelectState createState() => _SelectState();
@@ -30,8 +63,7 @@ class _SelectState extends State<Select> {
 
   @override
   Widget build(BuildContext context) {
-    final double deviceHeight = MediaQuery.of(context).size.height;
-    final double deviceWidth = MediaQuery.of(context).size.width;
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: const Color(0xFFFAF7F3),
       body: Column(
@@ -42,13 +74,16 @@ class _SelectState extends State<Select> {
             Padding(padding: EdgeInsets.all(8.0)),
             Align(
                 child: Text("プロフィール帳のタイプを選んでください",
-                    style: TextStyle(fontSize: 18, color: const Color(0xFF737373),))),
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: const Color(0xFF737373),
+                    ))),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
             ),
             CarouselSlider.builder(
               options: CarouselOptions(
-                  height: 450.0,
+                  height: SizeConfig.widgetHeightSize,
                   initialPage: 0,
                   viewportFraction: 1,
                   enableInfiniteScroll: true,
@@ -61,10 +96,13 @@ class _SelectState extends State<Select> {
               itemCount: imgList.length,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return Container(
-                    width:deviceWidth * 0.8,
-                    height:deviceHeight,
+                    width: SizeConfig.widgetWidthSize,
+                    height: SizeConfig.widgetHeightSize,
+
                     decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFF737373),),
+                      border: Border.all(
+                        color: const Color(0xFF737373),
+                      ),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: ListTile(
