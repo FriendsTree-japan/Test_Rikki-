@@ -12,6 +12,10 @@ class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth;
   static late double screenHeight;
+  static late double widgetHeightSizeFirst;
+  static late double widgetHeightSizeSecond;
+  static late double widgetHeightSizeThird;
+  static late double widgetPaddingSize;
   static late double bigFontSize;
   static late double middleFontSize;
   static late double smallFontSize;
@@ -23,10 +27,22 @@ class SizeConfig {
     screenWidth = _mediaQueryData.size.width;
     screenHeight = _mediaQueryData.size.height;
 
-    //フォントのサイズを設定
+    //フォントのサイズを定義
     bigFontSize = 40.0;
     middleFontSize = 14.0;
     smallFontSize = 12.0;
+
+    //各ウィジェットの最大値を定義
+    widgetHeightSizeFirst = 200.0;
+    widgetHeightSizeSecond = 126.0;
+    widgetHeightSizeThird = 180.0;
+
+    //各ウィジェット間のPaddingの値を定義
+    if (screenHeight > 700) {
+      widgetPaddingSize = 15.0;
+    } else {
+      widgetPaddingSize = 5.0;
+    }
   }
 }
 
@@ -37,7 +53,7 @@ class ColorConfig {
   static late Color Cream;
 
   void init(BuildContext context) {
-    //使用する色を設定
+    //使用する色を定義
     Black = Color(0xFF737373);
     Orange = Color(0xFFFFC0A3);
     White = Color(0xFFFFFFFF);
@@ -212,7 +228,7 @@ class _profile_005 extends State<profile_005> {
       theme: ThemeData(
         // brightness: Brightness.dark,
         primaryIconTheme: const IconThemeData.fallback().copyWith(
-          color: Colors.black,
+          color: ColorConfig.Black,
         ),
       ),
       home: Scaffold(
@@ -220,12 +236,12 @@ class _profile_005 extends State<profile_005> {
             backgroundColor: Colors.white,
             title: Text(profileTitle,
                 style: TextStyle(
-                  color: Colors.black54,
+                  color: ColorConfig.Black,
                   fontSize: 18,
                 )),
             //戻るボタン
             leading: new IconButton(
-                icon: new Icon(Icons.arrow_back, color: Colors.black),
+                icon: new Icon(Icons.arrow_back, color: ColorConfig.Black),
                 onPressed: () {
                   if (koshinFlg == "1") {
                     Navigator.pushReplacement(context,
@@ -240,7 +256,7 @@ class _profile_005 extends State<profile_005> {
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.green,
-                                    onPrimary: Colors.white),
+                                    onPrimary: ColorConfig.White),
                                 child: Text('いいえ'),
                                 onPressed: () {
                                   Navigator.pushReplacement(
@@ -337,13 +353,13 @@ class _profile_005 extends State<profile_005> {
             //保存/共有ボタン
             actions: <Widget>[
               IconButton(
-                icon: Icon(Icons.save_alt, color: Colors.black),
+                icon: Icon(Icons.save_alt, color: ColorConfig.Black),
                 onPressed: () {
                   showDialog(
                     context: context,
                     builder: (childContext) {
                       return SimpleDialog(
-                        backgroundColor: Colors.white,
+                        backgroundColor: ColorConfig.White,
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(20))),
@@ -454,6 +470,8 @@ class _profile_005 extends State<profile_005> {
                           Divider(color: Colors.black),
                           SimpleDialogOption(
                             onPressed: () {
+                              print(SizeConfig.screenHeight);
+                              print(SizeConfig.screenWidth);
                               saveImage _saveImage = saveImage();
                               _saveImage
                                   .saveLocalImage(convertWidgetToImageKey);
@@ -528,9 +546,13 @@ class _profile_005 extends State<profile_005> {
                                 fontFamily: 'Nicofont',
                                 fontSize: SizeConfig.bigFontSize))),
                   ),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: SizeConfig.widgetPaddingSize)),
                   Center(
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(maxHeight: 200),
+                      constraints: BoxConstraints(
+                          maxHeight: SizeConfig.widgetHeightSizeFirst),
                       child: Container(
                         height: SizeConfig.screenHeight * 0.3,
                         width: SizeConfig.screenWidth * 0.9,
@@ -541,6 +563,7 @@ class _profile_005 extends State<profile_005> {
                             0.0),
                         decoration: BoxDecoration(color: ColorConfig.Cream),
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
                             Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -856,9 +879,12 @@ class _profile_005 extends State<profile_005> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 5.0)),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: SizeConfig.widgetPaddingSize)),
                   ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 126),
+                    constraints: BoxConstraints(
+                        maxHeight: SizeConfig.widgetHeightSizeSecond),
                     child: Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: ColorConfig.Orange, width: 6),
@@ -872,34 +898,39 @@ class _profile_005 extends State<profile_005> {
                           SizeConfig.screenWidth * 0.02,
                           0.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
                           Container(
-                            child: Text("休みの日は何してる？",
-                                style: TextStyle(
-                                  color: ColorConfig.Black,
-                                  fontSize: SizeConfig.middleFontSize,
-                                )),
-                          ),
-                          Container(
-                            width: SizeConfig.screenWidth * 0.8,
-                            height: 20,
-                            child: TextField(
-                              controller: offDayController,
-                              maxLength: 16,
-                              decoration: InputDecoration(
-                                counterText: '',
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ColorConfig.White),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                Container(
+                                  child: Text("休みの日は何してる？",
+                                      style: TextStyle(
+                                        color: ColorConfig.Black,
+                                        fontSize: SizeConfig.middleFontSize,
+                                      )),
                                 ),
-                                filled: true,
-                                fillColor: ColorConfig.White,
-                              ),
-                              style: TextStyle(fontSize: 14),
-                            ),
-                          ),
+                                Container(
+                                  width: SizeConfig.screenWidth * 0.8,
+                                  height: 20,
+                                  child: TextField(
+                                    controller: offDayController,
+                                    maxLength: 16,
+                                    decoration: InputDecoration(
+                                      counterText: '',
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: ColorConfig.White),
+                                      ),
+                                      filled: true,
+                                      fillColor: ColorConfig.White,
+                                    ),
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                ),
+                              ])),
 
                           // Column(
                           //   children: <Widget>[
@@ -926,30 +957,37 @@ class _profile_005 extends State<profile_005> {
                           // ),
                           Padding(padding: EdgeInsets.all(3.0)),
                           Container(
-                            child: Text("生まれ変わるなら？",
-                                style: TextStyle(
-                                  color: ColorConfig.Black,
-                                  fontSize: SizeConfig.middleFontSize,
-                                )),
-                          ),
-                          Container(
-                            width: SizeConfig.screenWidth * 0.8,
-                            height: 20,
-                            child: TextField(
-                              controller: rebornController,
-                              maxLength: 16,
-                              decoration: InputDecoration(
-                                counterText: '',
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: ColorConfig.White),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                Container(
+                                  child: Text("生まれ変わるなら？",
+                                      style: TextStyle(
+                                        color: ColorConfig.Black,
+                                        fontSize: SizeConfig.middleFontSize,
+                                      )),
                                 ),
-                                filled: true,
-                                fillColor: ColorConfig.White,
-                              ),
-                              style: TextStyle(fontSize: 14),
-                            ),
-                          ),
+                                Container(
+                                  width: SizeConfig.screenWidth * 0.8,
+                                  height: 20,
+                                  child: TextField(
+                                    controller: rebornController,
+                                    maxLength: 16,
+                                    decoration: InputDecoration(
+                                      counterText: '',
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: ColorConfig.White),
+                                      ),
+                                      filled: true,
+                                      fillColor: ColorConfig.White,
+                                    ),
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                ),
+                              ])),
+
                           // Container(
                           //   child: Text("願いが一つ叶ったら？",
                           //       style: TextStyle(
@@ -973,7 +1011,9 @@ class _profile_005 extends State<profile_005> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 5.0)),
+                  Padding(
+                      padding: EdgeInsets.only(
+                          top: SizeConfig.widgetPaddingSize * 1.5)),
                   Container(
                     padding: EdgeInsets.fromLTRB(SizeConfig.screenWidth * 0.06,
                         0.0, SizeConfig.screenWidth * 0.06, 0.0),
@@ -982,7 +1022,8 @@ class _profile_005 extends State<profile_005> {
                       // mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         ConstrainedBox(
-                          constraints: BoxConstraints(maxHeight: 180),
+                          constraints: BoxConstraints(
+                              maxHeight: SizeConfig.widgetHeightSizeThird),
                           child: Container(
                             decoration: BoxDecoration(color: ColorConfig.Cream),
                             width: SizeConfig.screenWidth * 0.4,
@@ -1113,7 +1154,8 @@ class _profile_005 extends State<profile_005> {
                           ),
                         ),
                         ConstrainedBox(
-                          constraints: BoxConstraints(maxHeight: 180),
+                          constraints: BoxConstraints(
+                              maxHeight: SizeConfig.widgetHeightSizeThird),
                           child: Container(
                             decoration: BoxDecoration(color: ColorConfig.Cream),
                             width: SizeConfig.screenWidth * 0.4,
@@ -1150,6 +1192,7 @@ class _profile_005 extends State<profile_005> {
                                     style: TextStyle(fontSize: 14),
                                   ),
                                 ),
+                                
                                 Container(
                                   padding:
                                       EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
