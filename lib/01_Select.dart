@@ -33,7 +33,7 @@ class SizeConfig {
     //表示されるプロフィールのウィジェットの最大値を定義
     if (screenHeight > 700) {
       widgetWidthSize = screenWidth * 0.8;
-      widgetHeightSize = screenHeight * 0.8;
+      widgetHeightSize = screenHeight * 0.6;
     } else {
       widgetWidthSize = screenWidth * 0.6;
       widgetHeightSize = screenHeight * 0.6;

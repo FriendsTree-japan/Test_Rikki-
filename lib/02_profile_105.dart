@@ -33,12 +33,20 @@ class SizeConfig {
     smallFontSize = 12.0;
 
     //各ウィジェットの最大値を定義
-    widgetHeightSizeFirst = 200.0;
-    widgetHeightSizeSecond = 126.0;
-    widgetHeightSizeThird = 180.0;
+    if(screenHeight > 900){
+      widgetHeightSizeFirst = 250.0;
+      widgetHeightSizeSecond = 140.0;
+      widgetHeightSizeThird = 200.0;
+    }else {
+      widgetHeightSizeFirst = 200.0;
+      widgetHeightSizeSecond = 126.0;
+      widgetHeightSizeThird = 180.0;
+    }
 
     //各ウィジェット間のPaddingの値を定義
-    if (screenHeight > 700) {
+    if(screenHeight > 900) {
+      widgetPaddingSize = 20.0;
+    } else if (screenHeight > 700) {
       widgetPaddingSize = 15.0;
     } else {
       widgetPaddingSize = 5.0;
@@ -1042,26 +1050,37 @@ class _profile_005 extends State<profile_005> {
                                       )),
                                 ),
                                 Container(
-                                  height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
-                                  padding:
-                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
-                                  child: TextField(
-                                    controller: myBestTheme1Controller,
-                                    textAlign: TextAlign.center,
-                                    maxLength: 18,
-                                    decoration: InputDecoration(
-                                      counterText: '',
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: ColorConfig.White),
+                                    child: Stack(children: [
+                                  Container(
+                                      child: Image.asset(
+                                          'images/profile005/002_profile_005_best.png')),
+                                  Positioned(
+                                    top: 8,
+                                    left: 5,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 20,
+                                      width: SizeConfig.screenWidth * 0.34,
+                                      padding: EdgeInsets.fromLTRB(
+                                          3.0, 3.0, 0.0, 0.0),
+                                      child: TextField(
+                                        controller: myBestTheme1Controller,
+                                        textAlign: TextAlign.center,
+                                        maxLength: 18,
+                                        decoration: InputDecoration(
+                                          counterText: '',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: ColorConfig.White),
+                                          ),
+                                          filled: true,
+                                          fillColor: ColorConfig.White,
+                                        ),
+                                        style: TextStyle(fontSize: 14),
                                       ),
-                                      filled: true,
-                                      fillColor: ColorConfig.White,
                                     ),
-                                    style: TextStyle(fontSize: 14),
                                   ),
-                                ),
+                                ])),
                                 Container(
                                   padding:
                                       EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
@@ -1174,24 +1193,33 @@ class _profile_005 extends State<profile_005> {
                                       )),
                                 ),
                                 Container(
-                                  height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
-                                  child: TextField(
-                                    controller: myBestTheme2Controller,
-                                    textAlign: TextAlign.center,
-                                    maxLength: 18,
-                                    decoration: InputDecoration(
-                                      counterText: '',
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: ColorConfig.White),
-                                      ),
-                                      filled: true,
-                                      fillColor: ColorConfig.White,
-                                    ),
-                                    style: TextStyle(fontSize: 14),
-                                  ),
-                                ),
+                                    child: Stack(children: [
+                                  Container(
+                                      child: Image.asset(
+                                          'images/profile005/002_profile_005_best.png')),
+                                      Positioned(
+                                        top: 8,
+                                        left: 5,
+                                        child: Container(
+                                        height: 20,
+                                        width: SizeConfig.screenWidth * 0.34,
+                                        child: TextField(
+                                          controller: myBestTheme2Controller,
+                                          textAlign: TextAlign.center,
+                                          maxLength: 18,
+                                          decoration: InputDecoration(
+                                            counterText: '',
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: ColorConfig.White),
+                                            ),
+                                            filled: true,
+                                            fillColor: ColorConfig.White,
+                                          ),
+                                          style: TextStyle(fontSize: 14),
+                                        ),
+                                      ),)
+                                ])),
 
                                 Container(
                                   padding:
