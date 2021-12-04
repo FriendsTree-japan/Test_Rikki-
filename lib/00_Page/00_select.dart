@@ -1,19 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:profile_box_test/02_profile_002.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '00_admob_baner.dart';
-import '02_profile_001.dart';
-import '02_profile_002.dart';
-import '02_profile_003.dart';
-import '02_profile_004.dart';
-import '02_profile_105.dart';
-import '02_profile_006.dart';
-import '02_profile_007.dart';
-import '02_profile_008.dart';
-import '02_profile_009.dart';
-import '02_profile_010.dart';
-import '02_profile_011.dart';
+import '../01_Profile/01_profile_002.dart';
+import '../99_Others/99_admob_baner.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -55,9 +44,9 @@ class Select extends StatefulWidget {
 
 class _SelectState extends State<Select> {
   final List<String> imgList = [
-    'images/profile003.png',
-    'images/profile005.png',
-    'images/profile006.png',
+    'images/profile003_atode_deleate.png',
+    'images/profile002.png',
+    'images/profile006_atode_deleate.png',
   ];
   int _current = 0;
 
@@ -98,7 +87,6 @@ class _SelectState extends State<Select> {
                 return Container(
                     width: SizeConfig.widgetWidthSize,
                     height: SizeConfig.widgetHeightSize,
-
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: const Color(0xFF737373),
@@ -117,7 +105,7 @@ class _SelectState extends State<Select> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          profile_003.make()));
+                                          profile_005.make()));
                               break;
                             case 1: //プルフィール帳2
                               Navigator.push(
@@ -131,7 +119,7 @@ class _SelectState extends State<Select> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          profile_006.make()));
+                                          profile_005.make()));
                               break;
                           }
                         }));
@@ -160,16 +148,5 @@ class _SelectState extends State<Select> {
             )
           ]),
     );
-    //         Row(
-    //           mainAxisAlignment: MainAxisAlignment.start,
-    //           children: <Widget>[
-    //             Text('ちょっと大人の' ,style: TextStyle(color: Colors.lightGreen, fontSize: 25, )),
-    //             Text('のプロフィール帳', style: TextStyle(fontSize: 20)),
-    //           ],
-    //         ),
-    //       ],
-    //     ),
-    //   );
-    // }
   }
 }

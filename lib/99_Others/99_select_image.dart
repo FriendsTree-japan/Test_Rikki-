@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'profileDb.dart';
-import 'base64_helper.dart';
+import '99_base64_helper.dart';
 
 class HomeScreenModel extends ChangeNotifier {
   late String _base64ImageString = '';
@@ -48,8 +47,8 @@ class HomeScreenModel extends ChangeNotifier {
 
   /// 返却されたファイルパスが存在するときに、削除します
   void _deleteFile(
-      File targetFile,
-      ) async {
+    File targetFile,
+  ) async {
     try {
       final file = await _getLocalFile(targetFile);
       await file!.delete();

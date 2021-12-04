@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:screenshot/screenshot.dart';
-import 'main.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:collection/collection.dart';
 import 'package:path/path.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -18,7 +15,7 @@ class profileDb {
         "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)",
       );
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile005 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile002 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
       );
       await db.execute(
         "CREATE TABLE IF NOT EXISTS profile006 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, place TEXT, nickName TEXT, hobby TEXT, skill TEXT, myBoom TEXT, offDay TEXT, favoriteFood TEXT, favoriteMovie TEXT, favoriteAnime TEXT,favoriteTv TEXT, favoriteYouTube TEXT, favoritePlace TEXT)",
@@ -100,7 +97,7 @@ class profileDb {
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-          "CREATE TABLE IF NOT EXISTS profile005 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)");
+          "CREATE TABLE IF NOT EXISTS profile002 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)");
     });
     await database.transaction((txn) async {
       int id = await txn.rawInsert(query);
@@ -202,7 +199,7 @@ class profileDb {
     final Database db = await database;
 
     await db.update(
-      'profile005',
+      'profile002',
       plist.toMap_005(),
       where: "id = ?",
       whereArgs: [plist.id],
@@ -269,12 +266,11 @@ class profileDb {
           sliderValue3_p003: maps003[i]['sliderValue3'],
           slider3Koumoku1_p003: maps003[i]['slider3Koumoku1'],
           slider3Koumoku2_p003: maps003[i]['slider3Koumoku2'],
-          myImagePath_p003: maps003[i]['myImagePath']
-      );
+          myImagePath_p003: maps003[i]['myImagePath']);
     });
 
     final List<Map<String, dynamic>> maps005 =
-        await db.rawQuery('SELECT * FROM profile005');
+        await db.rawQuery('SELECT * FROM profile002');
     plist_005 = new List.generate(maps005.length, (i) {
       return ProList.ProList_005(
           id: maps005[i]['id'],
@@ -397,27 +393,26 @@ class ProList {
   String favoriteYouTube_p006 = "";
   String favoritePlace_p006 = "";
 
-  ProList.ProList_003({
-    required this.id,
-    required this.saveName,
-    required this.koshinYmd,
-    required this.name,
-    required this.birth_p003,
-    required this.place_p003,
-    required this.bloodType_p003,
-    required this.favoriteThing_p003,
-    required this.free_p003,
-    required this.sliderValue1_p003,
-    required this.slider1Koumoku1_p003,
-    required this.slider1Koumoku2_p003,
-    required this.sliderValue2_p003,
-    required this.slider2Koumoku1_p003,
-    required this.slider2Koumoku2_p003,
-    required this.sliderValue3_p003,
-    required this.slider3Koumoku1_p003,
-    required this.slider3Koumoku2_p003,
-    required this.myImagePath_p003
-  }) {
+  ProList.ProList_003(
+      {required this.id,
+      required this.saveName,
+      required this.koshinYmd,
+      required this.name,
+      required this.birth_p003,
+      required this.place_p003,
+      required this.bloodType_p003,
+      required this.favoriteThing_p003,
+      required this.free_p003,
+      required this.sliderValue1_p003,
+      required this.slider1Koumoku1_p003,
+      required this.slider1Koumoku2_p003,
+      required this.sliderValue2_p003,
+      required this.slider2Koumoku1_p003,
+      required this.slider2Koumoku2_p003,
+      required this.sliderValue3_p003,
+      required this.slider3Koumoku1_p003,
+      required this.slider3Koumoku2_p003,
+      required this.myImagePath_p003}) {
     this.tableName = "profile003";
   }
 
@@ -446,7 +441,7 @@ class ProList {
       required this.teme2MyBest1_p005,
       required this.teme2MyBest2_p005,
       required this.teme2MyBest3_p005}) {
-    this.tableName = "profile005";
+    this.tableName = "profile002";
   }
 
   ProList.ProList_006(
@@ -499,7 +494,7 @@ class ProList {
       'sliderValue3': sliderValue3_p003,
       'slider3Koumoku1': slider3Koumoku1_p003,
       'slider3Koumoku2': slider3Koumoku2_p003,
-      'myImagePath' : myImagePath_p003
+      'myImagePath': myImagePath_p003
     };
   }
 

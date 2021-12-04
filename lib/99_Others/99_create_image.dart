@@ -11,7 +11,7 @@ final convertWidgetToImageKey = GlobalKey();
 class WidgetToImageConverter {
   Future<ByteData?> exportToImage(GlobalKey globalKey) async {
     final boundary =
-    globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+        globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
     try {
       final image = await boundary.toImage(
         pixelRatio: 3,
@@ -43,7 +43,7 @@ class saveImage {
     final bytes = await WidgetToImageConverter().exportToImage(globalKey);
     if (bytes != null) {
       final result =
-      await ImageGallerySaver.saveImage(bytes.buffer.asUint8List());
+          await ImageGallerySaver.saveImage(bytes.buffer.asUint8List());
       print(result);
     }
   }

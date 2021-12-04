@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:screenshot/screenshot.dart';
-import 'main.dart';
-import '01_Select.dart';
-import 'profileDb.dart';
-import '01_Edit.dart';
-import 'CreateImage.dart';
-import 'profileShow.dart';
 import 'package:intl/intl.dart';
+import '../main.dart';
+import '../02_DateBase/common/02_profile_db.dart';
+import '../02_DateBase/common/02_profile_show.dart';
+import '../99_Others/99_create_image.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -33,18 +30,18 @@ class SizeConfig {
     smallFontSize = 12.0;
 
     //各ウィジェットの最大値を定義
-    if(screenHeight > 900){
+    if (screenHeight > 900) {
       widgetHeightSizeFirst = 250.0;
       widgetHeightSizeSecond = 140.0;
       widgetHeightSizeThird = 200.0;
-    }else {
+    } else {
       widgetHeightSizeFirst = 200.0;
       widgetHeightSizeSecond = 126.0;
       widgetHeightSizeThird = 180.0;
     }
 
     //各ウィジェット間のPaddingの値を定義
-    if(screenHeight > 900) {
+    if (screenHeight > 900) {
       widgetPaddingSize = 20.0;
     } else if (screenHeight > 700) {
       widgetPaddingSize = 15.0;
@@ -319,7 +316,7 @@ class _profile_005 extends State<profile_005> {
                                         DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
-                                        'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
+                                        'INSERT INTO profile002(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
                                         'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
 
                                     await proDb.saveData005(
@@ -435,7 +432,7 @@ class _profile_005 extends State<profile_005> {
                                     await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
-                                      'INSERT INTO profile005(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
+                                      'INSERT INTO profile002(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
                                       'VALUES("$saveName", "$date", "$name", "$nickName", "$birthYYYY", "$birthMM", "$birthDD", "$personality", "$skill", "$myBoom", "$recentThing", "$offDay", "$win1BillionYen", "$reborn", "$wish", "$myBestTheme1", "$teme1MyBest1", "$teme1MyBest2", "$teme1MyBest3", "$myBestTheme2", "$teme2MyBest1", "$teme2MyBest2", "$teme2MyBest3")';
 
                                   await proDb.saveData005(
@@ -535,7 +532,7 @@ class _profile_005 extends State<profile_005> {
               Container(
                 height: SizeConfig.screenHeight,
                 child: Image.asset(
-                    'images/profile005/002_Profile_005_background.png',
+                    'images/profile002/profile002_background.png',
                     fit: BoxFit.cover),
               ),
               Column(
@@ -1053,7 +1050,7 @@ class _profile_005 extends State<profile_005> {
                                     child: Stack(children: [
                                   Container(
                                       child: Image.asset(
-                                          'images/profile005/002_profile_005_best.png')),
+                                          'images/profile002/profile002_best.png')),
                                   Positioned(
                                     top: 8,
                                     left: 5,
@@ -1196,31 +1193,31 @@ class _profile_005 extends State<profile_005> {
                                     child: Stack(children: [
                                   Container(
                                       child: Image.asset(
-                                          'images/profile005/002_profile_005_best.png')),
-                                      Positioned(
-                                        top: 8,
-                                        left: 5,
-                                        child: Container(
-                                        height: 20,
-                                        width: SizeConfig.screenWidth * 0.34,
-                                        child: TextField(
-                                          controller: myBestTheme2Controller,
-                                          textAlign: TextAlign.center,
-                                          maxLength: 18,
-                                          decoration: InputDecoration(
-                                            counterText: '',
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                  color: ColorConfig.White),
-                                            ),
-                                            filled: true,
-                                            fillColor: ColorConfig.White,
+                                          'images/profile002/profile002_best.png')),
+                                  Positioned(
+                                    top: 8,
+                                    left: 5,
+                                    child: Container(
+                                      height: 20,
+                                      width: SizeConfig.screenWidth * 0.34,
+                                      child: TextField(
+                                        controller: myBestTheme2Controller,
+                                        textAlign: TextAlign.center,
+                                        maxLength: 18,
+                                        decoration: InputDecoration(
+                                          counterText: '',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: ColorConfig.White),
                                           ),
-                                          style: TextStyle(fontSize: 14),
+                                          filled: true,
+                                          fillColor: ColorConfig.White,
                                         ),
-                                      ),)
+                                        style: TextStyle(fontSize: 14),
+                                      ),
+                                    ),
+                                  )
                                 ])),
-
                                 Container(
                                   padding:
                                       EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),

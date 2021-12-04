@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import '01_Edit.dart';
-import 'profileDb.dart';
-import 'main.dart';
+import '../../main.dart';
 import 'package:intl/intl.dart';
+import '02_profile_db.dart';
 
 class profileShow {
-//   profileShow({Key? key,}) : super(key: key);
-//
-//   @override
-//   _profileShowState createState() => _profileShowState();
-// }
-//
-// class _profileShowState extends State<profileShow>  {
-//   Widget build(BuildContext context){
-//     return
-//
-//   }
   Future<void> confirmDeleteDialog(
       int id, String tableName, BuildContext context) async {
     return showDialog<void>(

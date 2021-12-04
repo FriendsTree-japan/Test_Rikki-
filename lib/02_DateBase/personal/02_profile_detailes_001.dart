@@ -1,12 +1,12 @@
 // import 'package:flutter/material.dart';
 // import 'package:screenshot/screenshot.dart';
 // import 'main.dart';
-// import '01_Select.dart';
+// import '00_select.dart';
 // import 'package:sqflite/sqflite.dart';
 // import 'package:collection/collection.dart';
 // import 'package:path/path.dart';
-// import 'profileDb.dart';
-// import '01_Edit.dart';
+// import '02_profile_db.dart';
+// import '00_edit.dart';
 //
 //   class ProfileDetailes extends StatefulWidget {
 //   final int id;

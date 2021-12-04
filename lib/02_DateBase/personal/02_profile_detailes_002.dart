@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:screenshot/screenshot.dart';
-import 'main.dart';
-import '01_Select.dart';
-
 
 class profile_005 extends StatefulWidget {
   @override
   _profile_005 createState() => _profile_005();
 }
-
 
 class _profile_005 extends State<profile_005> {
   @override
@@ -27,33 +22,28 @@ class _profile_005 extends State<profile_005> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: <Widget>[
-                  Column(
-                      children: <Widget>[
-                        Align(
-                          child:Container(
-                              child:Text("　My Profile"
-                                  ,style: TextStyle(color: Colors.blueAccent, fontSize: 24,))
-                          ),
-                        ),
-                      ]
-                  ),
+                  Column(children: <Widget>[
+                    Align(
+                      child: Container(
+                          child: Text("　My Profile",
+                              style: TextStyle(
+                                color: Colors.blueAccent,
+                                fontSize: 24,
+                              ))),
+                    ),
+                  ]),
                   Padding(padding: EdgeInsets.all(10.0)),
                 ],
               ),
             ),
-
-
             Container(
               padding: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
               child: Container(
                 padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: Color(0x72A2BEFF)
-                ),
-
-                child:
-                Column(
+                    color: Color(0x72A2BEFF)),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Row(
@@ -62,10 +52,11 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "わたし・ぼくの名前は"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("わたし・ぼくの名前は",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -74,7 +65,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 20,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 160,
@@ -85,17 +78,17 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  ""
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
@@ -104,7 +97,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 22,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 200,
@@ -115,37 +110,39 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "って呼んでね〜"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("って呼んでね〜",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "誕生日は"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("誕生日は",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
-
                         Column(
                           children: <Widget>[
                             Container(
                               child: TextField(
                                 maxLength: 4,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 60,
@@ -156,10 +153,11 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "年"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("年",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -168,7 +166,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 2,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 50,
@@ -179,20 +179,22 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "月"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("月",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
-
                         Column(
                           children: <Widget>[
                             Container(
                               child: TextField(
                                 maxLength: 2,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 50,
@@ -200,31 +202,31 @@ class _profile_005 extends State<profile_005> {
                             ),
                           ],
                         ),
-
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "日"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("日",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "性格は"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("性格は",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -233,7 +235,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 22,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 180,
@@ -244,44 +248,45 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "だと思ってるよ"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("だと思ってるよ",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "そんなわたし・ぼくだけど、これからもよろしくね"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("そんなわたし・ぼくだけど、これからもよろしくね",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "特技・趣味は"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("特技・趣味は",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -290,7 +295,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 30,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 240,
@@ -301,17 +308,17 @@ class _profile_005 extends State<profile_005> {
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "マイブームは"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("マイブームは",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -320,7 +327,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 28,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 215,
@@ -331,27 +340,28 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "で、"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("で、",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
                       ],
                     ),
                     Padding(padding: EdgeInsets.only(top: 10.0)),
-
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "最近やってみたいことは"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("最近やってみたいことは",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -360,7 +370,9 @@ class _profile_005 extends State<profile_005> {
                             Container(
                               child: TextField(
                                 maxLength: 14,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 120,
@@ -371,10 +383,11 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "かな〜"
-                                  ,style: TextStyle(color: Colors.black54, fontSize: 14,)
-                              ),
+                              child: Text("かな〜",
+                                  style: TextStyle(
+                                    color: Colors.black54,
+                                    fontSize: 14,
+                                  )),
                             ),
                           ],
                         ),
@@ -385,22 +398,24 @@ class _profile_005 extends State<profile_005> {
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 20.0)),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Column(
                   children: <Widget>[
                     Container(
-                      child: Text(
-                          "休みの日は何してる？"
-                          ,style: TextStyle(color: Color(0x860047FA), fontSize: 14,)
-                      ),
+                      child: Text("休みの日は何してる？",
+                          style: TextStyle(
+                            color: Color(0x860047FA),
+                            fontSize: 14,
+                          )),
                     ),
                     Container(
                       child: TextField(
                         maxLength: 16,
-                        decoration: const InputDecoration(counterText: '',),
+                        decoration: const InputDecoration(
+                          counterText: '',
+                        ),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
@@ -412,15 +427,18 @@ class _profile_005 extends State<profile_005> {
                 Column(
                   children: <Widget>[
                     Container(
-                      child: Text(
-                          "１０億円当たったら？"
-                          ,style: TextStyle(color: Color(0x860047FA), fontSize: 14,)
-                      ),
+                      child: Text("１０億円当たったら？",
+                          style: TextStyle(
+                            color: Color(0x860047FA),
+                            fontSize: 14,
+                          )),
                     ),
                     Container(
                       child: TextField(
                         maxLength: 16,
-                        decoration: const InputDecoration(counterText: '',),
+                        decoration: const InputDecoration(
+                          counterText: '',
+                        ),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
@@ -432,22 +450,24 @@ class _profile_005 extends State<profile_005> {
               ],
             ),
             Padding(padding: EdgeInsets.only(top: 15.0)),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Column(
                   children: <Widget>[
                     Container(
-                      child: Text(
-                          "生まれ変わるなら？"
-                          ,style: TextStyle(color: Color(0x860047FA), fontSize: 14,)
-                      ),
+                      child: Text("生まれ変わるなら？",
+                          style: TextStyle(
+                            color: Color(0x860047FA),
+                            fontSize: 14,
+                          )),
                     ),
                     Container(
                       child: TextField(
                         maxLength: 16,
-                        decoration: const InputDecoration(counterText: '',),
+                        decoration: const InputDecoration(
+                          counterText: '',
+                        ),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
@@ -459,15 +479,18 @@ class _profile_005 extends State<profile_005> {
                 Column(
                   children: <Widget>[
                     Container(
-                      child: Text(
-                          "願いが一つ叶ったら？"
-                          ,style: TextStyle(color: Color(0x860047FA), fontSize: 14,)
-                      ),
+                      child: Text("願いが一つ叶ったら？",
+                          style: TextStyle(
+                            color: Color(0x860047FA),
+                            fontSize: 14,
+                          )),
                     ),
                     Container(
                       child: TextField(
                         maxLength: 16,
-                        decoration: const InputDecoration(counterText: '',),
+                        decoration: const InputDecoration(
+                          counterText: '',
+                        ),
                         style: TextStyle(fontSize: 14),
                       ),
                       width: 150,
@@ -479,7 +502,6 @@ class _profile_005 extends State<profile_005> {
               ],
             ),
             Padding(padding: EdgeInsets.only(top: 20.0)),
-
             Container(
               padding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
               child: Container(
@@ -487,8 +509,7 @@ class _profile_005 extends State<profile_005> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
                     color: Color(0x86F2B8FF)),
-                child:
-                Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Row(
@@ -497,10 +518,11 @@ class _profile_005 extends State<profile_005> {
                         Column(
                           children: <Widget>[
                             Container(
-                              child: Text(
-                                  "My Best 3"
-                                  ,style: TextStyle(color: Color(0x86D400FA), fontSize: 18,)
-                              ),
+                              child: Text("My Best 3",
+                                  style: TextStyle(
+                                    color: Color(0x86D400FA),
+                                    fontSize: 18,
+                                  )),
                             ),
                           ],
                         ),
@@ -516,7 +538,9 @@ class _profile_005 extends State<profile_005> {
                               child: TextField(
                                 textAlign: TextAlign.center,
                                 maxLength: 18,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 160,
@@ -527,13 +551,15 @@ class _profile_005 extends State<profile_005> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第１位" ,style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第１位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
@@ -545,32 +571,35 @@ class _profile_005 extends State<profile_005> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第２位",style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第２位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
                                   height: 20.0,
                                 ),
-
                               ],
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第３位",style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第３位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
@@ -587,7 +616,9 @@ class _profile_005 extends State<profile_005> {
                               child: TextField(
                                 textAlign: TextAlign.center,
                                 maxLength: 18,
-                                decoration: const InputDecoration(counterText: '',),
+                                decoration: const InputDecoration(
+                                  counterText: '',
+                                ),
                                 style: TextStyle(fontSize: 14),
                               ),
                               width: 160,
@@ -598,51 +629,55 @@ class _profile_005 extends State<profile_005> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第１位",style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第１位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
                                   height: 20.0,
                                 ),
-
                               ],
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第２位",style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第２位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
                                   height: 20.0,
                                 ),
-
                               ],
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    child: Text("第３位",style: TextStyle(fontSize: 10))
-                                ),
+                                    child: Text("第３位",
+                                        style: TextStyle(fontSize: 10))),
                                 Padding(padding: EdgeInsets.all(5.0)),
                                 Container(
                                   child: TextField(
                                     maxLength: 16,
-                                    decoration: const InputDecoration(counterText: '',),
+                                    decoration: const InputDecoration(
+                                      counterText: '',
+                                    ),
                                     style: TextStyle(fontSize: 12),
                                   ),
                                   width: 120,
@@ -659,13 +694,9 @@ class _profile_005 extends State<profile_005> {
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-
-
-

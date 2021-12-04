@@ -9,6 +9,7 @@ class AdBanner extends StatelessWidget {
   }) : super(key: key);
 
   final AdSize size;
+
   @override
   Widget build(BuildContext context) {
     final banner = BannerAd(
