@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../01_Profile/01_profile_001.dart';
 import '../01_Profile/01_profile_002.dart';
 import '../99_Others/99_admob_baner.dart';
 
@@ -105,7 +106,7 @@ class _SelectState extends State<Select> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          profile_005.make()));
+                                          profile_001.make()));
                               break;
                             case 1: //プルフィール帳2
                               Navigator.push(

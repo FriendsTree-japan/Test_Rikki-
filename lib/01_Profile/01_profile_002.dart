@@ -611,7 +611,7 @@ class _profile_005 extends State<profile_005> {
                             ),
                             Padding(padding: EdgeInsets.only(top: 8.5)),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 Column(
                                   children: <Widget>[

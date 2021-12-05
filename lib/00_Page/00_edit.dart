@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../01_Profile/01_profile_001.dart';
 import '../01_Profile/01_profile_002.dart';
 import '../02_DateBase/common/02_profile_db.dart';
 import '../02_DateBase/common/02_profile_show.dart';
@@ -66,54 +67,31 @@ class _Edit extends State<Edit> {
                                 ),
                                 onTap: () {
                                   if (prolists[index].tableName ==
-                                      "profile003") {
+                                      "profile001") {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                profile_005.Details(
+                                                profile_001.Details(
                                                     prolists[index].id,
                                                     prolists[index].saveName,
                                                     prolists[index].koshinYmd,
                                                     prolists[index].name,
-                                                    prolists[index]
-                                                        .nickName_p005,
-                                                    prolists[index]
-                                                        .birthYYYY_p005,
-                                                    prolists[index]
-                                                        .birthMM_p005,
-                                                    prolists[index]
-                                                        .birthDD_p005,
-                                                    prolists[index]
-                                                        .personality_p005,
-                                                    prolists[index].skill_p005,
-                                                    prolists[index].myBoom_p005,
-                                                    prolists[index]
-                                                        .recentThing_p005,
-                                                    prolists[index].offDay_p005,
-                                                    prolists[index]
-                                                        .win1BillionYen_p005,
-                                                    prolists[index].reborn_p005,
-                                                    prolists[index].wish_p005,
-                                                    prolists[index]
-                                                        .myBestTheme1_p005,
-                                                    prolists[index]
-                                                        .teme1MyBest1_p005,
-                                                    prolists[
-                                                            index]
-                                                        .teme1MyBest2_p005,
-                                                    prolists[
-                                                            index]
-                                                        .teme1MyBest3_p005,
-                                                    prolists[
-                                                            index]
-                                                        .myBestTheme2_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest1_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest2_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest3_p005,
+                                                    prolists[index].birth_p001,
+                                                    prolists[index].hobby_p001,
+                                                    prolists[index].specialSkill_p001,
+                                                    prolists[index].freeTime_p001,
+                                                    prolists[index].SNS1_p001,
+                                                    prolists[index].SNS2_p001,
+                                                    prolists[index].ranking1_p001,
+                                                    prolists[index].first1_p001,
+                                                    prolists[index].second1_p001,
+                                                    prolists[index].third1_p001,
+                                                    prolists[index].ranking2_p001,
+                                                    prolists[index].first2_p001,
+                                                    prolists[index].second2_p001,
+                                                    prolists[index].third2_p001,
+                                                    prolists[index].freeeSpace_p001,
                                                     "1")));
                                   } else if (prolists[index].tableName ==
                                       "profile002") {
@@ -150,62 +128,13 @@ class _Edit extends State<Edit> {
                                                     prolists[index]
                                                         .teme1MyBest1_p005,
                                                     prolists[
-                                                            index]
+                                                    index]
                                                         .teme1MyBest2_p005,
                                                     prolists[
-                                                            index]
+                                                    index]
                                                         .teme1MyBest3_p005,
                                                     prolists[
-                                                            index]
-                                                        .myBestTheme2_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest1_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest2_p005,
-                                                    prolists[index]
-                                                        .teme2MyBest3_p005,
-                                                    "1")));
-                                  } else {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                profile_005.Details(
-                                                    prolists[index].id,
-                                                    prolists[index].saveName,
-                                                    prolists[index].koshinYmd,
-                                                    prolists[index].name,
-                                                    prolists[index]
-                                                        .nickName_p005,
-                                                    prolists[index]
-                                                        .birthYYYY_p005,
-                                                    prolists[index]
-                                                        .birthMM_p005,
-                                                    prolists[index]
-                                                        .birthDD_p005,
-                                                    prolists[index]
-                                                        .personality_p005,
-                                                    prolists[index].skill_p005,
-                                                    prolists[index].myBoom_p005,
-                                                    prolists[index]
-                                                        .recentThing_p005,
-                                                    prolists[index].offDay_p005,
-                                                    prolists[index]
-                                                        .win1BillionYen_p005,
-                                                    prolists[index].reborn_p005,
-                                                    prolists[index].wish_p005,
-                                                    prolists[index]
-                                                        .myBestTheme1_p005,
-                                                    prolists[index]
-                                                        .teme1MyBest1_p005,
-                                                    prolists[
-                                                            index]
-                                                        .teme1MyBest2_p005,
-                                                    prolists[
-                                                            index]
-                                                        .teme1MyBest3_p005,
-                                                    prolists[
-                                                            index]
+                                                    index]
                                                         .myBestTheme2_p005,
                                                     prolists[index]
                                                         .teme2MyBest1_p005,

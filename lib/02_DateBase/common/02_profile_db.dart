@@ -7,24 +7,63 @@ class profileDb {
   void createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT)",
       );
       await db.execute(
         "CREATE TABLE IF NOT EXISTS profile002 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
       );
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile006 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, place TEXT, nickName TEXT, hobby TEXT, skill TEXT, myBoom TEXT, offDay TEXT, favoriteFood TEXT, favoriteMovie TEXT, favoriteAnime TEXT,favoriteTv TEXT, favoriteYouTube TEXT, favoritePlace TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)",
       );
     });
     debugPrint("createData end");
   }
 
   //データセット処理(プロフィール)
+  //プロフィール帳①作成
+  Future<void> saveData001(
+      String saveName,
+      String koshinYmd,
+      String name,
+      String birth,
+      String hobby,
+      String specialSkill,
+      String freeTime,
+      String SNS1,
+      String SNS2,
+      String ranking1,
+      String first1,
+      String second1,
+      String third1,
+      String ranking2,
+      String first2,
+      String second2,
+      String third2,
+      String freeeSpace,
+      String query) async {
+    debugPrint("insertData start");
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "ftProBook77.db");
+    print("$saveName");
+    print("$query");
+    Database database = await openDatabase(path, version: 1,
+        onCreate: (Database db, int version) async {
+          await db.execute(
+              "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT)");
+        });
+    await database.transaction((txn) async {
+      int id = await txn.rawInsert(query);
+      print("insert: $id");
+    });
+
+    debugPrint("insertSaveData end");
+  }
+
   //プロフィール帳③作成
   Future<void> saveData003(
       String saveName,
@@ -48,7 +87,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     print("$saveName");
     print("$query");
     Database database = await openDatabase(path, version: 1,
@@ -92,7 +131,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -130,7 +169,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -150,7 +189,7 @@ class profileDb {
   Future<void> deleteData(int id, String tableName) async {
     debugPrint("DeleteData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -167,11 +206,31 @@ class profileDb {
     );
   }
 
+  //データ更新プロフィール001
+  Future<void> updateData001(ProList plist) async {
+    debugPrint("Updata start");
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "ftProBook77.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+
+    await db.update(
+      'profile001',
+      plist.toMap_001(),
+      where: "id = ?",
+      whereArgs: [plist.id],
+      conflictAlgorithm: ConflictAlgorithm.abort,
+    );
+  }
+
   //データ更新プロフィール003
   Future<void> updateData003(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -191,7 +250,7 @@ class profileDb {
   Future<void> updateData005(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -212,7 +271,7 @@ class profileDb {
   Future<void> updateData006(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -232,16 +291,43 @@ class profileDb {
 //データ選択(List表示)
   Future<List<ProList>> getDataList() async {
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook.db");
+    String path = join(dbPath, "ftProBook77.db");
     final database = await openDatabase(
       path,
       version: 1,
     );
     final Database db = await database;
+    List<ProList> plist_001 = <ProList>[];
     List<ProList> plist_003 = <ProList>[];
     List<ProList> plist_005 = <ProList>[];
-    List<ProList> plist_006 = <ProList>[];
+    // List<ProList> plist_006 = <ProList>[];
     List<ProList> plist = <ProList>[];
+
+    final List<Map<String, dynamic>> maps001 =
+    await db.rawQuery('SELECT * FROM profile001');
+
+    plist_001 = new List.generate(maps001.length, (i) {
+      return ProList.ProList_001(
+          id: maps001[i]['id'],
+          saveName: maps001[i]['saveName'],
+          koshinYmd: maps001[i]['koshinYmd'],
+          name: maps001[i]['name'],
+          birth_p001: maps001[i]['birth'],
+          hobby_p001: maps001[i]['hobby'],
+          specialSkill_p001: maps001[i]['specialSkill'],
+          freeTime_p001: maps001[i]['freeTime'],
+          SNS1_p001: maps001[i]['SNS1'],
+          SNS2_p001: maps001[i]['SNS2'],
+          ranking1_p001: maps001[i]['ranking1'],
+          first1_p001: maps001[i]['first1'],
+          second1_p001: maps001[i]['second1'],
+          third1_p001: maps001[i]['third1'],
+          ranking2_p001: maps001[i]['ranking2'],
+          first2_p001: maps001[i]['first2'],
+          second2_p001: maps001[i]['second2'],
+          third2_p001: maps001[i]['third2'],
+          freeeSpace_p001: maps001[i]['freeeSpace']);
+    });
 
     final List<Map<String, dynamic>> maps003 =
         await db.rawQuery('SELECT * FROM profile003');
@@ -299,32 +385,32 @@ class profileDb {
           teme2MyBest3_p005: maps005[i]['teme2MyBest3']);
     });
 
-    final List<Map<String, dynamic>> maps006 =
-        await db.rawQuery('SELECT * FROM profile006');
-    plist_006 = new List.generate(maps006.length, (i) {
-      return ProList.ProList_006(
-          id: maps006[i]['id'],
-          saveName: maps006[i]['saveName'],
-          koshinYmd: maps006[i]['koshinYmd'],
-          name: maps006[i]['name'],
-          birthYYYY_p006: maps006[i]['birthYYYY'],
-          birthMM_p006: maps006[i]['birthMM'],
-          birthDD_p006: maps006[i]['birthDD'],
-          place_p006: maps006[i]['place'],
-          nickName_p006: maps006[i]['nickName'],
-          hobby_p006: maps006[i]['hobby'],
-          skill_p006: maps006[i]['skill'],
-          myBoom_p006: maps006[i]['myBoom'],
-          offDay_p006: maps006[i]['offDay'],
-          favoriteFood_p006: maps006[i]['favoriteFood'],
-          favoriteMovie_p006: maps006[i]['favoriteMovie'],
-          favoriteAnime_p006: maps006[i]['favoriteAnime'],
-          favoriteTv_p006: maps006[i]['favoriteTv'],
-          favoriteYouTube_p006: maps006[i]['favoriteYouTube'],
-          favoritePlace_p006: maps006[i]['favoritePlace']);
-    });
+    // final List<Map<String, dynamic>> maps006 =
+    //     await db.rawQuery('SELECT * FROM profile006');
+    // plist_006 = new List.generate(maps006.length, (i) {
+    //   return ProList.ProList_006(
+    //       id: maps006[i]['id'],
+    //       saveName: maps006[i]['saveName'],
+    //       koshinYmd: maps006[i]['koshinYmd'],
+    //       name: maps006[i]['name'],
+    //       birthYYYY_p006: maps006[i]['birthYYYY'],
+    //       birthMM_p006: maps006[i]['birthMM'],
+    //       birthDD_p006: maps006[i]['birthDD'],
+    //       place_p006: maps006[i]['place'],
+    //       nickName_p006: maps006[i]['nickName'],
+    //       hobby_p006: maps006[i]['hobby'],
+    //       skill_p006: maps006[i]['skill'],
+    //       myBoom_p006: maps006[i]['myBoom'],
+    //       offDay_p006: maps006[i]['offDay'],
+    //       favoriteFood_p006: maps006[i]['favoriteFood'],
+    //       favoriteMovie_p006: maps006[i]['favoriteMovie'],
+    //       favoriteAnime_p006: maps006[i]['favoriteAnime'],
+    //       favoriteTv_p006: maps006[i]['favoriteTv'],
+    //       favoriteYouTube_p006: maps006[i]['favoriteYouTube'],
+    //       favoritePlace_p006: maps006[i]['favoritePlace']);
+    // });
 
-    plist = plist_003 + plist_005 + plist_006;
+    plist = plist_001 + plist_003 + plist_005;
     return plist;
   }
 }
@@ -336,6 +422,24 @@ class ProList {
   String name = "";
   int id = 0;
   String tableName = "";
+
+  //プロフィール帳①
+  String birth_p001 = "";
+  String place_p001 = "";
+  String hobby_p001 = "";
+  String specialSkill_p001 = "";
+  String freeTime_p001 = "";
+  String SNS1_p001 = "";
+  String SNS2_p001 = "";
+  String ranking1_p001 = "";
+  String first1_p001 = "";
+  String second1_p001 = "";
+  String third1_p001 = "";
+  String ranking2_p001 = "";
+  String first2_p001 = "";
+  String second2_p001 = "";
+  String third2_p001 = "";
+  String freeeSpace_p001 = "";
 
   //プロフィール帳③
   String birth_p003 = "";
@@ -392,6 +496,29 @@ class ProList {
   String favoriteTv_p006 = "";
   String favoriteYouTube_p006 = "";
   String favoritePlace_p006 = "";
+
+  ProList.ProList_001(
+      {required this.id,
+        required this.saveName,
+        required this.koshinYmd,
+        required this.name,
+        required this.birth_p001,
+        required this.hobby_p001,
+        required this.specialSkill_p001,
+        required this.freeTime_p001,
+        required this.SNS1_p001,
+        required this.SNS2_p001,
+        required this.ranking1_p001,
+        required this.first1_p001,
+        required this.second1_p001,
+        required this.third1_p001,
+        required this.ranking2_p001,
+        required this.first2_p001,
+        required this.second2_p001,
+        required this.third2_p001,
+        required this.freeeSpace_p001}) {
+    this.tableName = "profile001";
+  }
 
   ProList.ProList_003(
       {required this.id,
@@ -473,6 +600,30 @@ class ProList {
   //   required this.myBestTheme1_p005,required this.teme1MyBest1_p005,required this.teme1MyBest2_p005,required this.teme1MyBest3_p005,
   //   required this.myBestTheme2_p005,required this.teme2MyBest1_p005,required this.teme2MyBest2_p005,required this.teme2MyBest3_p005
   // });
+
+  Map<String, dynamic> toMap_001() {
+    return {
+      'id': id,
+      'saveName': saveName,
+      'koshinYmd': koshinYmd,
+      'name': name,
+      'birth': birth_p001,
+      'hobby': hobby_p001,
+      'specialSkill': specialSkill_p001,
+      'freeTime': freeTime_p001,
+      'SNS1': SNS1_p001,
+      'SNS2': SNS2_p001,
+      'ranking1': ranking1_p001,
+      'first1': first1_p001,
+      'second1': second1_p001,
+      'third1': third1_p001,
+      'ranking2': ranking2_p001,
+      'first2': first2_p001,
+      'second2': second2_p001,
+      'third2': third2_p001,
+      'freeeSpace': freeeSpace_p001
+    };
+  }
 
   Map<String, dynamic> toMap_003() {
     return {
