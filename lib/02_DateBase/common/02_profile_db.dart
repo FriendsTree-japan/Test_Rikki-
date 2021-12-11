@@ -18,7 +18,7 @@ class profileDb {
         "CREATE TABLE IF NOT EXISTS profile002 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
       );
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, location TEXT, SNS1 TEXT, SNS2 TEXT, text1 TEXT, text2 TEXT, personal1 TEXT, personal2 TEXT, hobby 1 TEXT, hobby2 TEXT, tokugi TEXT, dream TEXT, man TEXT, kutiiguse TEXT, sukilaction TEXT, freespace TEXT)",
       );
     });
     debugPrint("createData end");
@@ -71,19 +71,21 @@ class profileDb {
       String name,
       String birth,
       String place,
-      String bloodType,
-      String favoriteThing,
-      String free,
-      double _sliderValue1,
-      String slider1Koumoku1,
-      String slider1Koumoku2,
-      double _sliderValue2,
-      String slider2Koumoku1,
-      String slider2Koumoku2,
-      double _sliderValue3,
-      String slider3Koumoku1,
-      String slider3Koumoku2,
-      String myImagePath,
+      String location,
+      String SNS1,
+      String SNS2,
+      String text1,
+      String text2,
+      String personal1,
+      String personal2,
+      String hobby1,
+      String hobby2,
+      String tokugi,
+      String dream,
+      String man,
+      String kutiiguse,
+      String sukilaction,
+      String freespace,
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
@@ -93,7 +95,7 @@ class profileDb {
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-          "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, bloodType TEXT, favoriteThing TEXT, free TEXT, sliderValue1 REAL, slider1Koumoku1 TEXT, slider1Koumoku2 TEXT, sliderValue2 REAL, slider2Koumoku1 TEXT, slider2Koumoku2 TEXT, sliderValue3 REAL, slider3Koumoku1 TEXT, slider3Koumoku2 TEXT, myImagePath TEXT)");
+          "CREATE TABLE IF NOT EXISTS profile003 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, place TEXT, location TEXT, SNS1 TEXT, SNS2 TEXT, text1 TEXT, text2 TEXT, personal1 TEXT, personal2 TEXT, hobby 1 TEXT, hobby2 TEXT, tokugi TEXT, dream TEXT, man TEXT, kutiiguse TEXT, sukilaction TEXT, freespace TEXT)");
     });
     await database.transaction((txn) async {
       int id = await txn.rawInsert(query);
@@ -340,19 +342,22 @@ class profileDb {
           name: maps003[i]['name'],
           birth_p003: maps003[i]['birth'],
           place_p003: maps003[i]['place'],
-          bloodType_p003: maps003[i]['bloodType'],
-          favoriteThing_p003: maps003[i]['favoriteThing'],
-          free_p003: maps003[i]['free'],
-          sliderValue1_p003: maps003[i]['sliderValue1'],
-          slider1Koumoku1_p003: maps003[i]['slider1Koumoku1'],
-          slider1Koumoku2_p003: maps003[i]['slider1Koumoku2'],
-          sliderValue2_p003: maps003[i]['sliderValue2'],
-          slider2Koumoku1_p003: maps003[i]['slider2Koumoku1'],
-          slider2Koumoku2_p003: maps003[i]['slider2Koumoku2'],
-          sliderValue3_p003: maps003[i]['sliderValue3'],
-          slider3Koumoku1_p003: maps003[i]['slider3Koumoku1'],
-          slider3Koumoku2_p003: maps003[i]['slider3Koumoku2'],
-          myImagePath_p003: maps003[i]['myImagePath']);
+          location_p003: maps003[i]['location'],
+          SNS1_p003: maps003[i]['SNS1'],
+          SNS2_p003: maps003[i]['SNS2'],
+          text1_p003: maps003[i]['text1'],
+          text2_p003: maps003[i]['text2'],
+          personal1_p003: maps003[i]['personal1'],
+          personal2_p003: maps003[i]['personal2'],
+          hobby1_p003: maps003[i]['hobby1'],
+          hobby2_p003: maps003[i]['hobby2'],
+          tokugi_p003: maps003[i]['tokugi'],
+          dream_p003: maps003[i]['dream'],
+          man_p003: maps003[i]['man'],
+          kutiiguse_p003: maps003[i]['kutiiguse'],
+          sukilaction_p003: maps003[i]['sukilaction'],
+          freespace_p003: maps003[i]['freespace']);
+
     });
 
     final List<Map<String, dynamic>> maps005 =
@@ -444,19 +449,21 @@ class ProList {
   //プロフィール帳③
   String birth_p003 = "";
   String place_p003 = "";
-  String bloodType_p003 = "";
-  String favoriteThing_p003 = "";
-  String free_p003 = "";
-  double sliderValue1_p003 = 0.0;
-  String slider1Koumoku1_p003 = "";
-  String slider1Koumoku2_p003 = "";
-  String slider2Koumoku1_p003 = "";
-  String slider2Koumoku2_p003 = "";
-  String slider3Koumoku1_p003 = "";
-  String slider3Koumoku2_p003 = "";
-  double sliderValue2_p003 = 0.0;
-  double sliderValue3_p003 = 0.0;
-  String myImagePath_p003 = "";
+  String location_p003 = "";
+  String SNS1_p003 = "";
+  String SNS2_p003 = "";
+  String text1_p003 = "";
+  String text2_p003 = "";
+  String personal1_p003 = "";
+  String personal2_p003 = "";
+  String hobby1_p003 = "";
+  String hobby2_p003 = "";
+  String tokugi_p003 = "";
+  String dream_p003 = "";
+  String man_p003 = "";
+  String kutiiguse_p003 = "";
+  String sukilaction_p003 = "";
+  String freespace_p003 = "";
 
   //プロフィール帳⑤
   String nickName_p005 = "";
@@ -527,19 +534,21 @@ class ProList {
       required this.name,
       required this.birth_p003,
       required this.place_p003,
-      required this.bloodType_p003,
-      required this.favoriteThing_p003,
-      required this.free_p003,
-      required this.sliderValue1_p003,
-      required this.slider1Koumoku1_p003,
-      required this.slider1Koumoku2_p003,
-      required this.sliderValue2_p003,
-      required this.slider2Koumoku1_p003,
-      required this.slider2Koumoku2_p003,
-      required this.sliderValue3_p003,
-      required this.slider3Koumoku1_p003,
-      required this.slider3Koumoku2_p003,
-      required this.myImagePath_p003}) {
+      required this.location_p003,
+      required this.SNS1_p003,
+      required this.SNS2_p003,
+      required this.text1_p003,
+      required this.text2_p003,
+      required this.personal1_p003,
+      required this.personal2_p003,
+      required this.hobby1_p003,
+      required this.hobby2_p003,
+      required this.tokugi_p003,
+      required this.dream_p003,
+      required this.man_p003,
+        required this.kutiiguse_p003,
+        required this.sukilaction_p003,
+        required this.freespace_p003}) {
     this.tableName = "profile003";
   }
 
@@ -633,19 +642,21 @@ class ProList {
       'name': name,
       'birth': birth_p003,
       'place': place_p003,
-      'bloodType': bloodType_p003,
-      'favoriteThing': favoriteThing_p003,
-      'free': free_p003,
-      'sliderValue1': sliderValue1_p003,
-      'slider1Koumoku1': slider1Koumoku1_p003,
-      'slider1Koumoku2': slider1Koumoku2_p003,
-      'sliderValue2': sliderValue2_p003,
-      'slider2Koumoku1': slider2Koumoku1_p003,
-      'slider2Koumoku2': slider2Koumoku2_p003,
-      'sliderValue3': sliderValue3_p003,
-      'slider3Koumoku1': slider3Koumoku1_p003,
-      'slider3Koumoku2': slider3Koumoku2_p003,
-      'myImagePath': myImagePath_p003
+      'location': location_p003,
+      'SNS1': SNS1_p003,
+      'SNS2': SNS2_p003,
+      'text1': text1_p003,
+      'text2': text2_p003,
+      'personal1': personal1_p003,
+      'personal2': personal2_p003,
+      'hobby1': hobby1_p003,
+      'hobby2': hobby2_p003,
+      'tokugi': tokugi_p003,
+      'dream': dream_p003,
+      'man': man_p003,
+      'kutiiguse': kutiiguse_p003,
+      'sukilaction': sukilaction_p003,
+      'freespace': freespace_p003
     };
   }
 

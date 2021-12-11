@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../01_Profile/01_profile_001.dart';
 import '../01_Profile/01_profile_002.dart';
+import '../01_Profile/01_profile_003.dart';
 import '../02_DateBase/common/02_profile_db.dart';
 import '../02_DateBase/common/02_profile_show.dart';
 
@@ -142,6 +143,35 @@ class _Edit extends State<Edit> {
                                                         .teme2MyBest2_p005,
                                                     prolists[index]
                                                         .teme2MyBest3_p005,
+                                                    "1")));
+                                  }else if (prolists[index].tableName ==
+                                      "profile003") {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                profile_003.Details(
+                                                    prolists[index].id,
+                                                    prolists[index].saveName,
+                                                    prolists[index].koshinYmd,
+                                                    prolists[index].name,
+                                                    prolists[index].birth_p003,
+                                                    prolists[index].place_p003,
+                                                    prolists[index].location_p003,
+                                                    prolists[index].SNS1_p003,
+                                                    prolists[index].SNS2_p003,
+                                                    prolists[index].text1_p003,
+                                                    prolists[index].text2_p003,
+                                                    prolists[index].personal1_p003,
+                                                    prolists[index].personal2_p003,
+                                                    prolists[index].hobby1_p003,
+                                                    prolists[index].hobby2_p003,
+                                                    prolists[index].tokugi_p003,
+                                                    prolists[index].dream_p003,
+                                                    prolists[index].man_p003,
+                                                    prolists[index].kutiiguse_p003,
+                                                    prolists[index].sukilaction_p003,
+                                                    prolists[index].freespace_p003,
                                                     "1")));
                                   }
                                 },
