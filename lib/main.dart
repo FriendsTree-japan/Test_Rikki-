@@ -115,6 +115,13 @@ class TabPage extends StatelessWidget {
                     color: const Color(0xFF737373),
                   )),
               onTap: _FAQURL,
+            ),
+            ListTile(
+              title: Text('利用規約',
+                  style: TextStyle(
+                    color: const Color(0xFF737373),
+                  )),
+              onTap: _rulesURL,
             )
           ],
         )),
@@ -130,7 +137,7 @@ class TabPage extends StatelessWidget {
 }
 
 void _manualURL() async {
-  const url = 'https://www.notion.so/4302c662ffb6440e9b5e7cc4ec470be0';
+  const url = 'https://dented-handball-204.notion.site/0fae7630d2d44c23afab34d9983a9eca';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -139,7 +146,16 @@ void _manualURL() async {
 }
 
 void _FAQURL() async {
-  const url = 'https://www.notion.so/4ed9feed73ad4162a9f1c52a41d956e8';
+  const url = 'https://dented-handball-204.notion.site/e9fd0cbcaa7b44539a6c82503b7be669';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+void _rulesURL() async {
+  const url = 'https://dented-handball-204.notion.site/303e688e5ef44507be7895bab4127b39';
   if (await canLaunch(url)) {
     await launch(url);
   } else {

@@ -606,42 +606,52 @@ class _profile_003 extends State<profile_003> {
                       style: TextStyle(fontSize: 12),
                     ),
                   ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: text1Controller,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: text2Controller,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                  // Column(
+                  //   children: [
+                  //     Container(
+                  //       decoration: BoxDecoration(color: ColorConfig.skyblue),
+                  //       child: Row(
+                  //         children: [
+                  //           Container(
+                  //             child: TextField(
+                  //               controller: text1Controller,
+                  //               maxLength: 16,
+                  //               decoration: InputDecoration(
+                  //                 counterText: '',
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   borderSide: BorderSide(
+                  //                       color: ColorConfig.White),
+                  //                 ),
+                  //                 filled: true,
+                  //                 fillColor: ColorConfig.White,
+                  //               ),
+                  //               style: TextStyle(fontSize: 12),
+                  //             ),
+                  //           ),
+                  //           Container(
+                  //             height: 20,
+                  //             width: SizeConfig.screenWidth * 0.3,
+                  //             child: TextField(
+                  //               controller: text2Controller,
+                  //               maxLength: 16,
+                  //               decoration: InputDecoration(
+                  //                 counterText: '',
+                  //                 enabledBorder: OutlineInputBorder(
+                  //                   borderSide: BorderSide(
+                  //                       color: ColorConfig.White),
+                  //                 ),
+                  //                 filled: true,
+                  //                 fillColor: ColorConfig.White,
+                  //               ),
+                  //               style: TextStyle(fontSize: 12),
+                  //             ),
+                  //           ),
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+
                   Container(
                     height: 20,
                     width: SizeConfig.screenWidth * 0.3,
