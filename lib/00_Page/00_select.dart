@@ -46,9 +46,9 @@ class Select extends StatefulWidget {
 
 class _SelectState extends State<Select> {
   final List<String> imgList = [
-    'images/profile003_atode_deleate.png',
-    'images/profile002.png',
-    'images/profile006_atode_deleate.png',
+    'images/select_profile_images/profile001.jpg',
+    'images/select_profile_images/profile002.png',
+    'images/select_profile_images/profile003.png',
   ];
   int _current = 0;
 
@@ -56,7 +56,7 @@ class _SelectState extends State<Select> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: const Color(0xFFFAF7F3),
+      backgroundColor: const Color(0xFFFFFFFF),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -90,10 +90,10 @@ class _SelectState extends State<Select> {
                     width: SizeConfig.widgetWidthSize,
                     height: SizeConfig.widgetHeightSize,
                     decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xFF737373),
-                      ),
-                      borderRadius: BorderRadius.circular(5),
+                      // border: Border.all(
+                      //   color: const Color(0xFF737373),
+                      // ),
+                      // borderRadius: BorderRadius.circular(5),
                     ),
                     child: ListTile(
                         title: Image.asset(
@@ -107,14 +107,14 @@ class _SelectState extends State<Select> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          profile_001.make()));
+                                          profile_005.make()));
                               break;
                             case 1: //プルフィール帳2
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          profile_005.make()));
+                                          profile_001.make()));
                               break;
                             case 2: //プルフィール帳2
                               Navigator.push(
@@ -138,7 +138,7 @@ class _SelectState extends State<Select> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == index
-                        ? Color.fromRGBO(115, 115, 115, 1.0)
+                        ? Color.fromRGBO(137, 211, 229, 1.0)
                         : Color.fromRGBO(115, 115, 115, 1.0),
                   ),
                 );
