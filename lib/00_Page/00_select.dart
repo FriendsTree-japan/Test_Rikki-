@@ -138,7 +138,7 @@ class _SelectState extends State<Select> {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == index
-                        ? Color.fromRGBO(137, 211, 229, 1.0)
+                        ? Color.fromRGBO(76, 175, 80, 1.0)
                         : Color.fromRGBO(115, 115, 115, 1.0),
                   ),
                 );

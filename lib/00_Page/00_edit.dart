@@ -58,7 +58,7 @@ class _Edit extends State<Edit> {
                                     Text(
                                   '${prolists[index].saveName}',
                                   style: TextStyle(
-                                      color: Colors.blue, fontSize: 18),
+                                      color: Colors.green, fontSize: 18),
                                 ),
                                 subtitle: Text(
                                   '${prolists[index].koshinYmd}',

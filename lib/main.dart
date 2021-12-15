@@ -20,7 +20,7 @@ class _MyApp extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: TabPage(0),
@@ -44,8 +44,8 @@ class TabPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.edit_sharp,size: 16),
-          Text( '　新規作成'),
+          Icon(Icons.edit_sharp, size: 16),
+          Text('　新規作成'),
         ],
       ),
     ),
@@ -53,8 +53,8 @@ class TabPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.app_registration,size: 16),
-          Text( '　一覧'),
+          Icon(Icons.app_registration, size: 16),
+          Text('　一覧'),
         ],
       ),
     ),
@@ -73,28 +73,28 @@ class TabPage extends StatelessWidget {
       length: _tab.length,
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80.0),
-          child: PreferredSize(
-            preferredSize: Size.fromHeight(40.0),
-            child: AppBar(
-              title: Text("Profile Book App",
-                  style: TextStyle(
-                    color: const Color(0xFF737373),
-                    fontSize: 18,
-                  )),
-              iconTheme: const IconThemeData(
-                color: const Color(0xFF737373),
+            preferredSize: Size.fromHeight(80.0),
+            child: PreferredSize(
+              preferredSize: Size.fromHeight(40.0),
+              child: AppBar(
+                title: Text("Profile Book App",
+                    style: TextStyle(
+                      color: const Color(0xFF737373),
+                      fontSize: 18,
+                      fontFamily: 'Nicofont',
+                    )),
+                iconTheme: const IconThemeData(
+                  color: const Color(0xFF737373),
+                ),
+                backgroundColor: const Color(0xFFFFFFFF),
+                bottom: TabBar(
+                  tabs: _tab,
+                  labelColor: const Color(0xFF737373),
+                  unselectedLabelColor: const Color(0xFF737373),
+                  indicatorColor: const Color(0xFF737373),
+                ),
               ),
-              backgroundColor: const Color(0xFFFFFFFF),
-              bottom: TabBar(
-                tabs: _tab,
-                labelColor: const Color(0xFF737373),
-                unselectedLabelColor: const Color(0xFF737373),
-                indicatorColor: const Color(0xFF737373),
-              ),
-            ),
-          )
-        ),
+            )),
         drawer: Drawer(
             child: ListView(
           children: <Widget>[
@@ -125,6 +125,17 @@ class TabPage extends StatelessWidget {
                     color: const Color(0xFF737373),
                   )),
               onTap: _rulesURL,
+            ),
+            ListTile(
+              title: Text('ソフトウェアライセンス',
+                  style: TextStyle(
+                    color: const Color(0xFF737373),
+                  )),
+              onTap: () => showLicensePage(
+                context: context,
+                applicationName: 'ProfileBookApp',
+                applicationVersion: '1.0.0',
+              ),
             )
           ],
         )),
@@ -140,7 +151,8 @@ class TabPage extends StatelessWidget {
 }
 
 void _manualURL() async {
-  const url = 'https://dented-handball-204.notion.site/0fae7630d2d44c23afab34d9983a9eca';
+  const url =
+      'https://dented-handball-204.notion.site/0fae7630d2d44c23afab34d9983a9eca';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -149,7 +161,8 @@ void _manualURL() async {
 }
 
 void _FAQURL() async {
-  const url = 'https://dented-handball-204.notion.site/e9fd0cbcaa7b44539a6c82503b7be669';
+  const url =
+      'https://dented-handball-204.notion.site/e9fd0cbcaa7b44539a6c82503b7be669';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -158,7 +171,8 @@ void _FAQURL() async {
 }
 
 void _rulesURL() async {
-  const url = 'https://dented-handball-204.notion.site/303e688e5ef44507be7895bab4127b39';
+  const url =
+      'https://dented-handball-204.notion.site/303e688e5ef44507be7895bab4127b39';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
