@@ -7,12 +7,12 @@ class profileDb {
   void createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(
-        "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT)",
+        "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT,myImagePath TEXT)",
       );
       await db.execute(
         "CREATE TABLE IF NOT EXISTS profile002 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, nickName TEXT, birthYYYY TEXT, birthMM TEXT, birthDD TEXT, personality TEXT, skill TEXT, myBoom TEXT, recentThing TEXT, offDay TEXT, win1BillionYen TEXT, reborn TEXT, wish TEXT,myBestTheme1 TEXT, teme1MyBest1 TEXT, teme1MyBest2 TEXT, teme1MyBest3 TEXT, myBestTheme2 TEXT, teme2MyBest1 TEXT, teme2MyBest2 TEXT, teme2MyBest3 TEXT)",
@@ -45,16 +45,17 @@ class profileDb {
       String second2,
       String third2,
       String freeeSpace,
+      String myImagePath,
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     print("$saveName");
     print("$query");
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
           await db.execute(
-              "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT)");
+              "CREATE TABLE IF NOT EXISTS profile001 (id INTEGER PRIMARY KEY, saveName TEXT, koshinYmd TEXT , name TEXT, birth TEXT, hobby TEXT, specialSkill TEXT, freeTime TEXT, SNS1 TEXT, SNS2 TEXT, ranking1 TEXT, first1 TEXT,second1 TEXT,third1 TEXT, ranking2 TEXT, first2 TEXT,second2 TEXT,third2 TEXT,freeeSpace TEXT,myImagePath TEXT)");
         });
     await database.transaction((txn) async {
       int id = await txn.rawInsert(query);
@@ -89,7 +90,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     print("$saveName");
     print("$query");
     Database database = await openDatabase(path, version: 1,
@@ -133,7 +134,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -171,7 +172,7 @@ class profileDb {
       String query) async {
     debugPrint("insertData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
@@ -191,7 +192,7 @@ class profileDb {
   Future<void> deleteData(int id, String tableName) async {
     debugPrint("DeleteData start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -212,7 +213,7 @@ class profileDb {
   Future<void> updateData001(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -232,7 +233,7 @@ class profileDb {
   Future<void> updateData003(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -252,7 +253,7 @@ class profileDb {
   Future<void> updateData005(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -273,7 +274,7 @@ class profileDb {
   Future<void> updateData006(ProList plist) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -293,7 +294,7 @@ class profileDb {
 //データ選択(List表示)
   Future<List<ProList>> getDataList() async {
     String dbPath = await getDatabasesPath();
-    String path = join(dbPath, "ftProBook22.db");
+    String path = join(dbPath, "ftProBook24.db");
     final database = await openDatabase(
       path,
       version: 1,
@@ -328,7 +329,10 @@ class profileDb {
           first2_p001: maps001[i]['first2'],
           second2_p001: maps001[i]['second2'],
           third2_p001: maps001[i]['third2'],
-          freeeSpace_p001: maps001[i]['freeeSpace']);
+          freeeSpace_p001: maps001[i]['freeeSpace'],
+          myImagePath_p001: maps001[i]['myImagePath']
+
+      );
     });
 
     final List<Map<String, dynamic>> maps003 =
@@ -445,6 +449,7 @@ class ProList {
   String second2_p001 = "";
   String third2_p001 = "";
   String freeeSpace_p001 = "";
+  String myImagePath_p001 = "";
 
   //プロフィール帳③
   String birth_p003 = "";
@@ -523,7 +528,8 @@ class ProList {
         required this.first2_p001,
         required this.second2_p001,
         required this.third2_p001,
-        required this.freeeSpace_p001}) {
+        required this.freeeSpace_p001,
+        required this.myImagePath_p001}) {
     this.tableName = "profile001";
   }
 
@@ -630,7 +636,8 @@ class ProList {
       'first2': first2_p001,
       'second2': second2_p001,
       'third2': third2_p001,
-      'freeeSpace': freeeSpace_p001
+      'freeeSpace': freeeSpace_p001,
+      'myImagePath':myImagePath_p001
     };
   }
 

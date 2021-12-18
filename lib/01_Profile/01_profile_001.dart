@@ -5,7 +5,8 @@ import '../02_DateBase/common/02_profile_db.dart';
 import '../02_DateBase/common/02_profile_show.dart';
 import '../99_Others/99_create_image.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
+import '../99_Others/99_base64_helper.dart';
+import '../99_Others/99_profile_image.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -91,6 +92,7 @@ class profile_001 extends StatefulWidget {
   late final String second2;
   late final String third2;
   late final String freeeSpace;
+  late final String myImagePath;
   late final String koshinFlg;
 
   profile_001.Details(
@@ -113,6 +115,7 @@ class profile_001 extends StatefulWidget {
       this.second2,
       this.third2,
       this.freeeSpace,
+      this.myImagePath,
       this.koshinFlg);
 
   profile_001.make() {
@@ -135,6 +138,7 @@ class profile_001 extends StatefulWidget {
     this.second2 = "";
     this.third2 = "";
     this.freeeSpace = "";
+    this.myImagePath = "";
     this.koshinFlg = "0";
   }
 
@@ -163,6 +167,8 @@ class _profile_001 extends State<profile_001> {
   late String koshinFlg;
   late String saveName;
   late String profileTitle;
+  //プロフィール画像Pass
+  late String myImagePath;
 
   void initState() {
     super.initState();
@@ -186,6 +192,7 @@ class _profile_001 extends State<profile_001> {
     this.freeeSpaceController =
     new TextEditingController(text: widget.freeeSpace);
     this.id = widget.id;
+    this.myImagePath = widget.myImagePath;
     this.koshinFlg = widget.koshinFlg;
     if (koshinFlg == "1") {
       this.profileTitle = "更新画面";
@@ -272,8 +279,8 @@ class _profile_001 extends State<profile_001> {
                                     DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
-                                        'INSERT INTO profile001(saveName, koshinYmd, name, birth, hobby, specialSkill, freeTime, SNS1, SNS2, ranking1, first1, second1, third1, ranking2, first2, second2, third2, freeeSpace) '
-                                        'VALUES("$saveName", "$date", "$name", "$birth", "$hobby", "$specialSkill", "$freeTime", "$SNS1", "$SNS2", "$ranking1", "$first1", "$second1", "$third1", "$ranking2", "$first2", "$second2", "$third2", "$freeeSpace")';
+                                        'INSERT INTO profile001(saveName, koshinYmd, name, birth, hobby, specialSkill, freeTime, SNS1, SNS2, ranking1, first1, second1, third1, ranking2, first2, second2, third2, freeeSpace, myImagePath) '
+                                        'VALUES("$saveName", "$date", "$name", "$birth", "$hobby", "$specialSkill", "$freeTime", "$SNS1", "$SNS2", "$ranking1", "$first1", "$second1", "$third1", "$ranking2", "$first2", "$second2", "$third2", "$freeeSpace", "$myImagePath")';
 
                                     await proDb.saveData001(
                                         saveName,
@@ -294,6 +301,7 @@ class _profile_001 extends State<profile_001> {
                                         second2,
                                         third2,
                                         freeeSpace,
+                                        myImagePath,
                                         query);
                                     koshinFlg = "1";
                                   }
@@ -364,7 +372,8 @@ class _profile_001 extends State<profile_001> {
                                     first2_p001: first2,
                                     second2_p001: second2,
                                     third2_p001: third2,
-                                    freeeSpace_p001: freeeSpace);
+                                    freeeSpace_p001: freeeSpace,
+                                    myImagePath_p001: myImagePath);
                                 await proDb.updateData001(plist);
                                 Navigator.pop(childContext);
                               } else {
@@ -372,9 +381,8 @@ class _profile_001 extends State<profile_001> {
                                 await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
-                                      'INSERT INTO profile001(saveName, koshinYmd, name, birth, hobby, specialSkill, freeTime, SNS1, SNS2, ranking1, first1, second1, third1, ranking2, first2, second2, third2, freeeSpace) '
-                                      'VALUES("$saveName", "$date", "$name", "$birth", "$hobby", "$specialSkill", "$freeTime", "$SNS1", "$SNS2", "$ranking1", "$first1", "$second1", "$third1", "$ranking2", "$first2", "$second2", "$third2", "$freeeSpace")';
-
+                                      'INSERT INTO profile001(saveName, koshinYmd, name, birth, hobby, specialSkill, freeTime, SNS1, SNS2, ranking1, first1, second1, third1, ranking2, first2, second2, third2, freeeSpace, myImagePath) '
+                                      'VALUES("$saveName", "$date", "$name", "$birth", "$hobby", "$specialSkill", "$freeTime", "$SNS1", "$SNS2", "$ranking1", "$first1", "$second1", "$third1", "$ranking2", "$first2", "$second2", "$third2", "$freeeSpace", "$myImagePath")';
                                   await proDb.saveData001(
                                       saveName,
                                       date,
@@ -394,6 +402,7 @@ class _profile_001 extends State<profile_001> {
                                       second2,
                                       third2,
                                       freeeSpace,
+                                      myImagePath,
                                       query);
                                   koshinFlg = "1";
                                 }
@@ -1014,13 +1023,51 @@ class _profile_001 extends State<profile_001> {
               // Padding(padding: EdgeInsets.only(top: SizeConfig.widgetPaddingSize),),
               Align(
                 alignment: FractionalOffset(0.98, 0),
-                child: Container(
+                child:
+                Container(
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
                     border: Border.all(color: ColorConfig.Orange, width: 6),
                     color: ColorConfig.White,
                   ),
+                  child: myImagePath == ""
+                    ?
+                    TextButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.black54,
+                          onPrimary: Colors.white),
+                      child: Text('No image Select'),
+                      onPressed: () async {
+                        // myImagePath = await HomeScreenModel().selectImage();
+                        Future result = Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ImageTrim.image(
+                                        myImagePath, "0")));
+                        myImagePath = await result as String;
+                        setState(() {});
+                      },
+                    )
+                        : TextButton(
+                style: ElevatedButton.styleFrom(
+                primary: Colors.black54,
+                    onPrimary: Colors.white),
+                onPressed: () async {
+                  Future result = Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ImageTrim.image(
+                                  myImagePath, "1")));
+                  myImagePath = await result as String;
+                  setState(() {});
+                },
+                child: Base64Helper.imageFromBase64String(
+                    myImagePath
+                ),
+              ),
                 ),
               ),
             ]),

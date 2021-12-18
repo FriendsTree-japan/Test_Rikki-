@@ -93,6 +93,7 @@ class _Edit extends State<Edit> {
                                                     prolists[index].second2_p001,
                                                     prolists[index].third2_p001,
                                                     prolists[index].freeeSpace_p001,
+                                                    prolists[index].myImagePath_p001,
                                                     "1")));
                                   } else if (prolists[index].tableName ==
                                       "profile002") {
