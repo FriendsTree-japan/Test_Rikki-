@@ -81,7 +81,7 @@
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.4",
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -118,6 +118,12 @@
     {
       "name": "http_parser",
       "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "image_cropper",
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_cropper-1.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -237,7 +243,7 @@
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4",
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -315,7 +321,7 @@
     },
     {
       "name": "url_launcher_web",
-      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.4",
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -338,7 +344,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-13T09:09:33.063080Z",
+  "generated": "2021-12-19T05:58:17.498431Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
