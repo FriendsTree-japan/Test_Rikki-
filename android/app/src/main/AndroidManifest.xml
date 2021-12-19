@@ -31,7 +31,7 @@
                 android:name="flutterEmbedding"
                 android:value="2" />
             <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
-                android:value="ca-app-pub-3940256099942544~3347511713" />
+                android:value="ca-app-pub-6761705372928180~2835628931" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
