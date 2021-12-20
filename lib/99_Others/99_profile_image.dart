@@ -8,17 +8,17 @@ import 'package:image_picker/image_picker.dart';
 import '99_base64_helper.dart';
 import 'package:path_provider/path_provider.dart';
 
-class ImageTrim extends StatefulWidget {
+class ProfileImage extends StatefulWidget {
   late String myImagePath;
   late String stateFlg;
 
-  ImageTrim.image(this.myImagePath, this.stateFlg);
+  ProfileImage.image(this.myImagePath, this.stateFlg);
 
   @override
-  _ImageTrimState createState() => _ImageTrimState();
+  _ProfileImageState createState() => _ProfileImageState();
 }
 
-class _ImageTrimState extends State<ImageTrim> {
+class _ProfileImageState extends State<ProfileImage> {
   File? imageFile;
   late String myImagePath;
   late String stateFlg;
@@ -134,7 +134,9 @@ class _ImageTrimState extends State<ImageTrim> {
               ? Base64Helper.imageFromBase64String(
               myImagePath
           )
-              : Container(child: Text('No image selected.')),
+              : Image.asset(
+              'images/common/upper_body-2.png',
+              fit: BoxFit.cover),
         ),
       ),
     );
