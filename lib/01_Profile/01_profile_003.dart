@@ -4,6 +4,7 @@ import '../main.dart';
 import '../02_DateBase/common/02_profile_db.dart';
 import '../02_DateBase/common/02_profile_show.dart';
 import '../99_Others/99_create_image.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -272,7 +273,7 @@ class _profile_003 extends State<profile_003> {
                                     String dream = dreamController.text;
                                     String man = manController.text;
                                     String kutiiguse = kutiiguseController.text;
-                                    String sukilaction = sukilactionController.text;
+                                      String sukilaction = sukilactionController.text;
                                     String freespace = freespaceController.text;
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
@@ -498,116 +499,233 @@ class _profile_003 extends State<profile_003> {
                         child: Text("My Profile",
                             style: TextStyle(
                                 color: ColorConfig.skyblue,
-                                fontSize: SizeConfig.bigFontSize))),
+                                fontSize: SizeConfig.bigFontSize, fontFamily: 'Nicofont',))),
                   ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: nameController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
+                  Stack(
+                    children: [
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight:
+                        SizeConfig.widgetHeightSizeFirst
                         ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: birthController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: ColorConfig.skyblue,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          height: SizeConfig.screenHeight * 0.4,
+                          width: SizeConfig.screenWidth * 0.82,
+                          padding: EdgeInsets.fromLTRB(
+                              SizeConfig.screenWidth * 0.02,
+                              0.0,
+                              SizeConfig.screenWidth * 0.02,
+                              0.0),
                         ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
                       ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: placeController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight:
+                            SizeConfig.widgetHeightSizeFirst * 0.9
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: ColorConfig.White,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              height: SizeConfig.screenHeight * 0.38,
+                              width: SizeConfig.screenWidth * 0.75,
+                              padding: EdgeInsets.fromLTRB(
+                                  SizeConfig.screenWidth * 0.02,
+                                  0.0,
+                                  SizeConfig.screenWidth * 0.02,
+                                  0.0),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            child: Column(
+                                              mainAxisAlignment: MainAxisAlignment.start,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                    child: Text("名前",
+                                                        style: TextStyle(
+                                                            color: ColorConfig.Black,
+                                                            fontSize: 12.0))),
+                                                Container(
+                                                  height: 20,
+                                                  width: SizeConfig.screenWidth * 0.3,
+                                                  child: TextField(
+                                                    controller: nameController,
+                                                    maxLength: 16,
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                      enabledBorder: OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: ColorConfig.White,
+                                                        ),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: ColorConfig.Gray,
+                                                    ),
+                                                    style: TextStyle(fontSize: 12),
+                                                  ),
+                                                ),
+
+                                                Container(
+                                                    child: Text("誕生日",
+                                                        style: TextStyle(
+                                                            color: ColorConfig.Black,
+                                                            fontSize: 12.0))),
+                                                Container(
+                                                  height: 20,
+                                                  width: SizeConfig.screenWidth * 0.3,
+                                                  child: TextField(
+                                                    controller: birthController,
+                                                    maxLength: 16,
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                      enabledBorder: OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: ColorConfig.White),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: ColorConfig.Gray,
+                                                    ),
+                                                    style: TextStyle(fontSize: 12,),
+                                                  ),
+                                                ),
+                                                Container(
+                                                    child: Text("場所",
+                                                        style: TextStyle(
+                                                            color: ColorConfig.Black,
+                                                            fontSize: 12.0))),
+                                                Container(
+                                                  height: 20,
+                                                  width: SizeConfig.screenWidth * 0.3,
+                                                  child: TextField(
+                                                    controller: locationController,
+                                                    maxLength: 16,
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                      enabledBorder: OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: ColorConfig.Gray),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: ColorConfig.Gray,
+                                                    ),
+                                                    style: TextStyle(fontSize: 12),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Padding(padding: EdgeInsets.all(25)),
+                                          Align(
+                                            alignment: FractionalOffset(0.98, 0),
+                                            child: Container(
+                                              height: 100,
+                                              width: 100,
+                                              decoration: BoxDecoration(
+                                                border: Border.all(color: ColorConfig.skyblue, width: 6),
+                                                color: ColorConfig.White,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                        child: Text("SNS",
+                                            style: TextStyle(
+                                                color: ColorConfig.Black,
+                                                fontSize: 12.0))),
+                                    Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Container(
+                                            child: Row(children: [
+                                              FaIcon(
+                                                FontAwesomeIcons.instagram,
+                                                color: ColorConfig.Black,
+                                                size: 10,
+                                              ),
+                                              Container(
+                                                height: 20,
+                                                width: SizeConfig.screenWidth *
+                                                    0.25,
+                                                child: TextField(
+                                                  controller: SNS1Controller,
+                                                  maxLength: 16,
+                                                  decoration: InputDecoration(
+                                                    counterText: '',
+                                                    enabledBorder:
+                                                    OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: ColorConfig
+                                                              .White),
+                                                    ),
+                                                    filled: true,
+                                                    fillColor:
+                                                    ColorConfig.Gray,
+                                                  ),
+                                                  style:
+                                                  TextStyle(fontSize: 12),
+                                                ),
+                                              ),
+                                            ]),
+                                          ),
+                                          Container(
+                                            child: Row(children: [
+                                              Row(children: [
+                                                FaIcon(
+                                                  FontAwesomeIcons.twitter,
+                                                  color: ColorConfig.Black,
+                                                  size: 10,
+                                                ),
+                                                Container(
+                                                  height: 20,
+                                                  width:
+                                                  SizeConfig.screenWidth *
+                                                      0.25,
+                                                  child: TextField(
+                                                    controller: SNS2Controller,
+                                                    maxLength: 16,
+                                                    decoration: InputDecoration(
+                                                      counterText: '',
+                                                      enabledBorder:
+                                                      OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                            color: ColorConfig
+                                                                .White),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor:
+                                                      ColorConfig.Gray,
+                                                    ),
+                                                    style:
+                                                    TextStyle(fontSize: 12),
+                                                  ),
+                                                ),
+                                              ]),
+                                            ]),
+                                          )
+                                        ])
+                                  ]),
+                            ),
+                          ),
                         ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
                       ),
-                      style: TextStyle(fontSize: 12),
-                    ),
+                    ],
                   ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: locationController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: SNS1Controller,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: SNS2Controller,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                  Padding(padding: EdgeInsets.only(top: 10)),
 
                   Center(
                     child: ConstrainedBox(
@@ -661,7 +779,7 @@ class _profile_003 extends State<profile_003> {
                       ),
                     ),
                   ),),
-                  Padding(padding: EdgeInsets.only(top: 10)),
+                  Padding(padding: EdgeInsets.only(top: 5)),
 
                   Center(
                     child: ConstrainedBox(
@@ -721,8 +839,7 @@ class _profile_003 extends State<profile_003> {
                         ),
                       ),
                     ),),
-                  Padding(padding: EdgeInsets.only(top: 10)),
-
+                  Padding(padding: EdgeInsets.only(top: 5)),
                   Center(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -781,8 +898,7 @@ class _profile_003 extends State<profile_003> {
                         ),
                       ),
                     ),),
-                  Padding(padding: EdgeInsets.only(top: 10)),
-
+                  Padding(padding: EdgeInsets.only(top: 5)),
                   Center(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -862,7 +978,7 @@ class _profile_003 extends State<profile_003> {
                         ),
                       ),
                     ),),
-                  Padding(padding: EdgeInsets.only(top: 10)),
+                  Padding(padding: EdgeInsets.only(top: 5)),
 
                   Center(
                     child: ConstrainedBox(
@@ -977,96 +1093,303 @@ class _profile_003 extends State<profile_003> {
                         ),
                       ),
                     ),),
+                  Padding(padding: EdgeInsets.only(top: 5)),
+                  Stack(
+                    children: [
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight:
+                        SizeConfig.widgetHeightSizeFirst
+                        ),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: ColorConfig.skyblue,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          height: SizeConfig.screenHeight * 0.15,
+                          width: SizeConfig.screenWidth * 0.82,
+                          padding: EdgeInsets.fromLTRB(
+                              SizeConfig.screenWidth * 0.02,
+                              0.0,
+                              SizeConfig.screenWidth * 0.02,
+                              0.0),
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight:
+                            SizeConfig.widgetHeightSizeFirst * 0.9
+                            ),
+                            child: Container(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: ColorConfig.White,
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                        height: SizeConfig.screenHeight * 0.055,
+                                        width: SizeConfig.screenWidth * 0.38,
+                                        padding: EdgeInsets.fromLTRB(
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0,
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Text("将来の夢は？",
+                                                  style: TextStyle(
+                                                    color: ColorConfig.skyblue,
+                                                    fontSize: SizeConfig.middleFontSize,
+                                                    fontWeight: FontWeight.bold,
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 20,
+                                              width: SizeConfig.screenWidth * 0.4,
+                                              padding:
+                                              EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                              child: TextField(
+                                                controller: dreamController,
+                                                maxLength: 10,
+                                                decoration: InputDecoration(
+                                                  counterText: '',
+                                                  enabledBorder: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: ColorConfig.White),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: ColorConfig.White,
+                                                ),
+                                                style: TextStyle(fontSize: 14,color: ColorConfig.Black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.fromLTRB(2.5, 2.5, 2.5, 2.5),
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: ColorConfig.White,
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                        height: SizeConfig.screenHeight * 0.055,
+                                        width: SizeConfig.screenWidth * 0.38,
+                                        padding: EdgeInsets.fromLTRB(
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0,
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Text("口ぐせは？",
+                                                  style: TextStyle(
+                                                    color: ColorConfig.skyblue,
+                                                    fontSize: SizeConfig.middleFontSize,
+                                                    fontWeight: FontWeight.bold,
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 20,
+                                              width: SizeConfig.screenWidth * 0.4,
+                                              padding:
+                                              EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                              child: TextField(
+                                                controller: kutiiguseController,
+                                                maxLength: 10,
+                                                decoration: InputDecoration(
+                                                  counterText: '',
+                                                  enabledBorder: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: ColorConfig.White),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: ColorConfig.White,
+                                                ),
+                                                style: TextStyle(fontSize: 14,color: ColorConfig.Black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.fromLTRB(2.5, 2.5, 2.5, 2.5),
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: ColorConfig.White,
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                        height: SizeConfig.screenHeight * 0.055,
+                                        width: SizeConfig.screenWidth * 0.38,
+                                        padding: EdgeInsets.fromLTRB(
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0,
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Text("憧れの人は？",
+                                                  style: TextStyle(
+                                                    color: ColorConfig.skyblue,
+                                                    fontSize: SizeConfig.middleFontSize,
+                                                    fontWeight: FontWeight.bold,
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 20,
+                                              width: SizeConfig.screenWidth * 0.4,
+                                              padding:
+                                              EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                              child: TextField(
+                                                controller: manController,
+                                                maxLength: 10,
+                                                decoration: InputDecoration(
+                                                  counterText: '',
+                                                  enabledBorder: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: ColorConfig.White),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: ColorConfig.White,
+                                                ),
+                                                style: TextStyle(fontSize: 14,color: ColorConfig.Black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.fromLTRB(2.5, 2.5, 2.5, 2.5),
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: ColorConfig.White,
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                        height: SizeConfig.screenHeight * 0.055,
+                                        width: SizeConfig.screenWidth * 0.38,
+                                        padding: EdgeInsets.fromLTRB(
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0,
+                                            SizeConfig.screenWidth * 0.02,
+                                            0.0),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              child: Text("好きな場所は？",
+                                                  style: TextStyle(
+                                                    color: ColorConfig.skyblue,
+                                                    fontSize: SizeConfig.middleFontSize,
+                                                    fontWeight: FontWeight.bold,
+                                                  )),
+                                            ),
+                                            Container(
+                                              height: 20,
+                                              width: SizeConfig.screenWidth * 0.4,
+                                              padding:
+                                              EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                              child: TextField(
+                                                controller: sukilactionController,
+                                                maxLength: 10,
+                                                decoration: InputDecoration(
+                                                  counterText: '',
+                                                  enabledBorder: OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: ColorConfig.White),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: ColorConfig.White,
+                                                ),
+                                                style: TextStyle(fontSize: 14,color: ColorConfig.Black),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
                   Padding(padding: EdgeInsets.only(top: 10)),
-                  
                   Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: dreamController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
+                    decoration: BoxDecoration(
+                      color: ColorConfig.White,
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: manController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
+                    height: SizeConfig.screenHeight * 0.13,
+                    width: SizeConfig.screenWidth * 0.82,
+                    child: Column(
+                      children: [
+                        Container(
+                          height: 26,
+                          child: Text(
+                            "Free Space",
+                            style: TextStyle(
+                                color: ColorConfig.skyblue,
+                                fontFamily: 'Nicofont',
+                                fontSize: 24),
+                          ),
                         ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: kutiiguseController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: sukilactionController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                  Container(
-                    height: 20,
-                    width: SizeConfig.screenWidth * 0.3,
-                    child: TextField(
-                      controller: freespaceController,
-                      maxLength: 16,
-                      decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: ColorConfig.White),
-                        ),
-                        filled: true,
-                        fillColor: ColorConfig.White,
-                      ),
-                      style: TextStyle(fontSize: 12),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxHeight:
+                          SizeConfig.widgetHeightSizeThird
+                          ),
+                          child:
+                          Container(
+                            height: 80.0,
+                            width: SizeConfig.screenWidth * 0.7,
+                            child: TextField(
+                              controller: freespaceController,
+                              maxLines: 3,
+                              maxLength: 48,
+                              decoration: InputDecoration(
+                                counterText: '',
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: ColorConfig.White),
+                                ),
+                                filled: true,
+                                fillColor: ColorConfig.White,
+                              ),
+                              style: TextStyle(fontSize: 12,color: ColorConfig.Black),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ],

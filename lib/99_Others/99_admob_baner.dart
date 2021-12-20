@@ -34,9 +34,9 @@ class AdBanner extends StatelessWidget {
 
   static String get bannerAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-3940256099942544/6300978111';
+      return 'ca-app-pub-6761705372928180/7255710938';
     } else if (Platform.isIOS) {
-      return 'ca-app-pub-3940256099942544/2934735716';
+      return 'ca-app-pub-6761705372928180/9171427832';
     } else {
       //どちらでもない場合は、テスト用を返す
       return BannerAd.testAdUnitId;
