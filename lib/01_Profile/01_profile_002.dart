@@ -56,6 +56,7 @@ class ColorConfig {
   static late Color Orange;
   static late Color White;
   static late Color Cream;
+  static late Color GrayWhite;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -63,6 +64,7 @@ class ColorConfig {
     Orange = Color(0xFFFFC0A3);
     White = Color(0xFFFFFFFF);
     Cream = Color(0xFFFAF7F3);
+    GrayWhite = Color(0xFFE2E2DF);
   }
 }
 
@@ -260,8 +262,8 @@ class _profile_005 extends State<profile_005> {
                             actions: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.green,
-                                    onPrimary: ColorConfig.White),
+                                    primary: ColorConfig.GrayWhite,
+                                    onPrimary: ColorConfig.Black),
                                 child: Text('いいえ'),
                                 onPressed: () {
                                   Navigator.pushReplacement(
@@ -272,7 +274,7 @@ class _profile_005 extends State<profile_005> {
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
+                                    primary: Colors.green,
                                     onPrimary: Colors.white),
                                 onPressed: () async {
                                   saveName =
@@ -936,30 +938,6 @@ class _profile_005 extends State<profile_005> {
                                       ),
                                     ),
                                   ])),
-
-                          // Column(
-                          //   children: <Widget>[
-                          //     Container(
-                          //       child: Text("１０億円当たったら？",
-                          //           style: TextStyle(
-                          //             color: Color(0x860047FA),
-                          //             fontSize: 14,
-                          //           )),
-                          //     ),
-                          //     Container(
-                          //       child: TextField(
-                          //         controller: win1BillionYenController,
-                          //         maxLength: 16,
-                          //         decoration: const InputDecoration(
-                          //           counterText: '',
-                          //         ),
-                          //         style: TextStyle(fontSize: 14),
-                          //       ),
-                          //       width: 150,
-                          //       height: 20,
-                          //     ),
-                          //   ],
-                          // ),
                           Padding(padding: EdgeInsets.all(3.0)),
                           Container(
                               child: Column(
@@ -992,26 +970,6 @@ class _profile_005 extends State<profile_005> {
                                       ),
                                     ),
                                   ])),
-
-                          // Container(
-                          //   child: Text("願いが一つ叶ったら？",
-                          //       style: TextStyle(
-                          //         color: Color(0x860047FA),
-                          //         fontSize: 14,
-                          //       )),
-                          // ),
-                          // Container(
-                          //   child: TextField(
-                          //     controller: wishController,
-                          //     maxLength: 16,
-                          //     decoration: const InputDecoration(
-                          //       counterText: '',
-                          //     ),
-                          //     style: TextStyle(fontSize: 14),
-                          //   ),
-                          //   width: 150,
-                          //   height: 20,
-                          // ),
                         ],
                       ),
                     ),

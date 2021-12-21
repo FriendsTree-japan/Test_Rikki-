@@ -61,6 +61,7 @@ class ColorConfig {
   static late Color White;
   static late Color Cream;
   static late Color Gray;
+  static late Color GrayWhite;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -70,6 +71,7 @@ class ColorConfig {
     White = Color(0xFFFFFFFF);
     Cream = Color(0xFFFAF7F3);
     Gray = Color(0xFFEBEAEF);
+    GrayWhite = Color(0xFFE2E2DF);
   }
 }
 
@@ -252,8 +254,8 @@ class _profile_003 extends State<profile_003> {
                             actions: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.green,
-                                    onPrimary: ColorConfig.White),
+                                    primary: ColorConfig.GrayWhite,
+                                    onPrimary: ColorConfig.Black),
                                 child: Text('いいえ'),
                                 onPressed: () {
                                   Navigator.pushReplacement(
@@ -264,7 +266,7 @@ class _profile_003 extends State<profile_003> {
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
+                                    primary: Colors.green,
                                     onPrimary: Colors.white),
                                 onPressed: () async {
                                   saveName =
