@@ -52,9 +52,9 @@ class _ProfileImageState extends State<ProfileImage> {
                   Navigator.pop(context, myImagePath);
                 }
             ),
-            backgroundColor: Colors.black54,
+            backgroundColor: Colors.white,
             title: Text("画像選択画面",style: TextStyle(
-              color: Colors.white,
+              color: Colors.black54,
               fontSize: 18,
             )),
             actions: <Widget>[
