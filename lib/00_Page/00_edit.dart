@@ -62,10 +62,10 @@ class _Edit extends State<Edit> {
     leading: prolists[index].tableName ==
     "profile001" ?
     Image.asset(
-    'images/select_profile_images/profile001.jpg',
+    'images/select_profile_images/profile002.png',
     fit: BoxFit.cover):
     prolists[index].tableName ==
-    "profile002" ? Image.asset('images/select_profile_images/profile002.png') : Image.asset('images/select_profile_images/profile003.png'),
+    "profile002" ? Image.asset('images/select_profile_images/profile001.jpg') : Image.asset('images/select_profile_images/profile003.png'),
     title:
     // ③オブジェクトの属性(タイトル属性)を参照する
     Text(

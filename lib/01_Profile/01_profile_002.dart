@@ -56,6 +56,7 @@ class ColorConfig {
   static late Color Orange;
   static late Color White;
   static late Color Cream;
+  static late Color GrayWhite;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -63,6 +64,7 @@ class ColorConfig {
     Orange = Color(0xFFFFC0A3);
     White = Color(0xFFFFFFFF);
     Cream = Color(0xFFFAF7F3);
+    GrayWhite = Color(0xFFE2E2DF);
   }
 }
 
@@ -260,8 +262,8 @@ class _profile_005 extends State<profile_005> {
                             actions: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.green,
-                                    onPrimary: ColorConfig.White),
+                                    primary: ColorConfig.GrayWhite,
+                                    onPrimary: ColorConfig.Black),
                                 child: Text('いいえ'),
                                 onPressed: () {
                                   Navigator.pushReplacement(
@@ -272,7 +274,7 @@ class _profile_005 extends State<profile_005> {
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
+                                    primary: Colors.green,
                                     onPrimary: Colors.white),
                                 onPressed: () async {
                                   saveName =
@@ -540,11 +542,8 @@ class _profile_005 extends State<profile_005> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                        padding: EdgeInsets.fromLTRB(
-                            0.0,
-                            SizeConfig.screenHeight * 0.01,
-                            0.0,
-                            SizeConfig.screenHeight * 0.01),
+                        padding:
+                        EdgeInsets.only(top: SizeConfig.widgetPaddingSize * 1.3),
                         child: Text("My Profile",
                             style: TextStyle(
                                 color: ColorConfig.Orange,
@@ -552,8 +551,11 @@ class _profile_005 extends State<profile_005> {
                                 fontSize: SizeConfig.bigFontSize))),
                   ),
                   Padding(
-                      padding:
-                      EdgeInsets.only(top: SizeConfig.widgetPaddingSize)),
+                      padding: EdgeInsets.fromLTRB(
+                          0.0,
+                          SizeConfig.screenHeight * 0.01,
+                          0.0,
+                          SizeConfig.screenHeight * 0.01)),
                   Center(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -582,12 +584,12 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
+                                  width: SizeConfig.screenWidth * 0.35,
                                   padding:
                                   EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: nameController,
-                                    maxLength: 20,
+                                    maxLength: 6,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -617,12 +619,12 @@ class _profile_005 extends State<profile_005> {
                                   children: <Widget>[
                                     Container(
                                       height: 20,
-                                      width: SizeConfig.screenWidth * 0.4,
+                                      width: SizeConfig.screenWidth * 0.52,
                                       padding: EdgeInsets.fromLTRB(
                                           1.5, 0.0, 1.5, 0.0),
                                       child: TextField(
                                         controller: nickNameController,
-                                        maxLength: 22,
+                                        maxLength: 11,
                                         decoration: InputDecoration(
                                           counterText: '',
                                           enabledBorder: OutlineInputBorder(
@@ -664,7 +666,7 @@ class _profile_005 extends State<profile_005> {
                                 Column(
                                   children: <Widget>[
                                     Container(
-                                      width: SizeConfig.screenWidth * 0.15,
+                                      width: SizeConfig.screenWidth * 0.16,
                                       height: 20,
                                       child: TextField(
                                         controller: birthYYYYController,
@@ -751,11 +753,11 @@ class _profile_005 extends State<profile_005> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 Container(
-                                  width: SizeConfig.screenWidth * 0.6,
+                                  width: SizeConfig.screenWidth * 0.73,
                                   height: 20,
                                   child: TextField(
                                     controller: personalityController,
-                                    maxLength: 22,
+                                    maxLength: 17,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -797,7 +799,7 @@ class _profile_005 extends State<profile_005> {
                                   height: 20,
                                   child: TextField(
                                     controller: skillController,
-                                    maxLength: 30,
+                                    maxLength: 10,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -831,11 +833,11 @@ class _profile_005 extends State<profile_005> {
                                       )),
                                 ),
                                 Container(
-                                  width: SizeConfig.screenWidth * 0.5,
+                                  width: SizeConfig.screenWidth * 0.6,
                                   height: 20,
                                   child: TextField(
                                     controller: myBoomController,
-                                    maxLength: 28,
+                                    maxLength: 14,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -861,22 +863,6 @@ class _profile_005 extends State<profile_005> {
                                         fontSize: SizeConfig.middleFontSize,
                                       )),
                                 ),
-                                // Column(
-                                //   children: <Widget>[
-                                //     Container(
-                                //       child: TextField(
-                                //         controller: recentThingController,
-                                //         maxLength: 14,
-                                //         decoration: const InputDecoration(
-                                //           counterText: '',
-                                //         ),
-                                //         style: TextStyle(fontSize: 14),
-                                //       ),
-                                //       width: 120,
-                                //       height: 20,
-                                //     ),
-                                //   ],
-                                // ),
                               ],
                             ),
                           ],
@@ -886,7 +872,7 @@ class _profile_005 extends State<profile_005> {
                   ),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: SizeConfig.widgetPaddingSize)),
+                      EdgeInsets.only(top: SizeConfig.widgetPaddingSize * 1.8)),
                   ConstrainedBox(
                     constraints: BoxConstraints(
                         maxHeight: SizeConfig.widgetHeightSizeSecond),
@@ -922,7 +908,7 @@ class _profile_005 extends State<profile_005> {
                                       height: 20,
                                       child: TextField(
                                         controller: offDayController,
-                                        maxLength: 16,
+                                        maxLength: 19,
                                         decoration: InputDecoration(
                                           counterText: '',
                                           enabledBorder: OutlineInputBorder(
@@ -936,31 +922,6 @@ class _profile_005 extends State<profile_005> {
                                       ),
                                     ),
                                   ])),
-
-                          // Column(
-                          //   children: <Widget>[
-                          //     Container(
-                          //       child: Text("１０億円当たったら？",
-                          //           style: TextStyle(
-                          //             color: Color(0x860047FA),
-                          //             fontSize: 14,
-                          //           )),
-                          //     ),
-                          //     Container(
-                          //       child: TextField(
-                          //         controller: win1BillionYenController,
-                          //         maxLength: 16,
-                          //         decoration: const InputDecoration(
-                          //           counterText: '',
-                          //         ),
-                          //         style: TextStyle(fontSize: 14),
-                          //       ),
-                          //       width: 150,
-                          //       height: 20,
-                          //     ),
-                          //   ],
-                          // ),
-                          Padding(padding: EdgeInsets.all(3.0)),
                           Container(
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -978,7 +939,7 @@ class _profile_005 extends State<profile_005> {
                                       height: 20,
                                       child: TextField(
                                         controller: rebornController,
-                                        maxLength: 16,
+                                        maxLength: 19,
                                         decoration: InputDecoration(
                                           counterText: '',
                                           enabledBorder: OutlineInputBorder(
@@ -992,33 +953,13 @@ class _profile_005 extends State<profile_005> {
                                       ),
                                     ),
                                   ])),
-
-                          // Container(
-                          //   child: Text("願いが一つ叶ったら？",
-                          //       style: TextStyle(
-                          //         color: Color(0x860047FA),
-                          //         fontSize: 14,
-                          //       )),
-                          // ),
-                          // Container(
-                          //   child: TextField(
-                          //     controller: wishController,
-                          //     maxLength: 16,
-                          //     decoration: const InputDecoration(
-                          //       counterText: '',
-                          //     ),
-                          //     style: TextStyle(fontSize: 14),
-                          //   ),
-                          //   width: 150,
-                          //   height: 20,
-                          // ),
                         ],
                       ),
                     ),
                   ),
                   Padding(
                       padding: EdgeInsets.only(
-                          top: SizeConfig.widgetPaddingSize * 1.5)),
+                          top: SizeConfig.widgetPaddingSize * 1.8)),
                   Container(
                     padding: EdgeInsets.fromLTRB(SizeConfig.screenWidth * 0.06,
                         0.0, SizeConfig.screenWidth * 0.06, 0.0),
@@ -1058,12 +999,10 @@ class _profile_005 extends State<profile_005> {
                                           alignment: Alignment.center,
                                           height: 20,
                                           width: SizeConfig.screenWidth * 0.34,
-                                          padding: EdgeInsets.fromLTRB(
-                                              3.0, 3.0, 0.0, 0.0),
                                           child: TextField(
                                             controller: myBestTheme1Controller,
                                             textAlign: TextAlign.center,
-                                            maxLength: 18,
+                                            maxLength: 7,
                                             decoration: InputDecoration(
                                               counterText: '',
                                               enabledBorder: OutlineInputBorder(
@@ -1090,10 +1029,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme1MyBest1Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(
@@ -1119,10 +1058,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme1MyBest2Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(
@@ -1148,10 +1087,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme1MyBest3Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(
@@ -1203,7 +1142,7 @@ class _profile_005 extends State<profile_005> {
                                           child: TextField(
                                             controller: myBestTheme2Controller,
                                             textAlign: TextAlign.center,
-                                            maxLength: 18,
+                                            maxLength: 7,
                                             decoration: InputDecoration(
                                               counterText: '',
                                               enabledBorder: OutlineInputBorder(
@@ -1230,10 +1169,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme2MyBest1Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(
@@ -1259,10 +1198,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme2MyBest2Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(
@@ -1288,10 +1227,10 @@ class _profile_005 extends State<profile_005> {
                                 Center(
                                   child: Container(
                                     height: 20,
-                                    width: SizeConfig.screenWidth * 0.3,
+                                    width: SizeConfig.screenWidth * 0.34,
                                     child: TextField(
                                       controller: teme2MyBest3Controller,
-                                      maxLength: 16,
+                                      maxLength: 8,
                                       decoration: InputDecoration(
                                         counterText: '',
                                         enabledBorder: OutlineInputBorder(

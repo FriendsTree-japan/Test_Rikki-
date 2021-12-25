@@ -24,7 +24,7 @@ class profileShow {
           actions: <Widget>[
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Colors.blue, onPrimary: Colors.purple),
+                  primary: Colors.green, onPrimary: Colors.white),
               child: Text('はい', style: TextStyle(color: Colors.white)),
               onPressed: () async {
                 profileDb delData = new profileDb();
@@ -39,8 +39,8 @@ class profileShow {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  primary: Colors.blue, onPrimary: Colors.purple),
-              child: Text('いいえ', style: TextStyle(color: Colors.white)),
+                  primary: Color(0xFFE2E2DF), onPrimary: Color(0xFF737373)),
+              child: Text('いいえ', style: TextStyle(color: Color(0xFF737373))),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -68,7 +68,7 @@ class profileShow {
             actions: <Widget>[
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
+                    primary: Color(0xFFE2E2DF), onPrimary: Color(0xFF737373)),
                 child: Text('キャンセル'),
                 onPressed: () async {
                   Navigator.pop(context, saveName);
@@ -77,7 +77,7 @@ class profileShow {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    primary: Colors.blue, onPrimary: Colors.white),
+                    primary: Colors.green, onPrimary: Colors.white),
                 child: Text('OK'),
                 onPressed: () async {
                   saveName = saveNameController.text;
@@ -93,7 +93,7 @@ class profileShow {
                             actions: <Widget>[
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Colors.blue,
+                                    primary: Colors.green,
                                     onPrimary: Colors.white),
                                 child: Text('OK'),
                                 onPressed: () {
