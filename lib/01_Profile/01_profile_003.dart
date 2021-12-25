@@ -527,13 +527,13 @@ class _profile_003 extends State<profile_003> {
                     children: [
                       ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxHeight: SizeConfig.widgetHeightSizeFirst),
+                            maxHeight: SizeConfig.widgetHeightSizeFirst* 0.888),
                         child: Container(
                           decoration: BoxDecoration(
                             color: ColorConfig.skyblue,
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          height: SizeConfig.screenHeight * 0.4,
+                          height: SizeConfig.screenHeight * 0.35,
                           width: SizeConfig.screenWidth * 0.82,
                           padding: EdgeInsets.fromLTRB(
                               SizeConfig.screenWidth * 0.02,
@@ -548,7 +548,7 @@ class _profile_003 extends State<profile_003> {
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
                                 maxHeight:
-                                    SizeConfig.widgetHeightSizeFirst * 0.9),
+                                    SizeConfig.widgetHeightSizeFirst * 0.788),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: ColorConfig.White,
@@ -585,10 +585,10 @@ class _profile_003 extends State<profile_003> {
                                                   height: 20,
                                                   width:
                                                       SizeConfig.screenWidth *
-                                                          0.3,
+                                                          0.35,
                                                   child: TextField(
                                                     controller: nameController,
-                                                    maxLength: 16,
+                                                    maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
@@ -616,10 +616,10 @@ class _profile_003 extends State<profile_003> {
                                                   height: 20,
                                                   width:
                                                       SizeConfig.screenWidth *
-                                                          0.3,
+                                                          0.35,
                                                   child: TextField(
                                                     controller: birthController,
-                                                    maxLength: 16,
+                                                    maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
@@ -647,11 +647,11 @@ class _profile_003 extends State<profile_003> {
                                                   height: 20,
                                                   width:
                                                       SizeConfig.screenWidth *
-                                                          0.3,
+                                                          0.35,
                                                   child: TextField(
                                                     controller:
                                                         locationController,
-                                                    maxLength: 16,
+                                                    maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
@@ -671,7 +671,7 @@ class _profile_003 extends State<profile_003> {
                                               ],
                                             ),
                                           ),
-                                          Padding(padding: EdgeInsets.all(25)),
+                                          Padding(padding: EdgeInsets.all(15)),
                                           Align(
                                             alignment:
                                                 FractionalOffset(0.98, 0),
@@ -729,10 +729,10 @@ class _profile_003 extends State<profile_003> {
                                               Container(
                                                 height: 20,
                                                 width: SizeConfig.screenWidth *
-                                                    0.25,
+                                                    0.32,
                                                 child: TextField(
                                                   controller: SNS1Controller,
-                                                  maxLength: 16,
+                                                  maxLength: 14,
                                                   decoration: InputDecoration(
                                                     counterText: '',
                                                     enabledBorder:
@@ -762,10 +762,10 @@ class _profile_003 extends State<profile_003> {
                                                   height: 20,
                                                   width:
                                                       SizeConfig.screenWidth *
-                                                          0.25,
+                                                          0.32,
                                                   child: TextField(
                                                     controller: SNS2Controller,
-                                                    maxLength: 16,
+                                                    maxLength: 14,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
@@ -815,12 +815,12 @@ class _profile_003 extends State<profile_003> {
                               children: <Widget>[
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
+                                  width: SizeConfig.screenWidth * 0.5,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: text1Controller,
-                                    maxLength: 10,
+                                    maxLength: 13,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -831,14 +831,14 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.skyblue,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.White),
+                                        fontSize: 12, color: ColorConfig.White),
                                   ),
                                 ),
                                 Container(
                                   child: Text("って呼んでね！",
                                       style: TextStyle(
                                         color: ColorConfig.White,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                               ],
@@ -872,12 +872,12 @@ class _profile_003 extends State<profile_003> {
                                   child: Text("性格はよく",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
+                                  width: SizeConfig.screenWidth * 0.35,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
@@ -893,14 +893,14 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.Gray,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.Black),
+                                        fontSize: 12, color: ColorConfig.Black),
                                   ),
                                 ),
                                 Container(
                                   child: Text("って言われるけど",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                               ],
@@ -934,17 +934,17 @@ class _profile_003 extends State<profile_003> {
                                   child: Text("自分では",
                                       style: TextStyle(
                                         color: ColorConfig.White,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.3,
+                                  width: SizeConfig.screenWidth * 0.35,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: personal2Controller,
-                                    maxLength: 10,
+                                    maxLength: 8,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -955,14 +955,14 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.skyblue,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.White),
+                                        fontSize: 12, color: ColorConfig.White),
                                   ),
                                 ),
                                 Container(
                                   child: Text("だと思うなぁ...！",
                                       style: TextStyle(
                                         color: ColorConfig.White,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                               ],
@@ -996,7 +996,7 @@ class _profile_003 extends State<profile_003> {
                                   child: Text("趣味は",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
@@ -1006,7 +1006,7 @@ class _profile_003 extends State<profile_003> {
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: hobby1Controller,
-                                    maxLength: 6,
+                                    maxLength: 5,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -1017,24 +1017,24 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.Gray,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.Black),
+                                        fontSize: 12, color: ColorConfig.Black),
                                   ),
                                 ),
                                 Container(
                                   child: Text("で、最近は",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.1,
+                                  width: SizeConfig.screenWidth * 0.25,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: hobby2Controller,
-                                    maxLength: 6,
+                                    maxLength: 5,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -1045,7 +1045,7 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.Gray,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.Black),
+                                        fontSize: 12, color: ColorConfig.Black),
                                   ),
                                 ),
                               ],
@@ -1076,20 +1076,20 @@ class _profile_003 extends State<profile_003> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 Container(
-                                  child: Text("にすごくはまってる！　特技は",
+                                  child: Text("にすごくはまってる！特技は",
                                       style: TextStyle(
                                         color: ColorConfig.White,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.2,
+                                  width: SizeConfig.screenWidth * 0.35,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: text2Controller,
-                                    maxLength: 10,
+                                    maxLength: 8,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -1100,7 +1100,7 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.skyblue,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.White),
+                                        fontSize: 12, color: ColorConfig.White),
                                   ),
                                 ),
                               ],
@@ -1110,7 +1110,7 @@ class _profile_003 extends State<profile_003> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 10)),
+                  Padding(padding: EdgeInsets.only(top: 5)),
                   Center(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
@@ -1131,20 +1131,20 @@ class _profile_003 extends State<profile_003> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 Container(
-                                  child: Text("かな〜。いつもは",
+                                  child: Text("いつもは",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                                 Container(
                                   height: 20,
-                                  width: SizeConfig.screenWidth * 0.1,
+                                  width: SizeConfig.screenWidth * 0.37,
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
-                                    controller: text1Controller,
-                                    maxLength: 10,
+                                    controller: text2Controller,
+                                    maxLength: 9,
                                     decoration: InputDecoration(
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
@@ -1155,14 +1155,14 @@ class _profile_003 extends State<profile_003> {
                                       fillColor: ColorConfig.Gray,
                                     ),
                                     style: TextStyle(
-                                        fontSize: 14, color: ColorConfig.Black),
+                                        fontSize: 12, color: ColorConfig.Black),
                                   ),
                                 ),
                                 Container(
                                   child: Text("して過ごしてるよ",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
-                                        fontSize: SizeConfig.middleFontSize,
+                                        fontSize: 12,
                                       )),
                                 ),
                               ],
@@ -1172,7 +1172,7 @@ class _profile_003 extends State<profile_003> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.only(top: 5)),
+                  Padding(padding: EdgeInsets.only(top: 10)),
                   Stack(
                     children: [
                       ConstrainedBox(
@@ -1232,33 +1232,31 @@ class _profile_003 extends State<profile_003> {
                                               child: Text("将来の夢は？",
                                                   style: TextStyle(
                                                     color: ColorConfig.skyblue,
-                                                    fontSize: SizeConfig
-                                                        .middleFontSize,
+                                                    fontSize: 13,
                                                     fontWeight: FontWeight.bold,
                                                   )),
                                             ),
                                             Container(
-                                              height: 20,
+                                              height: 15,
                                               width:
                                                   SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
                                                 controller: dreamController,
-                                                maxLength: 10,
+                                                maxLength: 8,
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                        color:
-                                                            ColorConfig.White),
+                                                        color: ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
                                                 ),
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 12,
                                                     color: ColorConfig.Black),
                                               ),
                                             ),
@@ -1292,20 +1290,19 @@ class _profile_003 extends State<profile_003> {
                                               child: Text("口ぐせは？",
                                                   style: TextStyle(
                                                     color: ColorConfig.skyblue,
-                                                    fontSize: SizeConfig
-                                                        .middleFontSize,
+                                                    fontSize: 13,
                                                     fontWeight: FontWeight.bold,
                                                   )),
                                             ),
                                             Container(
-                                              height: 20,
+                                              height: 15,
                                               width:
                                                   SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
                                                 controller: kutiiguseController,
-                                                maxLength: 10,
+                                                maxLength: 8,
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
@@ -1318,7 +1315,7 @@ class _profile_003 extends State<profile_003> {
                                                   fillColor: ColorConfig.White,
                                                 ),
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 12,
                                                     color: ColorConfig.Black),
                                               ),
                                             ),
@@ -1359,20 +1356,19 @@ class _profile_003 extends State<profile_003> {
                                               child: Text("憧れの人は？",
                                                   style: TextStyle(
                                                     color: ColorConfig.skyblue,
-                                                    fontSize: SizeConfig
-                                                        .middleFontSize,
+                                                    fontSize: 13,
                                                     fontWeight: FontWeight.bold,
                                                   )),
                                             ),
                                             Container(
-                                              height: 20,
+                                              height: 15,
                                               width:
                                                   SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
                                                 controller: manController,
-                                                maxLength: 10,
+                                                maxLength: 8,
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
@@ -1385,7 +1381,7 @@ class _profile_003 extends State<profile_003> {
                                                   fillColor: ColorConfig.White,
                                                 ),
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 12,
                                                     color: ColorConfig.Black),
                                               ),
                                             ),
@@ -1419,13 +1415,12 @@ class _profile_003 extends State<profile_003> {
                                               child: Text("好きな場所は？",
                                                   style: TextStyle(
                                                     color: ColorConfig.skyblue,
-                                                    fontSize: SizeConfig
-                                                        .middleFontSize,
+                                                    fontSize: 13,
                                                     fontWeight: FontWeight.bold,
                                                   )),
                                             ),
                                             Container(
-                                              height: 20,
+                                              height: 15,
                                               width:
                                                   SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
@@ -1433,7 +1428,7 @@ class _profile_003 extends State<profile_003> {
                                               child: TextField(
                                                 controller:
                                                     sukilactionController,
-                                                maxLength: 10,
+                                                maxLength: 8,
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
@@ -1446,7 +1441,7 @@ class _profile_003 extends State<profile_003> {
                                                   fillColor: ColorConfig.White,
                                                 ),
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 12,
                                                     color: ColorConfig.Black),
                                               ),
                                             ),
@@ -1480,19 +1475,19 @@ class _profile_003 extends State<profile_003> {
                             style: TextStyle(
                                 color: ColorConfig.skyblue,
                                 fontFamily: 'Nicofont',
-                                fontSize: 24),
+                                fontSize: 20),
                           ),
                         ),
                         ConstrainedBox(
                           constraints: BoxConstraints(
-                              maxHeight: SizeConfig.widgetHeightSizeThird),
+                              maxHeight: SizeConfig.widgetHeightSizeThird * 0.8),
                           child: Container(
-                            height: 80.0,
+                            height: SizeConfig.screenWidth * 0.15,
                             width: SizeConfig.screenWidth * 0.7,
                             child: TextField(
                               controller: freespaceController,
-                              maxLines: 3,
-                              maxLength: 48,
+                              maxLines: 2,
+                              maxLength: 36,
                               decoration: InputDecoration(
                                 counterText: '',
                                 enabledBorder: OutlineInputBorder(
