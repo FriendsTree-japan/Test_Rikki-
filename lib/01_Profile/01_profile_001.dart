@@ -502,7 +502,8 @@ class _profile_001 extends State<profile_001> {
                           style: TextStyle(
                               color: ColorConfig.White,
                               fontFamily: 'Nicofont',
-                              fontSize: SizeConfig.bigFontSize),
+                              fontSize: SizeConfig.bigFontSize
+                          ),
                         ),
                       ),
                       Container(
@@ -976,7 +977,7 @@ class _profile_001 extends State<profile_001> {
                                 Container(
                                     child: Text("3.",
                                         style: TextStyle(
-                                            color: ColorConfig.Black,
+                                            color : ColorConfig.Black,
                                             fontSize: 12.0))),
                                 Container(
                                   height: 20,

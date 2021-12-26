@@ -517,11 +517,19 @@ class _profile_003 extends State<profile_003> {
                             0.0,
                             SizeConfig.screenHeight * 0.01),
                         child: Text("My Profile",
-                            style: TextStyle(
-                              color: ColorConfig.skyblue,
-                              fontSize: SizeConfig.bigFontSize,
-                              fontFamily: 'Nicofont',
-                            ))),
+                          style: TextStyle(
+                            color: ColorConfig.skyblue,
+                            fontFamily: 'Nicofont',
+                            fontSize: SizeConfig.bigFontSize,
+                            shadows: <Shadow>[
+                              Shadow(
+                                offset: Offset(3.0, 3.0),
+                                blurRadius: 2.0,
+                                color: ColorConfig.White,
+                              ),
+                            ],
+                          ),
+                        )),
                   ),
                   Stack(
                     children: [
@@ -1469,7 +1477,7 @@ class _profile_003 extends State<profile_003> {
                     child: Column(
                       children: [
                         Container(
-                          height: 20,
+                          height: 26,
                           child: Text(
                             "Free Space",
                             style: TextStyle(
@@ -1478,21 +1486,19 @@ class _profile_003 extends State<profile_003> {
                                 fontSize: 16),
                           ),
                         ),
-                        ConstrainedBox(
-                          constraints: BoxConstraints(
-                              maxHeight: SizeConfig.widgetHeightSizeThird * 0.8),
+                        Container(
                           child: Container(
                             height: SizeConfig.screenWidth * 0.15,
                             width: SizeConfig.screenWidth * 0.7,
                             child: TextField(
                               controller: freespaceController,
-                              maxLines: 2,
-                              maxLength: 36,
+                              maxLines: 1,
+                              maxLength: 19,
                               decoration: InputDecoration(
                                 counterText: '',
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: ColorConfig.White),
+                                  BorderSide(color: ColorConfig.White),
                                 ),
                                 filled: true,
                                 fillColor: ColorConfig.White,
@@ -1501,7 +1507,7 @@ class _profile_003 extends State<profile_003> {
                                   fontSize: 12, color: ColorConfig.Black),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),

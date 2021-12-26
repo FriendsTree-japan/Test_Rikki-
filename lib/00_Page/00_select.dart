@@ -67,7 +67,6 @@ class _SelectState extends State<Select> {
                 child: Text("プロフィール帳のタイプを選んでください",
                     style: TextStyle(
                       fontSize: 18,
-                      color: const Color(0xFF737373),
                     ))),
             Padding(
               padding: EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),

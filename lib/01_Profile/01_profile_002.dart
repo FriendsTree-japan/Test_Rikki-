@@ -545,10 +545,19 @@ class _profile_005 extends State<profile_005> {
                         padding:
                         EdgeInsets.only(top: SizeConfig.widgetPaddingSize * 1.3),
                         child: Text("My Profile",
-                            style: TextStyle(
-                                color: ColorConfig.Orange,
-                                fontFamily: 'Nicofont',
-                                fontSize: SizeConfig.bigFontSize))),
+                          style: TextStyle(
+                            color: ColorConfig.Orange,
+                            fontFamily: 'Nicofont',
+                            fontSize: SizeConfig.bigFontSize,
+                            shadows: <Shadow>[
+                              Shadow(
+                                offset: Offset(3.0, 3.0),
+                                blurRadius: 2.0,
+                                color: ColorConfig.White,
+                              ),
+                            ],
+                          ),
+                        )),
                   ),
                   Padding(
                       padding: EdgeInsets.fromLTRB(

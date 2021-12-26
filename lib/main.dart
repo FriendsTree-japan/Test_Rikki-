@@ -77,21 +77,20 @@ class TabPage extends StatelessWidget {
             child: PreferredSize(
               preferredSize: Size.fromHeight(40.0),
               child: AppBar(
-                title: Text("Profile Book App",
+                title: Text("My Profile",
                     style: TextStyle(
-                      color: const Color(0xFF737373),
+                      color: const Color(0xFFFFFFFF),
                       fontSize: 18,
-                      fontFamily: 'Nicofont',
                     )),
                 iconTheme: const IconThemeData(
-                  color: const Color(0xFF737373),
+                  color: const Color(0xFFFFFFFF),
                 ),
-                backgroundColor: const Color(0xFFFFFFFF),
+                backgroundColor: const Color(0xFF4CAF50),
                 bottom: TabBar(
                   tabs: _tab,
-                  labelColor: const Color(0xFF737373),
-                  unselectedLabelColor: const Color(0xFF737373),
-                  indicatorColor: const Color(0xFF737373),
+                  labelColor: const Color(0xFFFFFFFF),
+                  unselectedLabelColor: const Color(0xFFFFFFFF),
+                  indicatorColor: const Color(0xFFFFFFFF),
                 ),
               ),
             )),
@@ -108,28 +107,24 @@ class TabPage extends StatelessWidget {
             ListTile(
               title: Text('操作手順書',
                   style: TextStyle(
-                    color: const Color(0xFF737373),
                   )),
               onTap: _manualURL,
             ),
             ListTile(
               title: Text('問い合わせ',
                   style: TextStyle(
-                    color: const Color(0xFF737373),
                   )),
               onTap: _FAQURL,
             ),
             ListTile(
               title: Text('利用規約',
                   style: TextStyle(
-                    color: const Color(0xFF737373),
                   )),
               onTap: _rulesURL,
             ),
             ListTile(
               title: Text('ソフトウェアライセンス',
                   style: TextStyle(
-                    color: const Color(0xFF737373),
                   )),
               onTap: () => showLicensePage(
                 context: context,
