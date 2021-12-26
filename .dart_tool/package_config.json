@@ -3,339 +3,563 @@
   "packages": [
     {
       "name": "async",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.6.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "boolean_selector",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "carousel_slider",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.0.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "characters",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.2.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "charcode",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.3.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/charcode-1.2.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "clock",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/clock-1.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "collection",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "cross_file",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/cross_file-0.3.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "cupertino_icons",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "esys_flutter_share",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/esys_flutter_share-1.0.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "fake_async",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/packages/flutter",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/packages/flutter",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_test",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/packages/flutter_test",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/packages/flutter_test",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_web_plugins",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/packages/flutter_web_plugins",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/packages/flutter_web_plugins",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "font_awesome_flutter",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.2.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.2.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "google_mobile_ads",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.6",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/google_mobile_ads-0.13.6",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "http",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.3",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "http_parser",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "image_cropper",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_cropper-1.4.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_cropper-1.4.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "image_gallery_saver",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "image_picker",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.8.4+1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.8.4+1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "image_picker_for_web",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.1.4",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.1.4",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "image_picker_platform_interface",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_platform_interface-2.4.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "intl",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "js",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "lints",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "matcher",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.11",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.10",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "meta",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.3.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "nested",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path_provider",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.0"
     },
     {
       "name": "pedantic",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "platform",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/platform-2.2.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/platform-2.2.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "1.24"
     },
     {
       "name": "plugin_platform_interface",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "provider",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/provider-5.0.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/provider-5.0.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "screenshot",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/screenshot-1.2.3",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/screenshot-1.2.3",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "sky_engine",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/bin/cache/pkg/sky_engine",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/bin/cache/pkg/sky_engine",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "source_span",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "sqflite",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "sqflite_common",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.1+1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.1+1",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "stream_channel",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "string_scanner",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "synchronized",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "term_glyph",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "test_api",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.4.3",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "typed_data",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.10",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_linux",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_macos",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_platform_interface",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.4",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_platform_interface-2.0.4",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_web",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.5",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.5",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "url_launcher_windows",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.2",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "vector_math",
+<<<<<<< HEAD
       "rootUri": "file:///Users/yoshidayouichirou/Documents/02_Programing/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.1",
+=======
+      "rootUri": "file:///Users/karitarikito/development/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.0",
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "2.12"
     },
     {
       "name": "profile_box_test",
@@ -344,7 +568,13 @@
       "languageVersion": "2.12"
     }
   ],
+<<<<<<< HEAD
   "generated": "2021-12-25T07:26:52.780803Z",
   "generator": "pub",
   "generatorVersion": "2.15.1"
+=======
+  "generated": "2021-12-25T12:54:58.651123Z",
+  "generator": "pub",
+  "generatorVersion": "2.13.4"
+>>>>>>> c3edccf7d7ffdc88fa3130aef5b6112706714870
 }
