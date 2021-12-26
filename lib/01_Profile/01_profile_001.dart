@@ -994,10 +994,6 @@ class _profile_001 extends State<profile_001> {
                                     ),
                                     style: TextStyle(fontSize: 12),
                                   ),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f96ade26a8856a3ae84f42e2067a57eef342fc7f
                                 ),
                               ]),
                               Padding(
@@ -1007,31 +1003,23 @@ class _profile_001 extends State<profile_001> {
                                 Container(
                                     child: Text("3.",
                                         style: TextStyle(
-<<<<<<< HEAD
                                             color: ColorConfig.Black,
-=======
-                                            color : ColorConfig.Black,
->>>>>>> f96ade26a8856a3ae84f42e2067a57eef342fc7f
                                             fontSize: 12.0))),
                                 Container(
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.3,
                                   child: TextField(
                                     controller: third2Controller,
-<<<<<<< HEAD
                                     maxLength: 9,
-=======
-                                    maxLength: 16,
->>>>>>> f96ade26a8856a3ae84f42e2067a57eef342fc7f
                                     decoration: InputDecoration(
                                       counterText: '',
                                       // enabledBorder: OutlineInputBorder(
                                       //   borderSide:
                                       //   BorderSide(color: ColorConfig.Yellow),
                                       // ),
-<<<<<<< HEAD
-=======
-=======
+                                    ),
+                                  ),
+                                ),
                                   Row(children: [
                                     Container(
                                         child: Text("3.",
@@ -1046,19 +1034,11 @@ class _profile_001 extends State<profile_001> {
                                         maxLength: 9,
                                         decoration: InputDecoration(
                                           counterText: '',
-                                          // enabledBorder: OutlineInputBorder(
-                                          //   borderSide:
-                                          //   BorderSide(color: ColorConfig.Yellow),
-                                          // ),
                                         ),
                                         style: TextStyle(fontSize: 12),
                                       ),
->>>>>>> e2902868490d0b4633cf095f9fb3fc60d96c4272
->>>>>>> f96ade26a8856a3ae84f42e2067a57eef342fc7f
                                     ),
-                                    style: TextStyle(fontSize: 12),
-                                  ),
-                                ),
+                                  ],),
                               ]),
                             ]),
                           ],
