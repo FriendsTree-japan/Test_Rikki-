@@ -1088,7 +1088,7 @@ class _profile_003 extends State<profile_003> {
                                   padding:
                                       EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
-                                    controller: text2Controller,
+                                    controller: tokugiController,
                                     maxLength: 8,
                                     decoration: InputDecoration(
                                       counterText: '',
@@ -1469,13 +1469,13 @@ class _profile_003 extends State<profile_003> {
                     child: Column(
                       children: [
                         Container(
-                          height: 26,
+                          height: 20,
                           child: Text(
                             "Free Space",
                             style: TextStyle(
                                 color: ColorConfig.skyblue,
                                 fontFamily: 'Nicofont',
-                                fontSize: 20),
+                                fontSize: 16),
                           ),
                         ),
                         ConstrainedBox(

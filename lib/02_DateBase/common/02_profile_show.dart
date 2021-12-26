@@ -64,6 +64,7 @@ class profileShow {
             content: TextField(
               controller: saveNameController,
               decoration: InputDecoration(hintText: "ここに入力"),
+              maxLength: 11,
             ),
             actions: <Widget>[
               ElevatedButton(

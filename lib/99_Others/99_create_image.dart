@@ -33,8 +33,7 @@ class shareProvider {
   Future<void> shareImageAndText(String text, GlobalKey globalKey) async {
     final bytes = await WidgetToImageConverter().exportToImage(globalKey);
     await Share.file(
-        'shared image', 'share.png', bytes!.buffer.asUint8List(), 'image/png',
-        text: 'プロフィールをシェアする');
+        'shared image', 'share.png', bytes!.buffer.asUint8List(), 'image/png',);
   }
 }
 
