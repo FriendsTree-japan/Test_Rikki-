@@ -15,6 +15,7 @@ class SizeConfig {
   static late double widgetHeightSizeFirst;
   static late double widgetHeightSizeSecond;
   static late double widgetHeightSizeThird;
+  static late double widgetHeightSizePhoto;
   static late double widgetPaddingSize;
   static late double bigFontSize;
   static late double middleFontSize;
@@ -32,19 +33,22 @@ class SizeConfig {
     middleFontSize = 14.0;
     smallFontSize = 12.0;
 
-    //各ウィジェットの最大値を定義
+    //各ウィジェッsアイズを定義
     if (screenHeight > 900) {
-      widgetHeightSizeFirst = 300.0;
+      widgetHeightSizeFirst = 280.0;
       widgetHeightSizeSecond = 140.0;
       widgetHeightSizeThird = 140.0;
+      widgetHeightSizePhoto = 200;
     } else if (screenHeight > 700) {
-      widgetHeightSizeFirst = 250.0;
+      widgetHeightSizeFirst = 280.0;
       widgetHeightSizeSecond = 126.0;
       widgetHeightSizeThird = 150.0;
+      widgetHeightSizePhoto = 200;
     } else {
       widgetHeightSizeFirst = 280.0;
       widgetHeightSizeSecond = 126.0;
       widgetHeightSizeThird = 120.0;
+      widgetHeightSizePhoto = 180;
     }
 
     //各ウィジェット間のPaddingの値を定義
@@ -536,7 +540,7 @@ class _profile_001 extends State<profile_001> {
                             color: ColorConfig.Yellow,
                             borderRadius: BorderRadius.circular(15),
                           ),
-                          height: SizeConfig.screenHeight * 0.5,
+                          height: SizeConfig.widgetHeightSizeFirst,
                           width: SizeConfig.screenWidth * 0.82,
                           padding: EdgeInsets.fromLTRB(
                               SizeConfig.screenWidth * 0.02,
@@ -703,9 +707,9 @@ class _profile_001 extends State<profile_001> {
                                                 ])
                                           ]),
                                       Container(
-                                        height: SizeConfig.screenHeight * 0.35,
+                                        height: SizeConfig.widgetHeightSizePhoto,
                                         width: SizeConfig.screenWidth * 0.25,
-                                        // color:Colors.red,
+                                        //color:Colors.red,
                                         child: Align(
                                           alignment: Alignment.topRight,
                                           child: InkWell(
@@ -1020,25 +1024,6 @@ class _profile_001 extends State<profile_001> {
                                     ),
                                   ),
                                 ),
-                                  Row(children: [
-                                    Container(
-                                        child: Text("3.",
-                                            style: TextStyle(
-                                                color: ColorConfig.Black,
-                                                fontSize: 12.0))),
-                                    Container(
-                                      height: 20,
-                                      width: SizeConfig.screenWidth * 0.3,
-                                      child: TextField(
-                                        controller: third2Controller,
-                                        maxLength: 9,
-                                        decoration: InputDecoration(
-                                          counterText: '',
-                                        ),
-                                        style: TextStyle(fontSize: 12),
-                                      ),
-                                    ),
-                                  ],),
                               ]),
                             ]),
                           ],
