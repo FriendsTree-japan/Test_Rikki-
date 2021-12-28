@@ -177,6 +177,26 @@ class _profile_001 extends State<profile_001> {
   late String saveName;
   late String profileTitle;
 
+  //前情報保持
+  late String nameZen;
+  late String birthZen;
+  late String hobbyZen;
+  late String specialSkillZen;
+  late String freeTimeZen;
+  late String SNS1Zen;
+  late String SNS2Zen;
+  late String ranking1Zen;
+  late String first1Zen;
+  late String second1Zen;
+  late String third1Zen;
+  late String ranking2Zen;
+  late String first2Zen;
+  late String second2Zen;
+  late String third2Zen;
+  late String freeeSpaceZen;
+  late String myImagePathZen;
+
+
   //プロフィール画像Pass
   late String myImagePath;
 
@@ -209,6 +229,23 @@ class _profile_001 extends State<profile_001> {
     } else {
       this.profileTitle = "新規作成画面";
     }
+    this.nameZen = widget.name;
+    this.birthZen = widget.birth;
+    this.hobbyZen = widget.hobby;
+    this.specialSkillZen = widget.specialSkill;
+    this.freeTimeZen = widget.freeTime;
+    this.SNS1Zen = widget.SNS1;
+    this.SNS2Zen = widget.SNS2;
+    this.ranking1Zen = widget.ranking1;
+    this.first1Zen = widget.first1;
+    this.second1Zen = widget.second1;
+    this.third1Zen = widget.third1;
+    this.ranking2Zen = widget.ranking2;
+    this.first2Zen = widget.first2;
+    this.second2Zen = widget.second2;
+    this.third2Zen = widget.third2;
+    this.freeeSpaceZen = widget.freeeSpace;
+    this.myImagePathZen = widget.myImagePath;
   }
 
   @override
@@ -235,9 +272,107 @@ class _profile_001 extends State<profile_001> {
             leading: new IconButton(
                 icon: new Icon(Icons.arrow_back, color: ColorConfig.Black),
                 onPressed: () {
+                  String name = nameController.text;
+                  String birth = birthController.text;
+                  String hobby = hobbyController.text;
+                  String specialSkill =
+                      specialSkillController.text;
+                  String freeTime = freeTimeController.text;
+                  String SNS1 = SNS1Controller.text;
+                  String SNS2 = SNS2Controller.text;
+                  String ranking1 = ranking1Controller.text;
+                  String first1 = first1Controller.text;
+                  String second1 = second1Controller.text;
+                  String third1 = third1Controller.text;
+                  String ranking2 = ranking2Controller.text;
+                  String first2 = first2Controller.text;
+                  String second2 = second2Controller.text;
+                  String third2 = third2Controller.text;
+                  String freeeSpace =
+                      freeeSpaceController.text;
                   if (koshinFlg == "1") {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => TabPage(1)));
+                    if (name == this.nameZen &&
+                        birth == this.birthZen &&
+                        hobby == this.hobbyZen &&
+                        specialSkill == specialSkillZen &&
+                        freeTime == freeTimeZen &&
+                        SNS1 == SNS1Zen &&
+                        SNS2 == SNS2Zen &&
+                        ranking1 == ranking1Zen &&
+                        first1 == first1Zen &&
+                        second1 == second1Zen &&
+                        third1 == third1Zen &&
+                        ranking2 == ranking2Zen &&
+                        first2 == first2Zen &&
+                        second2 == second2Zen &&
+                        third2 == third2Zen &&
+                        freeeSpace == freeeSpaceZen &&
+                        myImagePath == myImagePathZen) {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => TabPage(1)));
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('プロフィールが更新されています。変更内容を保存しますか？'),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: ColorConfig.GrayWhite,
+                                      onPrimary: ColorConfig.Black),
+                                  child: Text('いいえ'),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.green,
+                                      onPrimary: Colors.white),
+                                  onPressed: () async {
+                                    profileDb proDb = new profileDb();
+                                    DateTime now = DateTime.now();
+                                    DateFormat outputFormat =
+                                    DateFormat('yyyy/MM/dd HH:mm');
+                                    String date = outputFormat.format(now);
+                                    ProList plist = new ProList.ProList_001(
+                                        id: id,
+                                        saveName: saveName,
+                                        koshinYmd: date,
+                                        name: name,
+                                        birth_p001: birth,
+                                        hobby_p001: hobby,
+                                        specialSkill_p001: specialSkill,
+                                        freeTime_p001: freeTime,
+                                        SNS1_p001: SNS1,
+                                        SNS2_p001: SNS2,
+                                        ranking1_p001: ranking1,
+                                        first1_p001: first1,
+                                        second1_p001: second1,
+                                        third1_p001: third1,
+                                        ranking2_p001: ranking2,
+                                        first2_p001: first2,
+                                        second2_p001: second2,
+                                        third2_p001: third2,
+                                        freeeSpace_p001: freeeSpace,
+                                        myImagePath_p001: myImagePath);
+                                    await proDb.updateData001(plist);
+                                    Navigator.pop(context);
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                  child: Text('はい'),
+                                ),
+                              ],
+                            );
+                          });
+                    }
                   } else {
                     showDialog(
                         context: context,
@@ -266,24 +401,6 @@ class _profile_001 extends State<profile_001> {
                                       await profileShow().saveDialog(context);
                                   if (saveName != "") {
                                     profileDb proDb = new profileDb();
-                                    String name = nameController.text;
-                                    String birth = birthController.text;
-                                    String hobby = hobbyController.text;
-                                    String specialSkill =
-                                        specialSkillController.text;
-                                    String freeTime = freeTimeController.text;
-                                    String SNS1 = SNS1Controller.text;
-                                    String SNS2 = SNS2Controller.text;
-                                    String ranking1 = ranking1Controller.text;
-                                    String first1 = first1Controller.text;
-                                    String second1 = second1Controller.text;
-                                    String third1 = third1Controller.text;
-                                    String ranking2 = ranking2Controller.text;
-                                    String first2 = first2Controller.text;
-                                    String second2 = second2Controller.text;
-                                    String third2 = third2Controller.text;
-                                    String freeeSpace =
-                                        freeeSpaceController.text;
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
                                         DateFormat('yyyy/MM/dd HH:mm');
@@ -316,6 +433,10 @@ class _profile_001 extends State<profile_001> {
                                     koshinFlg = "1";
                                   }
                                   Navigator.pop(context);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TabPage(1)));
                                 },
                                 child: Text('はい'),
                               ),
@@ -385,6 +506,23 @@ class _profile_001 extends State<profile_001> {
                                     freeeSpace_p001: freeeSpace,
                                     myImagePath_p001: myImagePath);
                                 await proDb.updateData001(plist);
+                                this.nameZen = name;
+                                this.birthZen = birth;
+                                this.hobbyZen = hobby;
+                                this.specialSkillZen = specialSkill;
+                                this.freeTimeZen = freeTime;
+                                this.SNS1Zen = SNS1;
+                                this.SNS2Zen = SNS2;
+                                this.ranking1Zen = ranking1;
+                                this.first1Zen = first1;
+                                this.second1Zen = second1;
+                                this.third1Zen = third1;
+                                this.ranking2Zen = ranking2;
+                                this.first2Zen = first2;
+                                this.second2Zen = second2;
+                                this.third2Zen = third2;
+                                this.freeeSpaceZen = freeeSpace;
+                                this.myImagePathZen = myImagePath;
                                 Navigator.pop(childContext);
                               } else {
                                 saveName =
@@ -416,6 +554,24 @@ class _profile_001 extends State<profile_001> {
                                       query);
                                   koshinFlg = "1";
                                 }
+                                this.nameZen = name;
+                                this.birthZen = birth;
+                                this.hobbyZen = hobby;
+                                this.specialSkillZen = specialSkill;
+                                this.freeTimeZen = freeTime;
+                                this.SNS1Zen = SNS1;
+                                this.SNS2Zen = SNS2;
+                                this.ranking1Zen = ranking1;
+                                this.first1Zen = first1;
+                                this.second1Zen = second1;
+                                this.third1Zen = third1;
+                                this.ranking2Zen = ranking2;
+                                this.first2Zen = first2;
+                                this.second2Zen = second2;
+                                this.third2Zen = third2;
+                                this.freeeSpaceZen = freeeSpace;
+                                this.myImagePathZen = myImagePath;
+
                                 Navigator.pop(childContext);
                               }
                             },
@@ -661,7 +817,7 @@ class _profile_001 extends State<profile_001> {
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                 ),
-                                                style: TextStyle(fontSize: 4),
+                                                style: TextStyle(fontSize: 12),
                                               ),
                                             ),
                                             Padding(
