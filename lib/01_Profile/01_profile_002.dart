@@ -181,42 +181,65 @@ class _profile_005 extends State<profile_005> {
   late String saveName;
   late String profileTitle;
 
+  //前情報保持
+  late String nameZen;
+  late String nickNameZen;
+  late String birthYYYYZen;
+  late String birthMMZen;
+  late String birthDDZen;
+  late String personalityZen;
+  late String skillZen;
+  late String myBoomZen;
+  late String recentThingZen;
+  late String offDayZen;
+  late String win1BillionYenZen;
+  late String rebornZen;
+  late String wishZen;
+  late String myBestTheme1Zen;
+  late String teme1MyBest1Zen;
+  late String teme1MyBest2Zen;
+  late String teme1MyBest3Zen;
+  late String myBestTheme2Zen;
+  late String teme2MyBest1Zen;
+  late String teme2MyBest2Zen;
+  late String teme2MyBest3Zen;
+
   void initState() {
     super.initState();
     this.saveName = widget.saveName;
     this.nameController = new TextEditingController(text: widget.name);
     this.nickNameController = new TextEditingController(text: widget.nickName);
     this.birthYYYYController =
-    new TextEditingController(text: widget.birthYYYY);
+        new TextEditingController(text: widget.birthYYYY);
     this.birthMMController = new TextEditingController(text: widget.birthMM);
     this.birthDDController = new TextEditingController(text: widget.birthDD);
     this.personalityController =
-    new TextEditingController(text: widget.personality);
+        new TextEditingController(text: widget.personality);
     this.skillController = new TextEditingController(text: widget.skill);
     this.myBoomController = new TextEditingController(text: widget.myBoom);
     this.recentThingController =
-    new TextEditingController(text: widget.recentThing);
+        new TextEditingController(text: widget.recentThing);
     this.offDayController = new TextEditingController(text: widget.offDay);
     this.win1BillionYenController =
-    new TextEditingController(text: widget.win1BillionYen);
+        new TextEditingController(text: widget.win1BillionYen);
     this.rebornController = new TextEditingController(text: widget.reborn);
     this.wishController = new TextEditingController(text: widget.wish);
     this.myBestTheme1Controller =
-    new TextEditingController(text: widget.myBestTheme1);
+        new TextEditingController(text: widget.myBestTheme1);
     this.teme1MyBest1Controller =
-    new TextEditingController(text: widget.teme1MyBest1);
+        new TextEditingController(text: widget.teme1MyBest1);
     this.teme1MyBest2Controller =
-    new TextEditingController(text: widget.teme1MyBest2);
+        new TextEditingController(text: widget.teme1MyBest2);
     this.teme1MyBest3Controller =
-    new TextEditingController(text: widget.teme1MyBest3);
+        new TextEditingController(text: widget.teme1MyBest3);
     this.myBestTheme2Controller =
-    new TextEditingController(text: widget.myBestTheme2);
+        new TextEditingController(text: widget.myBestTheme2);
     this.teme2MyBest1Controller =
-    new TextEditingController(text: widget.teme2MyBest1);
+        new TextEditingController(text: widget.teme2MyBest1);
     this.teme2MyBest2Controller =
-    new TextEditingController(text: widget.teme2MyBest2);
+        new TextEditingController(text: widget.teme2MyBest2);
     this.teme2MyBest3Controller =
-    new TextEditingController(text: widget.teme2MyBest3);
+        new TextEditingController(text: widget.teme2MyBest3);
     this.id = widget.id;
     this.koshinFlg = widget.koshinFlg;
     if (koshinFlg == "1") {
@@ -224,6 +247,27 @@ class _profile_005 extends State<profile_005> {
     } else {
       this.profileTitle = "新規作成画面";
     }
+    this.nameZen = widget.name;
+    this.nickNameZen = widget.nickName;
+    this.birthYYYYZen = widget.birthYYYY;
+    this.birthMMZen = widget.birthMM;
+    this.birthDDZen = widget.birthDD;
+    this.personalityZen = widget.personality;
+    this.skillZen = widget.skill;
+    this.myBoomZen = widget.myBoom;
+    this.recentThingZen = widget.recentThing;
+    this.offDayZen = widget.offDay;
+    this.win1BillionYenZen = widget.win1BillionYen;
+    this.rebornZen = widget.reborn;
+    this.wishZen = widget.wish;
+    this.myBestTheme1Zen = widget.myBestTheme1;
+    this.teme1MyBest1Zen = widget.teme1MyBest1;
+    this.teme1MyBest2Zen = widget.teme1MyBest2;
+    this.teme1MyBest3Zen = widget.teme1MyBest3;
+    this.myBestTheme2Zen = widget.myBestTheme2;
+    this.teme2MyBest1Zen = widget.teme2MyBest1;
+    this.teme2MyBest2Zen = widget.teme2MyBest2;
+    this.teme2MyBest3Zen = widget.teme2MyBest3;
   }
 
   @override
@@ -250,9 +294,120 @@ class _profile_005 extends State<profile_005> {
             leading: new IconButton(
                 icon: new Icon(Icons.arrow_back, color: ColorConfig.Black),
                 onPressed: () {
+                  String name = nameController.text;
+                  String nickName = nickNameController.text;
+                  String birthYYYY = birthYYYYController.text;
+                  String birthMM = birthMMController.text;
+                  String birthDD = birthDDController.text;
+                  String personality = personalityController.text;
+                  String skill = skillController.text;
+                  String myBoom = myBoomController.text;
+                  String recentThing = recentThingController.text;
+                  String offDay = offDayController.text;
+                  String win1BillionYen = win1BillionYenController.text;
+                  String reborn = rebornController.text;
+                  String wish = wishController.text;
+                  String myBestTheme1 = myBestTheme1Controller.text;
+                  String teme1MyBest1 = teme1MyBest1Controller.text;
+                  String teme1MyBest2 = teme1MyBest2Controller.text;
+                  String teme1MyBest3 = teme1MyBest3Controller.text;
+                  String myBestTheme2 = myBestTheme2Controller.text;
+                  String teme2MyBest1 = teme2MyBest1Controller.text;
+                  String teme2MyBest2 = teme2MyBest2Controller.text;
+                  String teme2MyBest3 = teme2MyBest3Controller.text;
+
                   if (koshinFlg == "1") {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => TabPage(1)));
+                    if (name == nameZen &&
+                        nickName == nickNameZen &&
+                        birthYYYY == birthYYYYZen &&
+                        birthMM == birthMMZen &&
+                        birthDD == birthDDZen &&
+                        personality == personalityZen &&
+                        skill == skillZen &&
+                        myBoom == myBoomZen &&
+                        recentThing == recentThingZen &&
+                        offDay == offDayZen &&
+                        win1BillionYen == win1BillionYenZen &&
+                        reborn == rebornZen &&
+                        wish == wishZen &&
+                        myBestTheme1 == myBestTheme1Zen &&
+                        teme1MyBest1 == teme1MyBest1Zen &&
+                        teme1MyBest2 == teme1MyBest2Zen &&
+                        teme1MyBest3 == teme1MyBest3Zen &&
+                        myBestTheme2 == myBestTheme2Zen &&
+                        teme2MyBest1 == teme2MyBest1Zen &&
+                        teme2MyBest2 == teme2MyBest2Zen &&
+                        teme2MyBest3 == teme2MyBest3Zen) {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => TabPage(1)));
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('プロフィールが更新されています。変更内容を保存しますか？'),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: ColorConfig.GrayWhite,
+                                      onPrimary: ColorConfig.Black),
+                                  child: Text('いいえ'),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.green,
+                                      onPrimary: Colors.white),
+                                  onPressed: () async {
+                                    profileDb proDb = new profileDb();
+                                    DateTime now = DateTime.now();
+                                    DateFormat outputFormat =
+                                        DateFormat('yyyy/MM/dd HH:mm');
+                                    String date = outputFormat.format(now);
+                                    ProList plist = new ProList.ProList_005(
+                                        id: id,
+                                        saveName: saveName,
+                                        koshinYmd: date,
+                                        name: name,
+                                        nickName_p005: nickName,
+                                        birthYYYY_p005: birthYYYY,
+                                        birthMM_p005: birthMM,
+                                        birthDD_p005: birthDD,
+                                        personality_p005: personality,
+                                        skill_p005: skill,
+                                        myBoom_p005: myBoom,
+                                        recentThing_p005: recentThing,
+                                        offDay_p005: offDay,
+                                        win1BillionYen_p005: win1BillionYen,
+                                        reborn_p005: reborn,
+                                        wish_p005: wish,
+                                        myBestTheme1_p005: myBestTheme1,
+                                        teme1MyBest1_p005: teme1MyBest1,
+                                        teme1MyBest2_p005: teme1MyBest2,
+                                        teme1MyBest3_p005: teme1MyBest3,
+                                        myBestTheme2_p005: myBestTheme2,
+                                        teme2MyBest1_p005: teme2MyBest1,
+                                        teme2MyBest2_p005: teme2MyBest2,
+                                        teme2MyBest3_p005: teme2MyBest3);
+                                    await proDb.updateData005(plist);
+                                    Navigator.pop(context);
+
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                  child: Text('はい'),
+                                ),
+                              ],
+                            );
+                          });
+                    }
                   } else {
                     showDialog(
                         context: context,
@@ -278,44 +433,12 @@ class _profile_005 extends State<profile_005> {
                                     onPrimary: Colors.white),
                                 onPressed: () async {
                                   saveName =
-                                  await profileShow().saveDialog(context);
+                                      await profileShow().saveDialog(context);
                                   if (saveName != "") {
                                     profileDb proDb = new profileDb();
-                                    String name = nameController.text;
-                                    String nickName = nickNameController.text;
-                                    String birthYYYY = birthYYYYController.text;
-                                    String birthMM = birthMMController.text;
-                                    String birthDD = birthDDController.text;
-                                    String personality =
-                                        personalityController.text;
-                                    String skill = skillController.text;
-                                    String myBoom = myBoomController.text;
-                                    String recentThing =
-                                        recentThingController.text;
-                                    String offDay = offDayController.text;
-                                    String win1BillionYen =
-                                        win1BillionYenController.text;
-                                    String reborn = rebornController.text;
-                                    String wish = wishController.text;
-                                    String myBestTheme1 =
-                                        myBestTheme1Controller.text;
-                                    String teme1MyBest1 =
-                                        teme1MyBest1Controller.text;
-                                    String teme1MyBest2 =
-                                        teme1MyBest2Controller.text;
-                                    String teme1MyBest3 =
-                                        teme1MyBest3Controller.text;
-                                    String myBestTheme2 =
-                                        myBestTheme2Controller.text;
-                                    String teme2MyBest1 =
-                                        teme2MyBest1Controller.text;
-                                    String teme2MyBest2 =
-                                        teme2MyBest2Controller.text;
-                                    String teme2MyBest3 =
-                                        teme2MyBest3Controller.text;
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
-                                    DateFormat('yyyy/MM/dd HH:mm');
+                                        DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
                                         'INSERT INTO profile002(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
@@ -349,6 +472,10 @@ class _profile_005 extends State<profile_005> {
                                     koshinFlg = "1";
                                   }
                                   Navigator.pop(context);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TabPage(1)));
                                 },
                                 child: Text('はい'),
                               ),
@@ -369,7 +496,7 @@ class _profile_005 extends State<profile_005> {
                         backgroundColor: ColorConfig.White,
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         children: <Widget>[
                           SimpleDialogOption(
                             onPressed: () async {
@@ -398,7 +525,7 @@ class _profile_005 extends State<profile_005> {
                               String teme2MyBest3 = teme2MyBest3Controller.text;
                               DateTime now = DateTime.now();
                               DateFormat outputFormat =
-                              DateFormat('yyyy/MM/dd HH:mm');
+                                  DateFormat('yyyy/MM/dd HH:mm');
                               String date = outputFormat.format(now);
 
                               if (koshinFlg == "1") {
@@ -428,10 +555,32 @@ class _profile_005 extends State<profile_005> {
                                     teme2MyBest2_p005: teme2MyBest2,
                                     teme2MyBest3_p005: teme2MyBest3);
                                 await proDb.updateData005(plist);
+                                this.nameZen = name;
+                                this.nickNameZen = nickName;
+                                this.birthYYYYZen = birthYYYY;
+                                this.birthMMZen = birthMM;
+                                this.birthDDZen = birthDD;
+                                this.personalityZen = personality;
+                                this.skillZen = skill;
+                                this.myBoomZen = myBoom;
+                                this.recentThingZen = recentThing;
+                                this.offDayZen = offDay;
+                                this.win1BillionYenZen = win1BillionYen;
+                                this.rebornZen = reborn;
+                                this.wishZen = wish;
+                                this.myBestTheme1Zen = myBestTheme1;
+                                this.teme1MyBest1Zen = teme1MyBest1;
+                                this.teme1MyBest2Zen = teme1MyBest2;
+                                this.teme1MyBest3Zen = teme1MyBest3;
+                                this.myBestTheme2Zen = myBestTheme2;
+                                this.teme2MyBest1Zen = teme2MyBest1;
+                                this.teme2MyBest2Zen = teme2MyBest2;
+                                this.teme2MyBest3Zen = teme2MyBest3;
+
                                 Navigator.pop(childContext);
                               } else {
                                 saveName =
-                                await profileShow().saveDialog(context);
+                                    await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
                                       'INSERT INTO profile002(saveName, koshinYmd, name, nickName, birthYYYY, birthMM, birthDD, personality, skill, myBoom, recentThing, offDay, win1BillionYen, reborn, wish, myBestTheme1, teme1MyBest1, teme1MyBest2, teme1MyBest3, myBestTheme2, teme2MyBest1, teme2MyBest2, teme2MyBest3) '
@@ -464,6 +613,27 @@ class _profile_005 extends State<profile_005> {
                                       query);
                                   koshinFlg = "1";
                                 }
+                                this.nameZen = name;
+                                this.nickNameZen = nickName;
+                                this.birthYYYYZen = birthYYYY;
+                                this.birthMMZen = birthMM;
+                                this.birthDDZen = birthDD;
+                                this.personalityZen = personality;
+                                this.skillZen = skill;
+                                this.myBoomZen = myBoom;
+                                this.recentThingZen = recentThing;
+                                this.offDayZen = offDay;
+                                this.win1BillionYenZen = win1BillionYen;
+                                this.rebornZen = reborn;
+                                this.wishZen = wish;
+                                this.myBestTheme1Zen = myBestTheme1;
+                                this.teme1MyBest1Zen = teme1MyBest1;
+                                this.teme1MyBest2Zen = teme1MyBest2;
+                                this.teme1MyBest3Zen = teme1MyBest3;
+                                this.myBestTheme2Zen = myBestTheme2;
+                                this.teme2MyBest1Zen = teme2MyBest1;
+                                this.teme2MyBest2Zen = teme2MyBest2;
+                                this.teme2MyBest3Zen = teme2MyBest3;
                                 Navigator.pop(childContext);
                               }
                             },
@@ -542,9 +712,10 @@ class _profile_005 extends State<profile_005> {
                 children: <Widget>[
                   Center(
                     child: Container(
-                        padding:
-                        EdgeInsets.only(top: SizeConfig.widgetPaddingSize * 1.3),
-                        child: Text("My Profile",
+                        padding: EdgeInsets.only(
+                            top: SizeConfig.widgetPaddingSize * 1.3),
+                        child: Text(
+                          "My Profile",
                           style: TextStyle(
                             color: ColorConfig.Orange,
                             fontFamily: 'Nicofont',
@@ -595,7 +766,7 @@ class _profile_005 extends State<profile_005> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.35,
                                   padding:
-                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: nameController,
                                     maxLength: 6,
@@ -880,8 +1051,8 @@ class _profile_005 extends State<profile_005> {
                     ),
                   ),
                   Padding(
-                      padding:
-                      EdgeInsets.only(top: SizeConfig.widgetPaddingSize * 1.8)),
+                      padding: EdgeInsets.only(
+                          top: SizeConfig.widgetPaddingSize * 1.8)),
                   ConstrainedBox(
                     constraints: BoxConstraints(
                         maxHeight: SizeConfig.widgetHeightSizeSecond),
@@ -905,63 +1076,63 @@ class _profile_005 extends State<profile_005> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                      child: Text("休みの日は何してる？",
-                                          style: TextStyle(
-                                            color: ColorConfig.Black,
-                                            fontSize: SizeConfig.middleFontSize,
-                                          )),
-                                    ),
-                                    Container(
-                                      width: SizeConfig.screenWidth * 0.8,
-                                      height: 20,
-                                      child: TextField(
-                                        controller: offDayController,
-                                        maxLength: 19,
-                                        decoration: InputDecoration(
-                                          counterText: '',
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: ColorConfig.White),
-                                          ),
-                                          filled: true,
-                                          fillColor: ColorConfig.White,
-                                        ),
-                                        style: TextStyle(fontSize: 14),
+                                Container(
+                                  child: Text("休みの日は何してる？",
+                                      style: TextStyle(
+                                        color: ColorConfig.Black,
+                                        fontSize: SizeConfig.middleFontSize,
+                                      )),
+                                ),
+                                Container(
+                                  width: SizeConfig.screenWidth * 0.8,
+                                  height: 20,
+                                  child: TextField(
+                                    controller: offDayController,
+                                    maxLength: 19,
+                                    decoration: InputDecoration(
+                                      counterText: '',
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: ColorConfig.White),
                                       ),
+                                      filled: true,
+                                      fillColor: ColorConfig.White,
                                     ),
-                                  ])),
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                ),
+                              ])),
                           Container(
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Container(
-                                      child: Text("生まれ変わるなら？",
-                                          style: TextStyle(
-                                            color: ColorConfig.Black,
-                                            fontSize: SizeConfig.middleFontSize,
-                                          )),
-                                    ),
-                                    Container(
-                                      width: SizeConfig.screenWidth * 0.8,
-                                      height: 20,
-                                      child: TextField(
-                                        controller: rebornController,
-                                        maxLength: 19,
-                                        decoration: InputDecoration(
-                                          counterText: '',
-                                          enabledBorder: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                                color: ColorConfig.White),
-                                          ),
-                                          filled: true,
-                                          fillColor: ColorConfig.White,
-                                        ),
-                                        style: TextStyle(fontSize: 14),
+                                Container(
+                                  child: Text("生まれ変わるなら？",
+                                      style: TextStyle(
+                                        color: ColorConfig.Black,
+                                        fontSize: SizeConfig.middleFontSize,
+                                      )),
+                                ),
+                                Container(
+                                  width: SizeConfig.screenWidth * 0.8,
+                                  height: 20,
+                                  child: TextField(
+                                    controller: rebornController,
+                                    maxLength: 19,
+                                    decoration: InputDecoration(
+                                      counterText: '',
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: ColorConfig.White),
                                       ),
+                                      filled: true,
+                                      fillColor: ColorConfig.White,
                                     ),
-                                  ])),
+                                    style: TextStyle(fontSize: 14),
+                                  ),
+                                ),
+                              ])),
                         ],
                       ),
                     ),
@@ -989,7 +1160,7 @@ class _profile_005 extends State<profile_005> {
                               children: <Widget>[
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("best",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -998,37 +1169,37 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                     child: Stack(children: [
-                                      Container(
-                                          child: Image.asset(
-                                              'images/profile002/profile002_best.png')),
-                                      Positioned(
-                                        top: 8,
-                                        left: 5,
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          height: 20,
-                                          width: SizeConfig.screenWidth * 0.34,
-                                          child: TextField(
-                                            controller: myBestTheme1Controller,
-                                            textAlign: TextAlign.center,
-                                            maxLength: 7,
-                                            decoration: InputDecoration(
-                                              counterText: '',
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: ColorConfig.White),
-                                              ),
-                                              filled: true,
-                                              fillColor: ColorConfig.White,
-                                            ),
-                                            style: TextStyle(fontSize: 14),
+                                  Container(
+                                      child: Image.asset(
+                                          'images/profile002/profile002_best.png')),
+                                  Positioned(
+                                    top: 8,
+                                    left: 5,
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      height: 20,
+                                      width: SizeConfig.screenWidth * 0.34,
+                                      child: TextField(
+                                        controller: myBestTheme1Controller,
+                                        textAlign: TextAlign.center,
+                                        maxLength: 7,
+                                        decoration: InputDecoration(
+                                          counterText: '',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: ColorConfig.White),
                                           ),
+                                          filled: true,
+                                          fillColor: ColorConfig.White,
                                         ),
+                                        style: TextStyle(fontSize: 14),
                                       ),
-                                    ])),
+                                    ),
+                                  ),
+                                ])),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No1",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1057,7 +1228,7 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No2",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1086,7 +1257,7 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No3",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1130,7 +1301,7 @@ class _profile_005 extends State<profile_005> {
                               children: <Widget>[
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("best",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1139,36 +1310,36 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                     child: Stack(children: [
-                                      Container(
-                                          child: Image.asset(
-                                              'images/profile002/profile002_best.png')),
-                                      Positioned(
-                                        top: 8,
-                                        left: 5,
-                                        child: Container(
-                                          height: 20,
-                                          width: SizeConfig.screenWidth * 0.34,
-                                          child: TextField(
-                                            controller: myBestTheme2Controller,
-                                            textAlign: TextAlign.center,
-                                            maxLength: 7,
-                                            decoration: InputDecoration(
-                                              counterText: '',
-                                              enabledBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
-                                                    color: ColorConfig.White),
-                                              ),
-                                              filled: true,
-                                              fillColor: ColorConfig.White,
-                                            ),
-                                            style: TextStyle(fontSize: 14),
+                                  Container(
+                                      child: Image.asset(
+                                          'images/profile002/profile002_best.png')),
+                                  Positioned(
+                                    top: 8,
+                                    left: 5,
+                                    child: Container(
+                                      height: 20,
+                                      width: SizeConfig.screenWidth * 0.34,
+                                      child: TextField(
+                                        controller: myBestTheme2Controller,
+                                        textAlign: TextAlign.center,
+                                        maxLength: 7,
+                                        decoration: InputDecoration(
+                                          counterText: '',
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: ColorConfig.White),
                                           ),
+                                          filled: true,
+                                          fillColor: ColorConfig.White,
                                         ),
-                                      )
-                                    ])),
+                                        style: TextStyle(fontSize: 14),
+                                      ),
+                                    ),
+                                  )
+                                ])),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No1",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1197,7 +1368,7 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No2",
                                       style: TextStyle(
                                         color: ColorConfig.Black,
@@ -1226,7 +1397,7 @@ class _profile_005 extends State<profile_005> {
                                 ),
                                 Container(
                                   padding:
-                                  EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
+                                      EdgeInsets.fromLTRB(3.0, 3.0, 0.0, 0.0),
                                   child: Text("No3",
                                       style: TextStyle(
                                         color: ColorConfig.Black,

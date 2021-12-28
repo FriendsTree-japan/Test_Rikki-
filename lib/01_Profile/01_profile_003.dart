@@ -179,6 +179,26 @@ class _profile_003 extends State<profile_003> {
   late String saveName;
   late String profileTitle;
 
+  //前情報保持
+  late String nameZen;
+  late String birthZen;
+  late String placeZen;
+  late String locationZen;
+  late String SNS1Zen;
+  late String SNS2Zen;
+  late String text1Zen;
+  late String text2Zen;
+  late String personal1Zen;
+  late String personal2Zen;
+  late String hobby1Zen;
+  late String hobby2Zen;
+  late String tokugiZen;
+  late String dreamZen;
+  late String manZen;
+  late String kutiiguseZen;
+  late String sukilactionZen;
+  late String freespaceZen;
+
   //プロフィール画像Pass
   late String myImagePath;
 
@@ -216,6 +236,24 @@ class _profile_003 extends State<profile_003> {
     } else {
       this.profileTitle = "新規作成画面";
     }
+    this.nameZen = widget.name;
+    this.birthZen = widget.birth;
+    this.placeZen = widget.place;
+    this.locationZen = widget.location;
+    this.SNS1Zen = widget.SNS1;
+    this.SNS2Zen = widget.SNS2;
+    this.text1Zen = widget.text1;
+    this.text2Zen = widget.text2;
+    this.personal1Zen = widget.personal1;
+    this.personal2Zen = widget.personal2;
+    this.hobby1Zen = widget.hobby1;
+    this.hobby2Zen = widget.hobby2;
+    this.tokugiZen = widget.tokugi;
+    this.dreamZen = widget.dream;
+    this.manZen = widget.man;
+    this.kutiiguseZen = widget.kutiiguse;
+    this.sukilactionZen = widget.sukilaction;
+    this.freespaceZen = widget.freespace;
   }
 
   @override
@@ -242,9 +280,112 @@ class _profile_003 extends State<profile_003> {
             leading: new IconButton(
                 icon: new Icon(Icons.arrow_back, color: ColorConfig.Black),
                 onPressed: () {
+                  String name = nameController.text;
+                  String birth = birthController.text;
+                  String place = placeController.text;
+                  String location = locationController.text;
+                  String SNS1 = SNS1Controller.text;
+                  String SNS2 = SNS2Controller.text;
+                  String text1 = text1Controller.text;
+                  String text2 = text2Controller.text;
+                  String personal1 = personal1Controller.text;
+                  String personal2 = personal2Controller.text;
+                  String hobby1 = hobby1Controller.text;
+                  String hobby2 = hobby2Controller.text;
+                  String tokugi = tokugiController.text;
+                  String dream = dreamController.text;
+                  String man = manController.text;
+                  String kutiiguse = kutiiguseController.text;
+                  String sukilaction = sukilactionController.text;
+                  String freespace = freespaceController.text;
                   if (koshinFlg == "1") {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => TabPage(1)));
+                    if (name == nameZen &&
+                        birth == birthZen &&
+                        place == placeZen &&
+                        location == locationZen &&
+                        SNS1 == SNS1Zen &&
+                        SNS2 == SNS2Zen &&
+                        text1 == text1Zen &&
+                        text2 == text2Zen &&
+                        personal1 == personal1Zen &&
+                        personal2 == personal2Zen &&
+                        hobby1 == hobby1Zen &&
+                        hobby2 == hobby2Zen &&
+                        tokugi == tokugiZen &&
+                        dream == dreamZen &&
+                        man == manZen &&
+                        kutiiguse == kutiiguseZen &&
+                        sukilaction == sukilactionZen &&
+                        freespace == freespaceZen) {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => TabPage(1)));
+                    } else {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text('プロフィールが更新されています。変更内容を保存しますか？'),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: ColorConfig.GrayWhite,
+                                      onPrimary: ColorConfig.Black),
+                                  child: Text('いいえ'),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                ),
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      primary: Colors.green,
+                                      onPrimary: Colors.white),
+                                  onPressed: () async {
+                                    profileDb proDb = new profileDb();
+                                    DateTime now = DateTime.now();
+                                    DateFormat outputFormat =
+                                        DateFormat('yyyy/MM/dd HH:mm');
+                                    String date = outputFormat.format(now);
+                                    ProList plist = new ProList.ProList_003(
+                                        id: id,
+                                        saveName: saveName,
+                                        koshinYmd: date,
+                                        name: name,
+                                        birth_p003: birth,
+                                        place_p003: place,
+                                        location_p003: location,
+                                        SNS1_p003: SNS1,
+                                        SNS2_p003: SNS2,
+                                        text1_p003: text1,
+                                        text2_p003: text2,
+                                        personal1_p003: personal1,
+                                        personal2_p003: personal2,
+                                        hobby1_p003: hobby1,
+                                        hobby2_p003: hobby2,
+                                        tokugi_p003: tokugi,
+                                        dream_p003: dream,
+                                        man_p003: man,
+                                        kutiiguse_p003: kutiiguse,
+                                        sukilaction_p003: sukilaction,
+                                        freespace_p003: freespace,
+                                        myImagePath_p003: myImagePath);
+
+                                    await proDb.updateData003(plist);
+                                    Navigator.pop(context);
+
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => TabPage(1)));
+                                  },
+                                  child: Text('はい'),
+                                ),
+                              ],
+                            );
+                          });
+                    }
                   } else {
                     showDialog(
                         context: context,
@@ -273,25 +414,6 @@ class _profile_003 extends State<profile_003> {
                                       await profileShow().saveDialog(context);
                                   if (saveName != "") {
                                     profileDb proDb = new profileDb();
-                                    String name = nameController.text;
-                                    String birth = birthController.text;
-                                    String place = placeController.text;
-                                    String location = locationController.text;
-                                    String SNS1 = SNS1Controller.text;
-                                    String SNS2 = SNS2Controller.text;
-                                    String text1 = text1Controller.text;
-                                    String text2 = text2Controller.text;
-                                    String personal1 = personal1Controller.text;
-                                    String personal2 = personal2Controller.text;
-                                    String hobby1 = hobby1Controller.text;
-                                    String hobby2 = hobby2Controller.text;
-                                    String tokugi = tokugiController.text;
-                                    String dream = dreamController.text;
-                                    String man = manController.text;
-                                    String kutiiguse = kutiiguseController.text;
-                                    String sukilaction =
-                                        sukilactionController.text;
-                                    String freespace = freespaceController.text;
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
                                         DateFormat('yyyy/MM/dd HH:mm');
@@ -326,6 +448,10 @@ class _profile_003 extends State<profile_003> {
                                     koshinFlg = "1";
                                   }
                                   Navigator.pop(context);
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => TabPage(1)));
                                 },
                                 child: Text('はい'),
                               ),
@@ -399,6 +525,24 @@ class _profile_003 extends State<profile_003> {
                                     freespace_p003: freespace,
                                     myImagePath_p003: myImagePath);
                                 await proDb.updateData003(plist);
+                                nameZen = name;
+                                birthZen = birth;
+                                placeZen = place;
+                                locationZen = location;
+                                SNS1Zen = SNS1;
+                                SNS2Zen = SNS2;
+                                text1Zen = text1;
+                                text2Zen = text2;
+                                personal1Zen = personal1;
+                                personal2Zen = personal2;
+                                hobby1Zen = hobby1;
+                                hobby2Zen = hobby2;
+                                tokugiZen = tokugi;
+                                dreamZen = dream;
+                                manZen = man;
+                                kutiiguseZen = kutiiguse;
+                                sukilactionZen = sukilaction;
+                                freespaceZen = freespace;
                                 Navigator.pop(childContext);
                               } else {
                                 saveName =
@@ -433,6 +577,24 @@ class _profile_003 extends State<profile_003> {
                                       query);
                                   koshinFlg = "1";
                                 }
+                                nameZen = name;
+                                birthZen = birth;
+                                placeZen = place;
+                                locationZen = location;
+                                SNS1Zen = SNS1;
+                                SNS2Zen = SNS2;
+                                text1Zen = text1;
+                                text2Zen = text2;
+                                personal1Zen = personal1;
+                                personal2Zen = personal2;
+                                hobby1Zen = hobby1;
+                                hobby2Zen = hobby2;
+                                tokugiZen = tokugi;
+                                dreamZen = dream;
+                                manZen = man;
+                                kutiiguseZen = kutiiguse;
+                                sukilactionZen = sukilaction;
+                                freespaceZen = freespace;
                                 Navigator.pop(childContext);
                               }
                             },
@@ -516,7 +678,8 @@ class _profile_003 extends State<profile_003> {
                             SizeConfig.screenHeight * 0.01,
                             0.0,
                             SizeConfig.screenHeight * 0.01),
-                        child: Text("My Profile",
+                        child: Text(
+                          "My Profile",
                           style: TextStyle(
                             color: ColorConfig.skyblue,
                             fontFamily: 'Nicofont',
@@ -535,7 +698,8 @@ class _profile_003 extends State<profile_003> {
                     children: [
                       ConstrainedBox(
                         constraints: BoxConstraints(
-                            maxHeight: SizeConfig.widgetHeightSizeFirst* 0.888),
+                            maxHeight:
+                                SizeConfig.widgetHeightSizeFirst * 0.888),
                         child: Container(
                           decoration: BoxDecoration(
                             color: ColorConfig.skyblue,
@@ -1258,7 +1422,8 @@ class _profile_003 extends State<profile_003> {
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
-                                                        color: ColorConfig.White),
+                                                        color:
+                                                            ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
@@ -1498,7 +1663,7 @@ class _profile_003 extends State<profile_003> {
                                 counterText: '',
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
-                                  BorderSide(color: ColorConfig.White),
+                                      BorderSide(color: ColorConfig.White),
                                 ),
                                 filled: true,
                                 fillColor: ColorConfig.White,

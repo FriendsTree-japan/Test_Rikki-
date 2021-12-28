@@ -46,9 +46,9 @@ class Select extends StatefulWidget {
 
 class _SelectState extends State<Select> {
   final List<String> imgList = [
-    'images/select_profile_images/profile001.jpg',
-    'images/select_profile_images/profile002.png',
-    'images/select_profile_images/profile003.png',
+    'images/select_profile_images/Profile001_App.jpg',
+    'images/select_profile_images/Profile002_App.jpg',
+    'images/select_profile_images/Profile003_App.jpg',
   ];
   int _current = 0;
 
