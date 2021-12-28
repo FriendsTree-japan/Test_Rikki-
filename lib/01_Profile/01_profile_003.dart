@@ -65,7 +65,7 @@ class ColorConfig {
 
   void init(BuildContext context) {
     //使用する色を定義
-    Black = Color(0xFF737373);
+    Black = Color(0xFF212121);
     Orange = Color(0xFFFFC0A3);
     skyblue = Color(0xFF5CE1E6);
     White = Color(0xFFFFFFFF);
@@ -270,6 +270,7 @@ class _profile_003 extends State<profile_003> {
       ),
       home: Scaffold(
         appBar: AppBar(
+            // backgroundColor: Colors.green,
             backgroundColor: Colors.white,
             title: Text(profileTitle,
                 style: TextStyle(

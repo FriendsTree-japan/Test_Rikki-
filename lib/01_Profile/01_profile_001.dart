@@ -72,8 +72,7 @@ class ColorConfig {
 
   void init(BuildContext context) {
     //使用する色を定義
-
-    Black = Color(0xFF595959);
+    Black = Color(0xFF212121);
     Orange = Color(0xFFFFC0A3);
     White = Color(0xFFFFFFFF);
     Yellow = Color(0xFFFFF38D);
