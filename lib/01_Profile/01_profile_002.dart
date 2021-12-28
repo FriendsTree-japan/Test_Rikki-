@@ -60,7 +60,7 @@ class ColorConfig {
 
   void init(BuildContext context) {
     //使用する色を定義
-    Black = Color(0xFF737373);
+    Black = Color(0xFF212121);
     Orange = Color(0xFFFFC0A3);
     White = Color(0xFFFFFFFF);
     Cream = Color(0xFFFAF7F3);
@@ -284,6 +284,7 @@ class _profile_005 extends State<profile_005> {
       ),
       home: Scaffold(
         appBar: AppBar(
+            // backgroundColor: Colors.green,
             backgroundColor: Colors.white,
             title: Text(profileTitle,
                 style: TextStyle(
