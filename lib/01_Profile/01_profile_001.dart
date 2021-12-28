@@ -973,8 +973,6 @@ class _profile_001 extends State<profile_001> {
                                   Padding(
                                     padding: EdgeInsets.only(top: 6),
                                   ),
-<<<<<<< HEAD
-                                ),
                               ]),
                               Padding(
                                 padding: EdgeInsets.only(top: 6),
@@ -997,32 +995,7 @@ class _profile_001 extends State<profile_001> {
                                       //   borderSide:
                                       //   BorderSide(color: ColorConfig.Yellow),
                                       // ),
-=======
-                                  Row(children: [
-                                    Container(
-                                        child: Text("3.",
-                                            style: TextStyle(
-                                                color: ColorConfig.Black,
-                                                fontSize: 12.0))),
-                                    Container(
-                                      height: 20,
-                                      width: SizeConfig.screenWidth * 0.3,
-                                      child: TextField(
-                                        controller: third2Controller,
-                                        maxLength: 9,
-                                        decoration: InputDecoration(
-                                          counterText: '',
-                                          // enabledBorder: OutlineInputBorder(
-                                          //   borderSide:
-                                          //   BorderSide(color: ColorConfig.Yellow),
-                                          // ),
-                                        ),
-                                        style: TextStyle(fontSize: 12),
-                                      ),
->>>>>>> e2902868490d0b4633cf095f9fb3fc60d96c4272
-                                    ),
-                                  ]),
-                                ]),
+                                    )))]),
                               ],
                             )),
                       ])),
