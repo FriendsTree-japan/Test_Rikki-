@@ -198,6 +198,7 @@ class _profile_003 extends State<profile_003> {
   late String kutiiguseZen;
   late String sukilactionZen;
   late String freespaceZen;
+  late String myImagePathZen;
 
   //プロフィール画像Pass
   late String myImagePath;
@@ -214,20 +215,20 @@ class _profile_003 extends State<profile_003> {
     this.text1Controller = new TextEditingController(text: widget.text1);
     this.text2Controller = new TextEditingController(text: widget.text2);
     this.personal1Controller =
-        new TextEditingController(text: widget.personal1);
+    new TextEditingController(text: widget.personal1);
     this.personal2Controller =
-        new TextEditingController(text: widget.personal2);
+    new TextEditingController(text: widget.personal2);
     this.hobby1Controller = new TextEditingController(text: widget.hobby1);
     this.hobby2Controller = new TextEditingController(text: widget.hobby2);
     this.tokugiController = new TextEditingController(text: widget.tokugi);
     this.dreamController = new TextEditingController(text: widget.dream);
     this.manController = new TextEditingController(text: widget.man);
     this.kutiiguseController =
-        new TextEditingController(text: widget.kutiiguse);
+    new TextEditingController(text: widget.kutiiguse);
     this.sukilactionController =
-        new TextEditingController(text: widget.sukilaction);
+    new TextEditingController(text: widget.sukilaction);
     this.freespaceController =
-        new TextEditingController(text: widget.freespace);
+    new TextEditingController(text: widget.freespace);
     this.id = widget.id;
     this.myImagePath = widget.myImagePath;
     this.koshinFlg = widget.koshinFlg;
@@ -254,6 +255,7 @@ class _profile_003 extends State<profile_003> {
     this.kutiiguseZen = widget.kutiiguse;
     this.sukilactionZen = widget.sukilaction;
     this.freespaceZen = widget.freespace;
+    this.myImagePathZen = widget.myImagePath;
   }
 
   @override
@@ -270,7 +272,7 @@ class _profile_003 extends State<profile_003> {
       ),
       home: Scaffold(
         appBar: AppBar(
-            // backgroundColor: Colors.green,
+          // backgroundColor: Colors.green,
             backgroundColor: Colors.white,
             title: Text(profileTitle,
                 style: TextStyle(
@@ -317,7 +319,8 @@ class _profile_003 extends State<profile_003> {
                         man == manZen &&
                         kutiiguse == kutiiguseZen &&
                         sukilaction == sukilactionZen &&
-                        freespace == freespaceZen) {
+                        freespace == freespaceZen &&
+                        myImagePath == myImagePathZen) {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => TabPage(1)));
                     } else {
@@ -347,7 +350,7 @@ class _profile_003 extends State<profile_003> {
                                     profileDb proDb = new profileDb();
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
-                                        DateFormat('yyyy/MM/dd HH:mm');
+                                    DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     ProList plist = new ProList.ProList_003(
                                         id: id,
@@ -412,12 +415,12 @@ class _profile_003 extends State<profile_003> {
                                     onPrimary: Colors.white),
                                 onPressed: () async {
                                   saveName =
-                                      await profileShow().saveDialog(context);
+                                  await profileShow().saveDialog(context);
                                   if (saveName != "") {
                                     profileDb proDb = new profileDb();
                                     DateTime now = DateTime.now();
                                     DateFormat outputFormat =
-                                        DateFormat('yyyy/MM/dd HH:mm');
+                                    DateFormat('yyyy/MM/dd HH:mm');
                                     String date = outputFormat.format(now);
                                     String query =
                                         'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, location, SNS1, SNS2, text1, text2, personal1, personal2, hobby1, hobby2, tokugi, dream, man, kutiiguse, sukilaction, freespace, myImagePath) '
@@ -473,7 +476,7 @@ class _profile_003 extends State<profile_003> {
                         backgroundColor: ColorConfig.White,
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
+                            BorderRadius.all(Radius.circular(20))),
                         children: <Widget>[
                           SimpleDialogOption(
                             onPressed: () async {
@@ -498,7 +501,7 @@ class _profile_003 extends State<profile_003> {
                               String freespace = freespaceController.text;
                               DateTime now = DateTime.now();
                               DateFormat outputFormat =
-                                  DateFormat('yyyy/MM/dd HH:mm');
+                              DateFormat('yyyy/MM/dd HH:mm');
                               String date = outputFormat.format(now);
 
                               if (koshinFlg == "1") {
@@ -544,10 +547,11 @@ class _profile_003 extends State<profile_003> {
                                 kutiiguseZen = kutiiguse;
                                 sukilactionZen = sukilaction;
                                 freespaceZen = freespace;
+                                this.myImagePathZen = myImagePath;
                                 Navigator.pop(childContext);
                               } else {
                                 saveName =
-                                    await profileShow().saveDialog(context);
+                                await profileShow().saveDialog(context);
                                 if (saveName != "") {
                                   String query =
                                       'INSERT INTO profile003(saveName, koshinYmd, name, birth, place, location, SNS1, SNS2, text1, text2, personal1, personal2, hobby1, hobby2, tokugi, dream, man, kutiiguse, sukilaction, freespace, myImagePath) '
@@ -596,6 +600,7 @@ class _profile_003 extends State<profile_003> {
                                 kutiiguseZen = kutiiguse;
                                 sukilactionZen = sukilaction;
                                 freespaceZen = freespace;
+                                this.myImagePathZen = myImagePath;
                                 Navigator.pop(childContext);
                               }
                             },
@@ -700,7 +705,7 @@ class _profile_003 extends State<profile_003> {
                       ConstrainedBox(
                         constraints: BoxConstraints(
                             maxHeight:
-                                SizeConfig.widgetHeightSizeFirst * 0.888),
+                            SizeConfig.widgetHeightSizeFirst * 0.888),
                         child: Container(
                           decoration: BoxDecoration(
                             color: ColorConfig.skyblue,
@@ -721,7 +726,7 @@ class _profile_003 extends State<profile_003> {
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
                                 maxHeight:
-                                    SizeConfig.widgetHeightSizeFirst * 0.788),
+                                SizeConfig.widgetHeightSizeFirst * 0.788),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: ColorConfig.White,
@@ -744,9 +749,9 @@ class _profile_003 extends State<profile_003> {
                                           Container(
                                             child: Column(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                              MainAxisAlignment.start,
                                               crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                               children: [
                                                 Container(
                                                     child: Text("名前",
@@ -757,26 +762,26 @@ class _profile_003 extends State<profile_003> {
                                                 Container(
                                                   height: 20,
                                                   width:
-                                                      SizeConfig.screenWidth *
-                                                          0.35,
+                                                  SizeConfig.screenWidth *
+                                                      0.35,
                                                   child: TextField(
                                                     controller: nameController,
                                                     maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
-                                                          OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                           color:
-                                                              ColorConfig.White,
+                                                          ColorConfig.White,
                                                         ),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                          ColorConfig.Gray,
+                                                      ColorConfig.Gray,
                                                     ),
                                                     style:
-                                                        TextStyle(fontSize: 12),
+                                                    TextStyle(fontSize: 12),
                                                   ),
                                                 ),
                                                 Container(
@@ -788,22 +793,22 @@ class _profile_003 extends State<profile_003> {
                                                 Container(
                                                   height: 20,
                                                   width:
-                                                      SizeConfig.screenWidth *
-                                                          0.35,
+                                                  SizeConfig.screenWidth *
+                                                      0.35,
                                                   child: TextField(
                                                     controller: birthController,
                                                     maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
-                                                          OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                             color: ColorConfig
                                                                 .White),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                          ColorConfig.Gray,
+                                                      ColorConfig.Gray,
                                                     ),
                                                     style: TextStyle(
                                                       fontSize: 12,
@@ -819,26 +824,26 @@ class _profile_003 extends State<profile_003> {
                                                 Container(
                                                   height: 20,
                                                   width:
-                                                      SizeConfig.screenWidth *
-                                                          0.35,
+                                                  SizeConfig.screenWidth *
+                                                      0.35,
                                                   child: TextField(
                                                     controller:
-                                                        locationController,
+                                                    locationController,
                                                     maxLength: 8,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
-                                                          OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                             color: ColorConfig
                                                                 .Gray),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                          ColorConfig.Gray,
+                                                      ColorConfig.Gray,
                                                     ),
                                                     style:
-                                                        TextStyle(fontSize: 12),
+                                                    TextStyle(fontSize: 12),
                                                   ),
                                                 ),
                                               ],
@@ -847,7 +852,7 @@ class _profile_003 extends State<profile_003> {
                                           Padding(padding: EdgeInsets.all(15)),
                                           Align(
                                             alignment:
-                                                FractionalOffset(0.98, 0),
+                                            FractionalOffset(0.98, 0),
                                             child: InkWell(
                                                 child: Container(
                                                   height: 100,
@@ -855,17 +860,17 @@ class _profile_003 extends State<profile_003> {
                                                   decoration: BoxDecoration(
                                                     border: Border.all(
                                                         color:
-                                                            ColorConfig.skyblue,
+                                                        ColorConfig.skyblue,
                                                         width: 6),
                                                     color: ColorConfig.White,
                                                   ),
                                                   child: myImagePath == ""
                                                       ? Image.asset(
-                                                          'images/common/upper_body-2.png',
-                                                          fit: BoxFit.cover)
+                                                      'images/common/upper_body-2.png',
+                                                      fit: BoxFit.cover)
                                                       : Base64Helper
-                                                          .imageFromBase64String(
-                                                              myImagePath),
+                                                      .imageFromBase64String(
+                                                      myImagePath),
                                                 ),
                                                 onTap: () async {
                                                   Future result = Navigator.push(
@@ -876,7 +881,7 @@ class _profile_003 extends State<profile_003> {
                                                                   myImagePath,
                                                                   "1")));
                                                   myImagePath =
-                                                      await result as String;
+                                                  await result as String;
                                                   setState(() {});
                                                 }),
                                           ),
@@ -890,7 +895,7 @@ class _profile_003 extends State<profile_003> {
                                                 fontSize: 12.0))),
                                     Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           Container(
                                             child: Row(children: [
@@ -905,11 +910,11 @@ class _profile_003 extends State<profile_003> {
                                                     0.32,
                                                 child: TextField(
                                                   controller: SNS1Controller,
-                                                  maxLength: 14,
+                                                  maxLength: 12,
                                                   decoration: InputDecoration(
                                                     counterText: '',
                                                     enabledBorder:
-                                                        OutlineInputBorder(
+                                                    OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                           color: ColorConfig
                                                               .White),
@@ -918,7 +923,7 @@ class _profile_003 extends State<profile_003> {
                                                     fillColor: ColorConfig.Gray,
                                                   ),
                                                   style:
-                                                      TextStyle(fontSize: 12),
+                                                  TextStyle(fontSize: 12),
                                                 ),
                                               ),
                                             ]),
@@ -934,25 +939,25 @@ class _profile_003 extends State<profile_003> {
                                                 Container(
                                                   height: 20,
                                                   width:
-                                                      SizeConfig.screenWidth *
-                                                          0.32,
+                                                  SizeConfig.screenWidth *
+                                                      0.32,
                                                   child: TextField(
                                                     controller: SNS2Controller,
-                                                    maxLength: 14,
+                                                    maxLength: 12,
                                                     decoration: InputDecoration(
                                                       counterText: '',
                                                       enabledBorder:
-                                                          OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                         borderSide: BorderSide(
                                                             color: ColorConfig
                                                                 .White),
                                                       ),
                                                       filled: true,
                                                       fillColor:
-                                                          ColorConfig.Gray,
+                                                      ColorConfig.Gray,
                                                     ),
                                                     style:
-                                                        TextStyle(fontSize: 12),
+                                                    TextStyle(fontSize: 12),
                                                   ),
                                                 ),
                                               ]),
@@ -990,7 +995,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.5,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: text1Controller,
                                     maxLength: 13,
@@ -1052,7 +1057,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.35,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: personal1Controller,
                                     maxLength: 8,
@@ -1060,7 +1065,7 @@ class _profile_003 extends State<profile_003> {
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide:
-                                            BorderSide(color: ColorConfig.Gray),
+                                        BorderSide(color: ColorConfig.Gray),
                                       ),
                                       filled: true,
                                       fillColor: ColorConfig.Gray,
@@ -1114,7 +1119,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.35,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: personal2Controller,
                                     maxLength: 8,
@@ -1176,7 +1181,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.25,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: hobby1Controller,
                                     maxLength: 5,
@@ -1184,7 +1189,7 @@ class _profile_003 extends State<profile_003> {
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide:
-                                            BorderSide(color: ColorConfig.Gray),
+                                        BorderSide(color: ColorConfig.Gray),
                                       ),
                                       filled: true,
                                       fillColor: ColorConfig.Gray,
@@ -1204,7 +1209,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.25,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: hobby2Controller,
                                     maxLength: 5,
@@ -1212,7 +1217,7 @@ class _profile_003 extends State<profile_003> {
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide:
-                                            BorderSide(color: ColorConfig.Gray),
+                                        BorderSide(color: ColorConfig.Gray),
                                       ),
                                       filled: true,
                                       fillColor: ColorConfig.Gray,
@@ -1259,7 +1264,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.35,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: tokugiController,
                                     maxLength: 8,
@@ -1314,7 +1319,7 @@ class _profile_003 extends State<profile_003> {
                                   height: 20,
                                   width: SizeConfig.screenWidth * 0.37,
                                   padding:
-                                      EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
+                                  EdgeInsets.fromLTRB(1.5, 0.0, 1.5, 0.0),
                                   child: TextField(
                                     controller: text2Controller,
                                     maxLength: 9,
@@ -1322,7 +1327,7 @@ class _profile_003 extends State<profile_003> {
                                       counterText: '',
                                       enabledBorder: OutlineInputBorder(
                                         borderSide:
-                                            BorderSide(color: ColorConfig.Gray),
+                                        BorderSide(color: ColorConfig.Gray),
                                       ),
                                       filled: true,
                                       fillColor: ColorConfig.Gray,
@@ -1371,7 +1376,7 @@ class _profile_003 extends State<profile_003> {
                           child: ConstrainedBox(
                             constraints: BoxConstraints(
                                 maxHeight:
-                                    SizeConfig.widgetHeightSizeFirst * 0.9),
+                                SizeConfig.widgetHeightSizeFirst * 0.9),
                             child: Container(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -1380,13 +1385,13 @@ class _profile_003 extends State<profile_003> {
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
                                           color: ColorConfig.White,
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                          BorderRadius.circular(15),
                                         ),
                                         height: SizeConfig.screenHeight * 0.055,
                                         width: SizeConfig.screenWidth * 0.38,
@@ -1397,9 +1402,9 @@ class _profile_003 extends State<profile_003> {
                                             0.0),
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               child: Text("将来の夢は？",
@@ -1412,7 +1417,7 @@ class _profile_003 extends State<profile_003> {
                                             Container(
                                               height: 15,
                                               width:
-                                                  SizeConfig.screenWidth * 0.4,
+                                              SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
@@ -1421,10 +1426,10 @@ class _profile_003 extends State<profile_003> {
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
-                                                      OutlineInputBorder(
+                                                  OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                            ColorConfig.White),
+                                                        ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
@@ -1445,7 +1450,7 @@ class _profile_003 extends State<profile_003> {
                                         decoration: BoxDecoration(
                                           color: ColorConfig.White,
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                          BorderRadius.circular(15),
                                         ),
                                         height: SizeConfig.screenHeight * 0.055,
                                         width: SizeConfig.screenWidth * 0.38,
@@ -1456,9 +1461,9 @@ class _profile_003 extends State<profile_003> {
                                             0.0),
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               child: Text("口ぐせは？",
@@ -1471,7 +1476,7 @@ class _profile_003 extends State<profile_003> {
                                             Container(
                                               height: 15,
                                               width:
-                                                  SizeConfig.screenWidth * 0.4,
+                                              SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
@@ -1480,10 +1485,10 @@ class _profile_003 extends State<profile_003> {
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
-                                                      OutlineInputBorder(
+                                                  OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                            ColorConfig.White),
+                                                        ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
@@ -1500,18 +1505,18 @@ class _profile_003 extends State<profile_003> {
                                   ),
                                   Container(
                                     padding:
-                                        EdgeInsets.fromLTRB(2.5, 2.5, 2.5, 2.5),
+                                    EdgeInsets.fromLTRB(2.5, 2.5, 2.5, 2.5),
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         decoration: BoxDecoration(
                                           color: ColorConfig.White,
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                          BorderRadius.circular(15),
                                         ),
                                         height: SizeConfig.screenHeight * 0.055,
                                         width: SizeConfig.screenWidth * 0.38,
@@ -1522,9 +1527,9 @@ class _profile_003 extends State<profile_003> {
                                             0.0),
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               child: Text("憧れの人は？",
@@ -1537,7 +1542,7 @@ class _profile_003 extends State<profile_003> {
                                             Container(
                                               height: 15,
                                               width:
-                                                  SizeConfig.screenWidth * 0.4,
+                                              SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
@@ -1546,10 +1551,10 @@ class _profile_003 extends State<profile_003> {
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
-                                                      OutlineInputBorder(
+                                                  OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                            ColorConfig.White),
+                                                        ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
@@ -1570,7 +1575,7 @@ class _profile_003 extends State<profile_003> {
                                         decoration: BoxDecoration(
                                           color: ColorConfig.White,
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                          BorderRadius.circular(15),
                                         ),
                                         height: SizeConfig.screenHeight * 0.055,
                                         width: SizeConfig.screenWidth * 0.38,
@@ -1581,9 +1586,9 @@ class _profile_003 extends State<profile_003> {
                                             0.0),
                                         child: Column(
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                          MainAxisAlignment.start,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Container(
                                               child: Text("好きな場所は？",
@@ -1596,20 +1601,20 @@ class _profile_003 extends State<profile_003> {
                                             Container(
                                               height: 15,
                                               width:
-                                                  SizeConfig.screenWidth * 0.4,
+                                              SizeConfig.screenWidth * 0.4,
                                               padding: EdgeInsets.fromLTRB(
                                                   1.5, 0.0, 1.5, 0.0),
                                               child: TextField(
                                                 controller:
-                                                    sukilactionController,
+                                                sukilactionController,
                                                 maxLength: 8,
                                                 decoration: InputDecoration(
                                                   counterText: '',
                                                   enabledBorder:
-                                                      OutlineInputBorder(
+                                                  OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                         color:
-                                                            ColorConfig.White),
+                                                        ColorConfig.White),
                                                   ),
                                                   filled: true,
                                                   fillColor: ColorConfig.White,
@@ -1664,7 +1669,7 @@ class _profile_003 extends State<profile_003> {
                                 counterText: '',
                                 enabledBorder: OutlineInputBorder(
                                   borderSide:
-                                      BorderSide(color: ColorConfig.White),
+                                  BorderSide(color: ColorConfig.White),
                                 ),
                                 filled: true,
                                 fillColor: ColorConfig.White,

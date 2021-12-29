@@ -912,7 +912,7 @@ class _profile_001 extends State<profile_001> {
                                       width: SizeConfig.screenWidth * 0.3,
                                       child: TextField(
                                         controller: SNS1Controller,
-                                        maxLength: 9,
+                                        maxLength: 12,
                                         decoration: InputDecoration(
                                           counterText: '',
                                         ),
@@ -932,7 +932,7 @@ class _profile_001 extends State<profile_001> {
                                       width: SizeConfig.screenWidth * 0.3,
                                       child: TextField(
                                         controller: SNS2Controller,
-                                        maxLength: 9,
+                                        maxLength: 12,
                                         decoration: InputDecoration(
                                           counterText: '',
                                         ),
